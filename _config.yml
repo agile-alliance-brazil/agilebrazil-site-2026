@@ -18,15 +18,15 @@
 # You can create any custom variable you would like, and they will be accessible
 # in the templates via {{ site.myvariable }}.
 
-title: Agile Brazil 2025
+title: Agile Brazil 2026
 author: Agile Brazil
 generator: Agile Brazil
 lang: pt-BR
 languages: ["pt-BR", "en"]
-city: Rio de Janeiro
-state: RJ
-venue: Centro de Convenções ExpoRio
-dates:  18 e 19 de Setembro, 2025
+city: ""
+state: ""
+venue: ""
+dates:  ""
 
 emails:
   - contato@agilebrazil.com
@@ -35,12 +35,12 @@ emails:
 seo:
   author_1: Agile Alliance Brazil
   author_2: Agile Brazil volunteers
-  description: Site da conferência Agile Brazil 2025
+  description: Site da conferência Agile Brazil 2026
   keywords: agile, agilidade, conferência, evento, product, coding, práticas, cultura, pessoas, gestão, aprendizado
 
 sistemas:
-  submissoes: "https://www.even3.com.br/evento/login?evento=agilebrazil2025&lang=pt"
-  inscricoes: "https://www.even3.com.br/agilebrazil2025/"
+  submissoes: "https://www.even3.com.br/evento/login?evento=agilebrazil2026&lang=pt"
+  inscricoes: "https://www.even3.com.br/agilebrazil2026/"
 
 forms:
   community: "https://forms.gle/Uj1GhBhwxGuvC6iM6"
@@ -50,7 +50,7 @@ sponsorship:
   calculator: "https://docs.google.com/spreadsheets/d/1NVqC6tvm-qB1VBNCDdeydA7aVHxlVtHbPREZvI0PDhY"
 
 url: "https://www.agilebrazil.com"
-baseurl: "/2025" # the subpath of your site, e.g. /blog
+baseurl: "/2026" # the subpath of your site, e.g. /blog
 
 cotas:
   - title

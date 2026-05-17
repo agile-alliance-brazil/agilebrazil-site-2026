@@ -4,15 +4,54 @@
 }
 
 
-#banner {
-    background-color: var(--ab-logo-azul-escuro);
-    color: rgba(255, 255, 255, 0.5);
-    background-image: url(/2026/assets/images/banner-2025-3.jpg);
-    background-position: top center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    cursor: default;
-    text-align: center;
-    min-height: 70vh;
-    width: 100%;
+#banner img {
+    max-width: 480px;
+    width: 80%;
+}
+
+.inner.body-page{
+    max-width: 80%;
+    margin: auto;
+}
+
+@media screen and (max-width: 900px) {
+    #banner {
+        min-height: 30vh;
+    }
+}
+
+
+.wrapper.style1 {
+    background-color: #f3f3f3;
+}
+
+
+.wrapper {
+    padding: 30px 0;
+}
+
+.heading {
+    font-size: 1.5em;
+    margin-bottom: 12px;
+    color: #063676;
+}
+
+
+@media screen and (min-width: 981px) {
+    #protocolos .spotlights > * {
+        width: 50%;
+        background-color: #fff;
+        border-radius: 10px;
+        padding: 1rem;
+        margin: 1rem;
+        text-align: center;
+    }
+}
+
+#protocolos .spotlights {
+    justify-content: center;
+}
+
+.spotlights{
+    display: flex;
 }

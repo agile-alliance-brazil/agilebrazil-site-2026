@@ -1,0 +1,62 @@
+.about-wrapper{max-width:1200px;margin:48px auto;padding:0 16px}
+.box {
+    border-color: rgba(0, 0, 0, 0.15);
+}
+.box {
+    border: solid 1px;
+    border-radius: 4px;
+    margin-bottom: 2rem;
+    padding: 1.5rem;
+}
+
+.back-banner {
+    min-height: 70vh;
+}
+
+#banner header.heading {
+    border-color: rgba(255, 255, 255, 0.15);
+}
+
+#banner header {
+    max-width: 50%;
+    padding: 2%;
+}
+
+@media screen and (min-width: 720px) {
+    header.major.diversidade {
+        margin: 5rem auto 1rem auto !important;
+    }
+}
+
+header.heading {
+    border-bottom: 1px solid;
+    margin: 0 auto 2rem auto;
+    max-width: 80%;
+    text-align: center;
+}
+
+.inner {
+    margin: 0 auto;
+    max-width: calc(100% - 10rem);
+    width: 80rem;
+}
+
+#banner > .inner {
+    -moz-transition: -moz-transform 0.75s ease-in-out, opacity 0.75s ease-in-out;
+    -webkit-transition: -webkit-transform 0.75s ease-in-out, opacity 0.75s ease-in-out;
+    -ms-transition: -ms-transform 0.75s ease-in-out, opacity 0.75s ease-in-out;
+    transition: transform 0.75s ease-in-out, opacity 0.75s ease-in-out;
+    display: flex;
+    -mox-flex-direction: row;
+    -webkit-flex-direction: row;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    -moz-align-items: center;
+    -webkit-align-items: center;
+    -ms-align-items: center;
+    align-items: center;
+}
+
+#banner {
+    color:rgba(255, 255, 255) !important;
+}

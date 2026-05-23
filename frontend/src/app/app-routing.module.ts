@@ -16,6 +16,10 @@ const routes: Routes = [
     loadChildren: () => import('./sponsorship/sponsorship.module').then(m => m.SponsorshipModule)
   },
   {
+    path: 'comunidade',
+    loadChildren: () => import('./community/community.module').then(m => m.CommunityModule)
+  },
+  {
     path: 'codigo-de-conduta',
     loadChildren: () => import('./code-of-conduct/code-of-conduct.module').then(m => m.CodeOfConductModule)
   },

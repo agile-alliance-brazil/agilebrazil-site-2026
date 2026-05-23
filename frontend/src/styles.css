@@ -2,7 +2,7 @@
 
 :root {
     --bg: #ffffff;
-    --primary: #063676;
+    --primary: #010e9b;
     /* deep blue */
     --accent: #dd0031;
     /* red accent */
@@ -89,7 +89,7 @@ h2 {
 
 
 .button.primary {
-    background-color: #063676;
+    background-color: #010e9b;
     box-shadow: none;
     color: #ffffff !important;
 }

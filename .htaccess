@@ -1,6 +1,8 @@
 <IfModule mod_rewrite.c>
-  # If the request exists with a .html extension.
-  RewriteCond %{SCRIPT_FILENAME}.html -f
-  # And there is no trailing slash, rewrite to add the .html extension.
-  RewriteRule [^/]$ %{REQUEST_URI}.html [QSA,L]
+  RewriteEngine On
+  RewriteBase /
+  RewriteRule ^index\.html$ - [L]
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule . /index.html [L]
 </IfModule>

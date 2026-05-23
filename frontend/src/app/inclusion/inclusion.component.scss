@@ -10,7 +10,7 @@
 }
 
 .back-banner {
-    min-height: 70vh;
+    min-height: 50vh;
 }
 
 #banner header.heading {
@@ -55,6 +55,11 @@ header.heading {
     -webkit-align-items: center;
     -ms-align-items: center;
     align-items: center;
+    min-height: 40vh;
+}
+
+#banner > .inner h1 {
+    font-size: 3rem;
 }
 
 #banner {

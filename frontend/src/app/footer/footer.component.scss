@@ -48,7 +48,12 @@
 .site-footer .supporters img {
     width: 132px;
     padding-bottom: 1em;
-    display: block
+    display: block;
+}
+
+.site-footer .supporters li, .site-footer .social {
+    margin: auto;
+    text-align: center;
 }
 
 .site-footer .icons {

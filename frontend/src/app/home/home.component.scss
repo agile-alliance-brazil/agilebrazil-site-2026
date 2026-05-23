@@ -36,15 +36,23 @@
     color: #063676;
 }
 
-
-@media screen and (min-width: 981px) {
-    #protocolos .spotlights > * {
-        width: 50%;
+ #protocolos .spotlights > * {
         background-color: #fff;
         border-radius: 10px;
         padding: 1rem;
         margin: 1rem;
         text-align: center;
+    }
+
+@media screen and (min-width: 981px) {
+    #protocolos .spotlights > * {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 981px) {
+    #protocolos .spotlights {
+        display: block;
     }
 }
 
@@ -54,4 +62,9 @@
 
 .spotlights{
     display: flex;
+}
+
+#banner {
+    min-height: 70vh;
+    width: 100%;
 }

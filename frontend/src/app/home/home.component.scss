@@ -50,9 +50,19 @@
     }
 }
 
+
+#banner {
+    min-height: 70vh;
+    width: 100%;
+    background-position: top left;
+}
+
 @media screen and (max-width: 981px) {
     #protocolos .spotlights {
         display: block;
+    }
+    #banner {
+        min-height: 50vh;
     }
 }
 
@@ -62,10 +72,4 @@
 
 .spotlights{
     display: flex;
-}
-
-#banner {
-    min-height: 70vh;
-    width: 100%;
-    background-position: top left;
 }

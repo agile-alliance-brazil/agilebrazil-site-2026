@@ -1,0 +1,60 @@
+.profiles .profile {
+    text-align: center;
+    margin: 0 auto !important;
+}
+
+.community .image-keynotes {
+    height: 100px !important;
+    padding: 0 0 0 2rem;
+    align-content: center;
+}
+
+ul.icons li {
+    display: inline-block;
+    padding: 0 1rem 0 0;
+    text-align: center;
+}
+
+ul.icons li .icon {
+    -moz-transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, color 0.2s ease-in-out;
+    -webkit-transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, color 0.2s ease-in-out;
+    -ms-transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, color 0.2s ease-in-out;
+    transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, color 0.2s ease-in-out;
+    background-color: transparent;
+    border-radius: 100%;
+    box-shadow: inset 0 0 0 1px #010e9b;
+    color: #010e9b;
+    display: block;
+    font-size: 1.25rem;
+    font-weight: 400;
+    height: 2.75rem;
+    line-height: 2.75rem;
+    margin: 0 auto 2rem auto;
+    width: 2.75rem;
+}
+
+.icon {
+    text-decoration: none;
+    border-bottom: none;
+    position: relative;
+}
+
+.icon > .label {
+    display: none;
+}
+
+.hastag-speakers.raizes {
+    background-color: #147332 !important;
+}
+
+.hastag-speakers {
+    color: #fff;
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 12px;
+    margin: auto;
+}
+
+ul.icons.hastag {
+    margin: 10px !important;
+}

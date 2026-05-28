@@ -63,12 +63,31 @@ ul.icons.hastag {
     display: none;
 }
 
-.text-comunidade-flow:hover {
+.profiles {
+    display: flex;;
+}
+
+.profile {
+    position: relative;
+}
+
+.image-keynotes:hover .text-comunidade-flow {
     display: block;
     position: absolute;
-    background-color: #3396e7;
+    background-color: #a5a5a5;
     padding: 10px;
-    border-radius: 5px;
+    border-radius: 30px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     z-index: 1;
+    top: 30px;
+    left: 200px;
+    min-width: 240px;
+}
+
+.image-keynotes:hover {
+    cursor: pointer;
+}
+
+.text-comunidade-flow p {
+    margin: 5px !important;
 }

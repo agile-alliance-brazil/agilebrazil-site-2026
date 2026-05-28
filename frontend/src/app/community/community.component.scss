@@ -58,3 +58,17 @@ ul.icons li .icon {
 ul.icons.hastag {
     margin: 10px !important;
 }
+
+.text-comunidade-flow {
+    display: none;
+}
+
+.text-comunidade-flow:hover {
+    display: block;
+    position: absolute;
+    background-color: #3396e7;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    z-index: 1;
+}

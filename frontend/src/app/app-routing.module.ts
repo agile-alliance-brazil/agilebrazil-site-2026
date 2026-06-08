@@ -30,6 +30,14 @@ const routes: Routes = [
   {
     path: 'diversidade-e-inclusao',
     loadChildren: () => import('./inclusion/inclusion.module').then(m => m.InclusionModule)
+  },
+  {
+    path: 'inscricao',
+    loadChildren: () => import('./ticket/ticket.module').then(m => m.TicketModule)
+  },
+  {
+    path: 'submissao-palestra',
+    loadChildren: () => import('./submission/submission.module').then(m => m.SubmissionModule)
   }
 ];
 

@@ -7,8 +7,9 @@ Quick commands:
 - Install and build (from repo root):
 
 ```bash
+nvm use 24
 cd frontend
-npm install
+npm install --force
 npm run build -- --configuration=production
 ```
 
@@ -17,8 +18,9 @@ The production build will emit static files into `../_site` as configured in `fr
 Development server:
 
 ```bash
+nvm use 24
 cd frontend
-npm install
+npm install --force
 npm start
 ```
 

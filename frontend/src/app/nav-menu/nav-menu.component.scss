@@ -93,3 +93,16 @@
     text-decoration: none;
     font-weight: 600
 }
+
+.nav-panel .response-menu {
+    display: none;
+}
+
+@media screen and (max-width: 600px) {
+    .nav-panel .response-menu {
+        display: flex;
+    }
+    .nav-bar .links {
+        display: none;
+    }
+}

@@ -16,7 +16,7 @@ const routes: Routes = [
     loadChildren: () => import('./sponsorship/sponsorship.module').then(m => m.SponsorshipModule)
   },
   {
-    path: 'comunidade',
+    path: 'comunidades',
     loadChildren: () => import('./community/community.module').then(m => m.CommunityModule)
   },
   {

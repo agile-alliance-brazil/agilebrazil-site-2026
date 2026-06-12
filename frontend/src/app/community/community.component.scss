@@ -43,8 +43,16 @@ ul.icons li .icon {
     display: none;
 }
 
-.hastag-speakers.raizes {
+.hastag-speakers.agilidade {
     background-color: #147332 !important;
+}
+
+.hastag-speakers.tecnologia {
+    background-color: #004AAD !important;
+}
+
+.hastag-speakers.produto {
+    background-color: #2D87FF !important;
 }
 
 .hastag-speakers {
@@ -57,6 +65,8 @@ ul.icons li .icon {
 
 ul.icons.hastag {
     margin: 10px !important;
+    display: flex;
+    justify-content: center;
 }
 
 .text-comunidade-flow {
@@ -74,14 +84,14 @@ ul.icons.hastag {
 .image-keynotes:hover .text-comunidade-flow {
     display: block;
     position: absolute;
-    background-color: #a5a5a5;
+    background-color: #f2a65d;
     padding: 10px;
     border-radius: 30px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     z-index: 1;
-    top: 30px;
-    left: 200px;
-    min-width: 240px;
+    top: 120px;
+    left: 0px;
+    min-width: 220px;
 }
 
 .image-keynotes:hover {

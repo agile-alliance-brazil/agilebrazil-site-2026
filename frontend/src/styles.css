@@ -156,6 +156,10 @@ p{
     text-align: justify;
 }
 
+p.title{
+    text-align: center;
+}
+
 header p{
     text-align: center;
 }

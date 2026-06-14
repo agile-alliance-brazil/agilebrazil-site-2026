@@ -36,7 +36,7 @@ export class CommunityComponent {
       imageUrl: '/2026/assets/images/comunidade_minas_conecta.png',
       tags: ['Desenvolvimento', 'Tecnologia', 'Design', 'Liderança'],
       instagram: 'https://www.instagram.com/minasconecta.co/',
-      linkedin: 'https://www.linkedin.com/in/yurajyanay/'
+      linkedin: 'https://www.linkedin.com/company/minas-conecta/'
     },
     {
       name: 'DevLimeira',
@@ -56,7 +56,7 @@ export class CommunityComponent {
     },
     {
       name: 'Pipoca Ágil',
-      description: '<p class="title"> <strong>Comunidade Progirls</strong> <br/> A ProGirls é uma comunidade criada para fortalecer o protagonismo feminino na tecnologia. Promovemos inclusão, aprendizado, colaboração e oportunidades, criando um ambiente seguro e acolhedor para mulheres crescerem, se desenvolverem e conquistarem espaço na área de TI.</p>',
+      description: '<p class="title"> <strong>Comunidade Progirls</strong> <br/> O Pipoca Ágil é um podcast e comunidade colaborativa sobre agilidade, inovação e gestão de projetos. Promove aprendizado, networking e troca de experiências por meio de lives, entrevistas e projetos colaborativos.</p>',
       imageUrl: '/2026/assets/images/comunidade_pipoca_agil.jpeg',
       tags: ['Agilidade', 'Produto', 'Desenvolvimento', 'Tecnologia', 'Inteligência Artificial'],
       linkedin: 'https://www.linkedin.com/company/pipoca-%C3%A1gil/',

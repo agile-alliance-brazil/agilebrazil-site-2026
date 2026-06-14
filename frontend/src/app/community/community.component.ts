@@ -56,7 +56,7 @@ export class CommunityComponent {
     },
     {
       name: 'Pipoca Ágil',
-      description: '<p class="title"> <strong>Comunidade Progirls</strong> <br/> O Pipoca Ágil é um podcast e comunidade colaborativa sobre agilidade, inovação e gestão de projetos. Promove aprendizado, networking e troca de experiências por meio de lives, entrevistas e projetos colaborativos.</p>',
+      description: '<p class="title"> <strong>Pipoca Ágil</strong> <br/> O Pipoca Ágil é um podcast e comunidade colaborativa sobre agilidade, inovação e gestão de projetos. Promove aprendizado, networking e troca de experiências por meio de lives, entrevistas e projetos colaborativos.</p>',
       imageUrl: '/2026/assets/images/comunidade_pipoca_agil.jpeg',
       tags: ['Agilidade', 'Produto', 'Desenvolvimento', 'Tecnologia', 'Inteligência Artificial'],
       linkedin: 'https://www.linkedin.com/company/pipoca-%C3%A1gil/',

@@ -11,7 +11,7 @@
 
 ul.icons li {
     display: inline-block;
-    padding: 0 1rem 0 0;
+    padding: 5px;
     text-align: center;
 }
 
@@ -55,6 +55,34 @@ ul.icons li .icon {
     background-color: #2D87FF !important;
 }
 
+.hastag-speakers.desenvolvimento {
+    background-color: #FFC107 !important;
+}
+.hastag-speakers.design {
+    background-color: #9C27B0 !important;
+}
+.hastag-speakers.lideranca {
+    background-color: #F44336 !important;
+}
+.hastag-speakers.inteligencia-artificial {
+    background-color: #00BCD4 !important;
+}
+.hastag-speakers.projetos { 
+    background-color: #FF9800 !important;
+}
+.hastag-speakers.estrategia { 
+    background-color: #9E9E9E !important;
+}
+.hastag-speakers.governanca { 
+    background-color: #607D8B !important;
+}
+.hastag-speakers.transformacao-digital { 
+    background-color: #4CAF50 !important;
+}
+.hastag-speakers.gestao { 
+    background-color: #FF5722 !important;
+}
+
 .hastag-speakers {
     color: #fff;
     padding: 5px;
@@ -65,7 +93,7 @@ ul.icons li .icon {
 
 ul.icons.hastag {
     margin: 10px !important;
-    display: flex;
+    display: block;
     justify-content: center;
 }
 
@@ -74,11 +102,12 @@ ul.icons.hastag {
 }
 
 .profiles {
-    display: flex;;
+    display: block;
 }
 
 .profile {
     position: relative;
+    display: inline-grid;
 }
 
 .image-keynotes:hover .text-comunidade-flow {

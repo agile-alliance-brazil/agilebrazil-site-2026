@@ -18,27 +18,49 @@
 
             <div class="profiles session-speakers community">
 
-                <div class="profile" style="max-width: 275px !important;" *ngFor="let comunidade of comunidades">
+                <div class="profile" style="max-width: 275px !important; min-width: 220px !important; width: 25%;" *ngFor="let comunidade of comunidades">
                     <div class="image-keynotes">
                         <img style="max-width: 175px !important;
                             max-height: 100px !important;
                             border-radius: 0% !important;" class="image-speaker" src="{{comunidade.imageUrl}}" />
                         <div class="text-comunidade-flow" [innerHTML]="comunidade.description"></div>
                     </div>
+                    <!--<p  class="title">
+                        <span class="icon fa-solid fa-microphone" target="_blank"><span class="label">microphone</span></span>
+                        {{comunidade.tagsResumo}}
+                    </p>-->
                     <ul class="icons hastag">
                         <li *ngFor="let tag of comunidade.tags">
                             <span *ngIf="tag == 'Agilidade'" class="hastag-speakers agilidade">Agilidade</span>
                             <span *ngIf="tag == 'Tecnologia'" class="hastag-speakers tecnologia">Tecnologia</span>
                             <span *ngIf="tag == 'Produto'" class="hastag-speakers produto">Produto</span>
+                            <span *ngIf="tag == 'Desenvolvimento'" class="hastag-speakers desenvolvimento">Desenvolvimento</span>
+                            <span *ngIf="tag == 'Design'" class="hastag-speakers design">Design</span>
+                            <span *ngIf="tag == 'Liderança'" class="hastag-speakers lideranca">Liderança</span>
+                            <span *ngIf="tag == 'Projetos'" class="hastag-speakers projetos">Projetos</span>
+                            <span *ngIf="tag == 'Estratégia'" class="hastag-speakers estrategia">Estratégia</span>
+                            <span *ngIf="tag == 'Governança'" class="hastag-speakers governanca">Governança</span>
+                            <span *ngIf="tag == 'Transformação Digital'" class="hastag-speakers transformacao-digital">Transformação Digital</span>
+                            <span *ngIf="tag == 'Gestão'" class="hastag-speakers gestao">Gestão</span>
+                            <span *ngIf="tag == 'Inteligência Artificial'" class="hastag-speakers inteligencia-artificial">Inteligência Artificial</span>
                         </li>
                     </ul>
                     <ul class="icons">
                         <li *ngIf="comunidade.linkedin" ><a href="{{comunidade.linkedin}}"
                                 class="icon fa-brands fa-linkedin-in" target="_blank"><span
                                     class="label">LinkedIn</span></a></li>
+                        <li *ngIf="comunidade.whatsapp" ><a href="{{comunidade.whatsapp}}"
+                                class="icon fa-brands fa-whatsapp" target="_blank"><span
+                                    class="label">WhatsApp</span></a></li>
+                        <li *ngIf="comunidade.link" >
+                            <a href="{{comunidade.link}}" class="icon" target="_blank">
+                                <i class="fa-solid fa-link"></i>
+                            </a>
+                        </li>
                         <li  *ngIf="comunidade.instagram" ><a href="{{comunidade.instagram}}" class="icon fa-brands fa-instagram"
                                 target="_blank"><span class="label">Instagram</span></a></li>
-                          <li  *ngIf="comunidade.youtube"><a href="{{comunidade.youtube}}" class="icon fa-brands fa-youtube" target="_blank"><span class="label">YouTube</span></a></li>
+                        <li  *ngIf="comunidade.youtube"><a href="{{comunidade.youtube}}" class="icon fa-brands fa-youtube" target="_blank"><span class="label">YouTube</span></a></li>
+                        <li  *ngIf="comunidade.meetup"><a href="{{comunidade.meetup}}" class="icon fa-brands fa-meetup" target="_blank"><span class="label">Meetup</span></a></li>
                     </ul>
                 </div>
             </div>

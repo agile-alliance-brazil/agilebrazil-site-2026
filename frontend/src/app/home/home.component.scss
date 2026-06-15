@@ -76,3 +76,73 @@ p{
 .spotlights{
     display: flex;
 }
+
+/* Carousel styles */
+.carousel {
+    position: relative;
+    overflow: hidden;
+    max-width: 900px;
+    margin: 1.5rem auto;
+    border-radius: 8px;
+    background: #111;
+}
+
+.carousel-track {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.carousel img {
+    width: 100%;
+    flex: 0 0 100%;
+    display: none;
+    object-fit: cover;
+    height: 320px;
+}
+
+.carousel img.active {
+    display: block;
+}
+
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0,0,0,0.5);
+    color: #fff;
+    border: none;
+    font-size: 2rem;
+    padding: 0.25rem 0.6rem;
+    cursor: pointer;
+    z-index: 2;
+}
+
+.carousel-control.prev { left: 8px; }
+.carousel-control.next { right: 8px; }
+
+.carousel-indicators {
+    position: absolute;
+    bottom: 8px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 6px;
+    z-index: 3;
+}
+
+.carousel-indicators button {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    border: none;
+    background: rgba(255,255,255,0.5);
+    cursor: pointer;
+}
+
+.carousel-indicators button.active {
+    background: #fff;
+}
+
+@media (max-width: 600px) {
+    .carousel img.active { height: 200px; }
+}

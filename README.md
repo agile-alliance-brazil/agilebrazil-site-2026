@@ -10,7 +10,7 @@ Quick commands:
 nvm use 24
 cd frontend
 npm install --force
-npm run build -- --configuration=production
+npm run build --configuration=production
 ```
 
 The production build will emit static files into `../_site` as configured in `frontend/angular.json`.

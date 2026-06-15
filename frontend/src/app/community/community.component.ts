@@ -257,6 +257,13 @@ export class CommunityComponent {
       tags: ['Tecnologia'],
       instagram: 'https://www.instagram.com/phpmanaus?igsh=ZWdxMnB4eHI5aHI0',
       youtube: 'https://youtube.com/@phpmanaus?si=4wGh36VFP1MHangr'
+    },
+    {
+      name: 'SouJava',
+      description: '<p class="title"> <strong>SouJava</strong> <br/> O SouJava é um grupo de usuários formado por desenvolvedores e evangelistas que promove o fortalecimento e a profissionalização do Java no Brasil. Referência mundial, realiza eventos, encontros e ações online, apoiando a comunidade na aplicação da tecnologia Java em projetos reais.</p>',
+      imageUrl: '/2026/assets/images/comunidade_sou_java.png',
+      tags: ['Desenvolvimento'],
+      linkedin: 'https://www.linkedin.com/company/soujava/'
     }
   ];
 }

@@ -264,6 +264,15 @@ export class CommunityComponent {
       imageUrl: '/2026/assets/images/comunidade_sou_java.png',
       tags: ['Desenvolvimento'],
       linkedin: 'https://www.linkedin.com/company/soujava/'
+    },
+    {
+      name: 'Product Guru\'s',
+      description: '<p class="title"> <strong>Product Guru\'s</strong> <br/> O maior canal de conteúdo direto ao ponto sobre Produto, Negócios, Carreira e Tecnologia.\
+Entrevistas reais e sem filtro com PMs, founders, builders de IA e líderes de Nubank, iFood, Mercado Livre, Itaú outras empresas, startups e scale-ups.</p>',
+      imageUrl: '/2026/assets/images/comunidade_product_gurus.png',
+      tags: ['Produto', 'Inteligência Artificial', 'Liderança'],
+      youtube: 'https://www.youtube.com/@productgurus',
+      link: 'https://www.productgurus.com.br/'
     }
   ];
 }

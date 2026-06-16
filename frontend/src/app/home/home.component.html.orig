@@ -15,7 +15,11 @@
   </div>
 </section>
 
+<<<<<<< HEAD
 <section id="section-sponsor" class="wrapper">
+=======
+<section id="section-sponsor" class="wrapper style1">
+>>>>>>> production
   <div class="inner body-page">
     <div class="be-a-sponsor feature">
       <header class="heading">
@@ -28,15 +32,15 @@
     </div>
     </div>
 </section>
+<<<<<<< HEAD
 
 <section id="section-sponsor" class="wrapper style1">
   <div class="inner body-page">
     <div class="be-a-sponsor feature">
       <header class="heading">
-        <h2>Onde ficar</h2>
+        <h2>Onde ficar!</h2>
       </header>
-      <p>Temos condições exclusivas para o <a href="https://grandcarima.com.br/" target="_blank">Grand Carimã</a>!</p>
-      <p>Utilize o cupom de desconto: <strong>agile2026</strong>.</p>
+      <p>Esse ano temos cupom de desconto: <strong>agile2026</strong> para o <a href="https://grandcarima.com.br/" target="_blank">Grand Carimã</a>.</p>
       <div class="carousel" (mouseenter)="stopAutoplay()" (mouseleave)="startAutoplay()">
         <div class="carousel-track">
           <img *ngFor="let img of images; let i = index"
@@ -56,12 +60,11 @@
           </button>
         </div>
       </div>
-      <ul class="actions special">
-        <li><a href="https://grandcarima.com.br/" target="_blank" class="button primary">Realizar reserva</a></li>
-      </ul>
     </div>
     </div>
 </section>
+=======
+>>>>>>> production
 
 <section id="section-sponsor" class="wrapper">
   <div class="inner body-page">

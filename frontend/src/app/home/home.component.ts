@@ -11,7 +11,7 @@ export class HomeComponent implements OnInit, OnDestroy {
     '/2026/assets/images/hotel/img_2.jpg',
     '/2026/assets/images/hotel/img_3.jpg',
     '/2026/assets/images/hotel/img_4.jpg',
-    '/2026/assets/images/hotel/img_5.JPG',
+    '/2026/assets/images/hotel/img_5.jpg',
     '/2026/assets/images/hotel/img_6.jpg',
     '/2026/assets/images/hotel/img_7.JPG',
     '/2026/assets/images/hotel/img_8.jpg',

@@ -273,6 +273,14 @@ Entrevistas reais e sem filtro com PMs, founders, builders de IA e líderes de N
       tags: ['Produto', 'Inteligência Artificial', 'Liderança'],
       youtube: 'https://www.youtube.com/@productgurus',
       link: 'https://www.productgurus.com.br/'
+    },
+    {
+      name: 'DevParana',
+      description: '<p class="title"> <strong>DevParana</strong> <br/> A DevParaná é uma comunidade de tecnologia sem fins lucrativos que conecta profissionais, estudantes e empresas em todo o Paraná. Há mais de 10 anos promove eventos, meetups e conferências, fortalecendo o ecossistema de tecnologia e compartilhamento de conhecimento no estado.</p>',
+      imageUrl: '/2026/assets/images/comunidade_dev_parana.png',
+      tags: ['Agilidade', 'Desenvolvimento', 'Tecnologia'],
+      instagram: 'http://instagram.com/devparana',
+      meetup: 'http://meetup.com/developerparana'
     }
   ];
 }

@@ -31,7 +31,7 @@ Notes:
 Serving the built site:
 
 ```bash
-# from repo root
+## from repo root
 npx serve _site
 ```
 

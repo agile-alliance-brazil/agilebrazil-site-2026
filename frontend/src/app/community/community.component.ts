@@ -289,6 +289,14 @@ Entrevistas reais e sem filtro com PMs, founders, builders de IA e líderes de N
       tags: ['Agilidade', 'Liderança'],
       instagram: 'https://www.instagram.com/somoscoletivoacao/',
       linkedin: 'https://www.linkedin.com/company/coletivo-acao/'
+    },
+    {
+      name: 'Agile Club',
+      description: '<p class="title"> <strong>Agile Club</strong> <br/> Agile Club é um espaço criado para reunir profissionais e entusiastas de agilidade e liderança. Temos encontros com mentorias gratuitas, partilha de conteúdos exclusivos sobre agilidade, além de muitas oportunidades de networking.<br/>Nosso objetivo é compartilhar conhecimento e fortalecer os conceitos perdidos da agilidade.</p>',
+      imageUrl: '/2026/assets/images/comunidade_agile_club.jpg',
+      tags: ['Agilidade', 'Produto', 'Liderança'],
+      link: 'https://agileclub.yevenb.com',
+      whatsapp: 'https://chat.whatsapp.com/LVscrtfCKzK2rEAOtP8iSL'
     }
   ];
 }

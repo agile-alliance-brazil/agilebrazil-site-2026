@@ -281,6 +281,14 @@ Entrevistas reais e sem filtro com PMs, founders, builders de IA e líderes de N
       tags: ['Agilidade', 'Desenvolvimento', 'Tecnologia'],
       instagram: 'http://instagram.com/devparana',
       meetup: 'http://meetup.com/developerparana'
+    },
+    {
+      name: 'Coletivo Ação',
+      description: '<p class="title"> <strong>Coletivo Ação</strong> <br/> Somos uma comunidade de prática formada por facilitadores, líderes, agilistas e profissionais apaixonados por transformação organizacional. Compartilhamos conhecimento, experimentamos novas abordagens e construímos aprendizagem coletiva para gerar impacto real em pessoas, times e organizações.</p>',
+      imageUrl: '/2026/assets/images/comunidade_coletivo_acao.png',
+      tags: ['Agilidade', 'Liderança'],
+      instagram: 'https://www.instagram.com/somoscoletivoacao/',
+      linkedin: 'https://www.linkedin.com/company/coletivo-acao/'
     }
   ];
 }

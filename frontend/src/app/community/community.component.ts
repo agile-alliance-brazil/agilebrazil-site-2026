@@ -297,6 +297,14 @@ Entrevistas reais e sem filtro com PMs, founders, builders de IA e líderes de N
       tags: ['Agilidade', 'Produto', 'Liderança'],
       link: 'https://agileclub.yevenb.com',
       whatsapp: 'https://chat.whatsapp.com/LVscrtfCKzK2rEAOtP8iSL'
+    },
+    {
+      name: 'ProductTank São Paulo',
+      description: '<p class="title"> <strong>ProductTank São Paulo</strong> <br/> Participe do ProductTank São Paulo! Um meetup gratuito que reúne a comunidade de produto para talks, networking e discussões sobre estratégia e desenvolvimento de produtos. Presente em mais de 200 cidades, é organizado por voluntários e faz parte da rede global Mind the Product.</p>',
+      imageUrl: '/2026/assets/images/comunidade_product_tank_sao_paulo.png',
+      tags: ['Agilidade', 'Produto', 'Liderança'],
+      linkedin: 'https://www.linkedin.com/company/product-tank-s%C3%A3o-paulo/',
+      instagram: 'https://www.instagram.com/producttanksp/'
     }
   ];
 }

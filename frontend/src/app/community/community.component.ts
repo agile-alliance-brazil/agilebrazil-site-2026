@@ -305,6 +305,14 @@ Entrevistas reais e sem filtro com PMs, founders, builders de IA e líderes de N
       tags: ['Agilidade', 'Produto', 'Liderança'],
       linkedin: 'https://www.linkedin.com/company/product-tank-s%C3%A3o-paulo/',
       instagram: 'https://www.instagram.com/producttanksp/'
+    },
+    {
+      name: 'WoHackers',
+      description: '<p class="title"> <strong>WoHackers</strong> <br/> A WoHackers foi fundada por Beatriz e Yuki para ampliar a participação feminina na tecnologia por meio de hackathons, inovação e desenvolvimento profissional.</p>',
+      imageUrl: '/2026/assets/images/comunidade_wo_hackers.png',
+      tags: ['Agilidade', 'Produto', 'Desenvolvimento', 'Tecnologia', 'Inteligência Artificial', 'Design', 'Liderança'],
+      linkedin: 'https://www.linkedin.com/company/wohackers/?viewAsMember=true',
+      whatsapp: 'https://chat.whatsapp.com/EHz7v2d8dXxKoXwfEeDtQC'
     }
   ];
 }

@@ -313,6 +313,37 @@ Entrevistas reais e sem filtro com PMs, founders, builders de IA e líderes de N
       tags: ['Agilidade', 'Produto', 'Desenvolvimento', 'Tecnologia', 'Inteligência Artificial', 'Design', 'Liderança'],
       linkedin: 'https://www.linkedin.com/company/wohackers/?viewAsMember=true',
       whatsapp: 'https://chat.whatsapp.com/EHz7v2d8dXxKoXwfEeDtQC'
+    },
+    {
+      name: 'BRAVAS In Tech',
+      description: '<p class="title"> <strong>BRAVAS In Tech</strong> <br/> ​A BRAVAS In Tech é uma comunidade de meninas e mulheres unidas em prol de revolucionar o mercado de Tecnologia através do protagonismo feminino. Nosso propósito é valorizar, promover a conexão e impulsionar a carreira de mulheres de todas as idades através da troca de experiências e mentorias para construir um setor mais inclusivo e diverso.</p>',
+      imageUrl: '/2026/assets/images/comunidade_bravas_in_tech.png',
+      tags: ['Desenvolvimento', 'Tecnologia', 'Inteligência Artificial', 'Design', 'Liderança'],
+      linkedin: 'https://www.linkedin.com/company/bravasintech',
+      link: 'https://www.bravasintech.com/'
+    },
+    {
+      name: 'Java Amazonas',
+      description: '<p class="title"> <strong>Java Amazonas</strong> <br/> A comunidade foi criada com o intuito de promover a linguagem de programação Java no Amazonas. Ela representa uma forma de conectar, comunicar e colaborar com outros desenvolvedores do estado, compartilhando conhecimentos com o objetivo de expandir e fortalecer as comunidades de tecnologia da região.</p>',
+      imageUrl: '/2026/assets/images/comunidade_java_amazonas.png',
+      tags: ['Desenvolvimento', 'Tecnologia'],
+      link: 'https://javaamazonas.com.br/'
+    },
+    {
+      name: 'Agile Jampa',
+      description: '<p class="title"> <strong>Agile Jampa</strong> <br/> O Agile Jampa já é consolidado como o maior evento de Agilidade, Inovação e Gestão de Projetos do estado da Paraíba. Muito mais do que um encontro, nós somos o espaço definitivo para conectar, inspirar e transformar o ecossistema de tecnologia da região.</p>',
+      imageUrl: '/2026/assets/images/comunidade_agile_jampa.png',
+      tags: ['Agilidade', 'Produto', 'Tecnologia', 'Inteligência Artificial', 'Liderança', 'Inovação'],
+      linkedin: 'https://www.linkedin.com/company/agile-jampa/',
+      instagram: 'https://www.instagram.com/agile.jampa/'
+    },
+    {
+      name: 'Queens of Deploy',
+      description: '<p class="title"> <strong>Queens of Deploy</strong> <br/> ​O principal objetivo da Queens of Deploy é criar um espaço acolhedor, seguro e respeitoso para mulheres na área de tecnologia, onde todas possam crescer, compartilhar conhecimentos e superar desafios juntas.</p>',
+      imageUrl: '/2026/assets/images/comunidade_queens_of_deploy.jpeg',
+      tags: ['Desenvolvimento', 'Tecnologia', 'Carreira de mulheres'],
+      linkedin: 'https://www.linkedin.com/company/code-queens-dev/',
+      whatsapp: 'https://chat.whatsapp.com/KOKFfsXGD1PBVWvAXXNbcb'
     }
   ];
 }

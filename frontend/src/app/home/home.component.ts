@@ -24,13 +24,29 @@ export class HomeComponent implements OnInit, OnDestroy {
   current = 0;
   intervalId: any = null;
   autoplayDelay = 3000; // ms
+  showPopup = false;
 
   ngOnInit(): void {
     this.startAutoplay();
+    this.checkPopup();
   }
 
   ngOnDestroy(): void {
     this.stopAutoplay();
+  }
+
+  checkPopup(): void {
+    /*const hasClosed = sessionStorage.getItem('ab2026_popup_closed');
+    if (!hasClosed) {*/
+    setTimeout(() => {
+      this.showPopup = true;
+    }, 800);
+    //}
+  }
+
+  closePopup(): void {
+    this.showPopup = false;
+    sessionStorage.setItem('ab2026_popup_closed', 'true');
   }
 
   startAutoplay() {

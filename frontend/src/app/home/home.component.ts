@@ -27,8 +27,10 @@ export class HomeComponent implements OnInit, OnDestroy {
   showPopup = false;
 
   ngOnInit(): void {
+    /*
     this.startAutoplay();
     this.checkPopup();
+    */
   }
 
   ngOnDestroy(): void {

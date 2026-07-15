@@ -38,6 +38,10 @@ const routes: Routes = [
   {
     path: 'submissao-palestra',
     loadChildren: () => import('./submission/submission.module').then(m => m.SubmissionModule)
+  },
+  {
+    path: 'faq',
+    loadChildren: () => import('./faq/faq.module').then(m => m.FaqModule)
   }
 ];
 

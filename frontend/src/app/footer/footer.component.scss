@@ -11,9 +11,9 @@
 }
 
 /* three columns on wide screens */
-@media (min-width: 1200px) {
+@media (min-width: 800px) {
     .site-footer .sobre {
-        grid-template-columns: 1fr 1fr 1fr 1fr;
+        grid-template-columns: 1fr 1fr 1fr;
         align-items: start;
     }
 }

@@ -2,6 +2,10 @@
     background: #010e9b;
 }
 
+.padding-site-content {
+    padding-top: 70px;
+}
+
 .site-brand .site-title {
     color: #FFA505;
 }

@@ -351,7 +351,7 @@ Entrevistas reais e sem filtro com PMs, founders, builders de IA e líderes de N
       imageUrl: '/2026/assets/images/mulheres_agilistas.png',
       tags: ['Agilidade', 'Tecnologia', 'Inteligência Artificial', 'Liderança', 'Transição de Carreira'],
       linkedin: 'https://www.linkedin.com/company/mulheres-agilistas',
-      instagram: 'https://www.instagram.com/mulheresagilistas?igsh=MXZld3BhdGNobW52dA=='
+      instagram: 'https://www.instagram.com/mulheresagilistas/'
     }
   ];
 }

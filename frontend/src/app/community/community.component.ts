@@ -344,6 +344,14 @@ Entrevistas reais e sem filtro com PMs, founders, builders de IA e líderes de N
       tags: ['Desenvolvimento', 'Tecnologia', 'Carreira de mulheres'],
       linkedin: 'https://www.linkedin.com/company/code-queens-dev/',
       whatsapp: 'https://chat.whatsapp.com/KOKFfsXGD1PBVWvAXXNbcb'
+    },
+    {
+      name: 'Mulheres Agilistas',
+      description: '<p class="title"> <strong>Mulheres Agilistas</strong> <br/> Apoiar mulheres da área de agilidade a navegar suas transições de carreira, seja para produto, gestão, tech ou outras áreas.</p>',
+      imageUrl: '/2026/assets/images/mulheres_agilistas.png',
+      tags: ['Agilidade', 'Tecnologia', 'Inteligência Artificial', 'Liderança', 'Transição de Carreira'],
+      linkedin: 'https://www.linkedin.com/company/mulheres-agilistas',
+      instagram: 'https://www.instagram.com/mulheresagilistas?igsh=MXZld3BhdGNobW52dA=='
     }
   ];
 }

@@ -49,8 +49,8 @@
                 <ul class="icons">
 
                     <li>
-                        <a href="https://www.facebook.com/AgileBrazil" target="_blank" class="icon fa-brands fa-facebook-f"
-                            aria-label="Facebook">
+                        <a href="https://www.facebook.com/AgileBrazil" target="_blank"
+                            class="icon fa-brands fa-facebook-f" aria-label="Facebook">
                         </a>
                     </li>
 
@@ -88,8 +88,11 @@
             </ul>
 
             <h3 style="margin: 12px;" class="emails">Fale com a Agile Brazil</h3>
-            <a href="mailto:contato@agilebrazil.com">contato@agilebrazil.com</a> <br/>
-            <a href="mailto:patrocinios@agilebrazil.com">patrocinios@agilebrazil.com</a> <br/>
+            <a href="mailto:contato@agilebrazil.com">contato@agilebrazil.com</a> <br />
+            <a href="mailto:patrocinios@agilebrazil.com">patrocinios@agilebrazil.com</a> <br />
+            <button (click)="initPopup()"
+                style="margin-top: 12px; background-color: #2f80ed; color: #fff; border-radius: 8px; border: none; padding: 12px; cursor: pointer;">Receba
+                as novidades pela <br> Newsletter</button>
             <!-- <a target="_blank"
                 href="https://api.whatsapp.com/send/?phone=5511916443750&text&type=phone_number&app_absent=0">
                 <p style="margin: 0px;">AgilBot (+55 11 91644-3750)</p><img style="max-width: 100px; width: auto;"
@@ -103,3 +106,13 @@
         <span><i class="fab fa-creative-commons-sa"></i> CC BY-SA 4.0 &ndash; Agile Brazil 2010-2026</span>
     </section>
 </footer>
+
+<!-- Modal Popup Dialog -->
+<div class="popup-overlay" [style.display]="showPopup ? 'flex' : 'none'" (click)="closePopup()">
+    <div class="popup-content" (click)="$event.stopPropagation()">
+        <button class="popup-close-btn" (click)="closePopup()" aria-label="Fechar">&times;</button>
+        <div class="popup-body">
+            <div role="main" id="leads-site-8be23e7af83c036ddfdf"></div>
+        </div>
+    </div>
+</div>

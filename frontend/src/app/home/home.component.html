@@ -15,7 +15,7 @@
   </div>
 </section>
 
-<section id="section-sponsor" class="wrapper">
+<section id="section-sponsor" class="wrapper style1">
   <div class="inner body-page">
     <div class="be-a-sponsor feature">
       <header class="heading">
@@ -25,6 +25,48 @@
       <ul class="actions special">
         <li><a href="inscricao" class="button primary">Quero me Inscrever</a></li>
       </ul>
+    </div>
+  </div>
+</section>
+
+<section id="section-sponsor" class="wrapper">
+  <div class="inner body-page">
+    <div class="be-a-sponsor feature">
+      <header class="heading">
+        <h2>Nossos Keynotes 2026</h2>
+        <hr class="session-divider"/>
+      </header>
+      <div class="profiles session-keynotes">
+
+        <div class="profile" style="max-width: 350px !important; min-width: 220px !important; width: 30%;"
+          *ngFor="let keynote of keynotes">
+          <div class="image-keynotes">
+            <img style="max-width: 350px !important;
+                            max-height: 350px !important;
+                            border-radius: 10% !important;" class="image-speaker" src="{{keynote.imageUrl}}" />
+          </div>
+          <p class="title">
+            {{keynote.description}}
+          </p>
+          <ul class="icons">
+            <li *ngIf="keynote.linkedin"><a href="{{keynote.linkedin}}" class="icon fa-brands fa-linkedin-in"
+                target="_blank"><span class="label">LinkedIn</span></a></li>
+            <li *ngIf="keynote.whatsapp"><a href="{{keynote.whatsapp}}" class="icon fa-brands fa-whatsapp"
+                target="_blank"><span class="label">WhatsApp</span></a></li>
+            <li *ngIf="keynote.link">
+              <a href="{{keynote.link}}" class="icon" target="_blank">
+                <i class="fa-solid fa-link"></i>
+              </a>
+            </li>
+            <li *ngIf="keynote.instagram"><a href="{{keynote.instagram}}" class="icon fa-brands fa-instagram"
+                target="_blank"><span class="label">Instagram</span></a></li>
+            <li *ngIf="keynote.youtube"><a href="{{keynote.youtube}}" class="icon fa-brands fa-youtube"
+                target="_blank"><span class="label">YouTube</span></a></li>
+            <li *ngIf="keynote.meetup"><a href="{{keynote.meetup}}" class="icon fa-brands fa-meetup"
+                target="_blank"><span class="label">Meetup</span></a></li>
+          </ul>
+        </div>
+      </div>
     </div>
   </div>
 </section>
@@ -128,8 +170,8 @@
         <h2>Receba nossa Newsletter</h2>
       </header>
       <div>
-            <div style="max-width: 800px !important; margin: auto;" role="main" id="leads-site-8be23e7af83c036ddfdf"></div>
-        </div>
+        <div style="max-width: 800px !important; margin: auto;" role="main" id="leads-site-8be23e7af83c036ddfdf"></div>
+      </div>
     </div>
   </div>
 </section>

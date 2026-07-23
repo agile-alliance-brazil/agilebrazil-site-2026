@@ -24,6 +24,16 @@ export class HomeComponent implements OnInit, OnDestroy {
     '/2026/assets/images/hotel/img_12.jpg'
   ];
 
+  keynotes = [
+    {
+      name: 'Annelise Gripp',
+      description: 'Annelise Gripp é uma referência em Agilidade, Transformação Digital e Liderança no Brasil. Atua como Agile Coach, mentora, palestrante e facilitadora, com ampla experiência em gestão de projetos, desenvolvimento de pessoas e transformação organizacional. Atualmente integra a Compass UOL e possui uma trajetória marcada pela liderança de comunidades como Rio Agile, Agile Tour e iniciativas voltadas à inclusão de mulheres na tecnologia. É certificada em Scrum, Kanban e Agile Coaching, além de ser reconhecida por seu trabalho na disseminação da cultura ágil, mentoring e formação de lideranças.',
+      imageUrl: '/2026/assets/images/keynote_annelise_gripp.png',
+      instagram: 'https://www.instagram.com/annelisegripp/',
+      linkedin: 'https://www.linkedin.com/in/annelisegripp/'
+    }
+  ];
+
   current = 0;
   intervalId: any = null;
   autoplayDelay = 3000; // ms

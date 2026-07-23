@@ -310,3 +310,56 @@ p {
     width: 100%;
   }
 }
+
+.session-divider {
+  margin-bottom: 30px;
+  max-width: 450px;
+}
+
+ul.icons {
+        padding: 0px !important;
+}
+
+ul.icons li {
+    display: inline-block;
+    padding: 5px;
+    text-align: center;
+}
+
+ul.icons li .icon {
+    -moz-transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, color 0.2s ease-in-out;
+    -webkit-transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, color 0.2s ease-in-out;
+    -ms-transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, color 0.2s ease-in-out;
+    transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, color 0.2s ease-in-out;
+    background-color: transparent;
+    border-radius: 100%;
+    box-shadow: inset 0 0 0 1px #010e9b;
+    color: #010e9b;
+    display: block;
+    font-size: 1.25rem;
+    font-weight: 400;
+    height: 2.75rem;
+    line-height: 2.75rem;
+    margin: 0 auto 0rem auto;
+    width: 2.75rem;
+}
+
+.icon {
+    text-decoration: none;
+    border-bottom: none;
+    position: relative;
+}
+
+.icon > .label {
+    display: none;
+}
+
+.profiles .profile {
+    text-align: center;
+    margin: 0 auto !important;
+}
+
+.community .session-keynotes {
+    padding: 0;
+    align-content: center;
+}

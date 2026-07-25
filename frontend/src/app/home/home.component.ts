@@ -27,10 +27,12 @@ export class HomeComponent implements OnInit, OnDestroy {
   keynotes = [
     {
       name: 'Annelise Gripp',
+      function: 'Instrutora e Mentora na LACE Consultoria LTDA',
       description: 'Annelise Gripp é uma referência em Agilidade, Transformação Digital e Liderança no Brasil. Atua como Agile Coach, mentora, palestrante e facilitadora, com ampla experiência em gestão de projetos, desenvolvimento de pessoas e transformação organizacional. Atualmente integra a Compass UOL e possui uma trajetória marcada pela liderança de comunidades como Rio Agile, Agile Tour e iniciativas voltadas à inclusão de mulheres na tecnologia. É certificada em Scrum, Kanban e Agile Coaching, além de ser reconhecida por seu trabalho na disseminação da cultura ágil, mentoring e formação de lideranças.',
-      imageUrl: '/2026/assets/images/keynote_annelise_gripp.png',
+      imageUrl: '/2026/assets/images/annelise_gripp.jpg',
       instagram: 'https://www.instagram.com/annelisegripp/',
-      linkedin: 'https://www.linkedin.com/in/annelisegripp/'
+      linkedin: 'https://www.linkedin.com/in/annelisegripp/',
+      facebook: 'https://www.facebook.com/annelise.gripp'
     }
   ];
 

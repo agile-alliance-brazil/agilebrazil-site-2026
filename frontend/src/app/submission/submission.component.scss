@@ -9,14 +9,23 @@
     padding: 1.5rem;
 }
 
-.alert-info {
-    background-color: #ffa5053d;
-    border-color: #ffa505a8;
-    color: #ffa505;
+.alert-info, .finish-info {
     padding: 10px 15px;
     margin-bottom: 20px;
     border: 1px solid transparent;
     border-radius: 4px;
+}
+
+.alert-info {
+    background-color: #ffa5053d;
+    border-color: #ffa505a8;
+    color: #ffa505;
+}
+
+.finish-info {
+    background-color: rgb(255 5 5 / 24%);
+    border-color: rgb(255 5 5 / 66%);
+    color: #ff0505;
 }
 
 .loading {

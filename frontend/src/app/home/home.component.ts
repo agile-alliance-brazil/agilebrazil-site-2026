@@ -38,7 +38,7 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   current = 0;
   intervalId: any = null;
-  autoplayDelay = 20; // ms
+  autoplayDelay = 3000; // ms
   showPopup = false;
 
   constructor(
@@ -95,7 +95,7 @@ export class HomeComponent implements OnInit, OnDestroy {
     if (!hasClosed) {*/
     setTimeout(() => {
       this.showPopup = true;
-    }, 800);
+    }, 20);
     //}
   }
 

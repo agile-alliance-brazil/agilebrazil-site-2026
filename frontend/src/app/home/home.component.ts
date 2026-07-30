@@ -38,7 +38,7 @@ export class HomeComponent implements OnInit, OnDestroy {
 
   current = 0;
   intervalId: any = null;
-  autoplayDelay = 3000; // ms
+  autoplayDelay = 200; // ms
   showPopup = false;
 
   constructor(

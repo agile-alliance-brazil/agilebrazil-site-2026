@@ -33,6 +33,15 @@ export class HomeComponent implements OnInit, OnDestroy {
       instagram: 'https://www.instagram.com/annelisegripp/',
       linkedin: 'https://www.linkedin.com/in/annelisegripp/',
       facebook: 'https://www.facebook.com/annelise.gripp'
+    },
+    {
+      name: 'Rodrigo de Toledo',
+      function: 'Co-Founder e trainer K21',
+      description: 'Um profissional, instrutor e coach apaixonado e experiente na área de metodologias ágeis, com mais de 15 anos de atuação com Scrum, Kanban e outros métodos ágeis. Ele é fundador, consultor e instrutor da K21 e da Nower, auxiliando organizações a alcançar agilidade, inovação e satisfação do cliente por meio de serviços de treinamento, coaching e consultoria. <br/> Rodrigo também é Certified Scrum Trainer, instrutor de Kanban credenciado, facilitador de Management 3.0 e possui doutorado em computação gráfica pelo INRIA, na França. Ele já capacitou mais de 10.000 profissionais em competências de produto, agilidade, gestão e liderança, no Brasil, nos EUA e na Europa. Liderou transformações e expansões ágeis em diversos setores, como governo, mercado financeiro e startups. Além disso, organizou e palestrou em diversos eventos ágeis nacionais e internacionais, compartilhando seu conhecimento e suas perspectivas com a comunidade.',
+      imageUrl: '/2026/assets/images/rodrigo_de_toledo.png',
+      instagram: 'https://www.instagram.com/rodrigo.detoledo/',
+      linkedin: 'https://www.linkedin.com/in/rodrigodetoledo/',
+      facebook: 'https://www.facebook.com/rodrigodetoledo'
     }
   ];
 

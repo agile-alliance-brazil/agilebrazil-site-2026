@@ -8,4 +8,13 @@ declare var RDStationForms: any;
   templateUrl: './footer.component.html',
   styleUrls: ['./footer.component.scss']
 })
-export class FooterComponent {}
+export class FooterComponent {
+  patrocinadores = [
+    {
+      name: 'Gino Terentim',
+      imageUrl: '/2026/assets/images/ginoterentim.png',
+      nivel: 'Gold',
+      link: 'https://ginoterentim.com/'
+    }
+  ]
+}

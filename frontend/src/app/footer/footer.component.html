@@ -1,21 +1,34 @@
-<footer class="site-footer">
-    <!--
-        Sessão patrocinadores
-    -->
 
+<section class="patrocinadores">
+    <h2>Patrocinadoras</h2>
+    <p>Conheça as empresas que apoiam a Agile Brazil</p>
+    <hr class="session-divider"/>
+    <h1>Patrocínio ouro</h1>
+    <div class="session-sponsor">
+        <div class="profile" style="max-width: 300px !important; min-width: 220px !important; width: 30%;" *ngFor="let patrocinador of patrocinadores">
+            <div *ngIf="patrocinador.nivel == 'Gold'">
+                <a href="{{patrocinador.link}}" title="{{patrocinador.name}}"  target="_blank">
+                    <img style="max-width: 300px !important; max-height: 250px !important; border-radius: 0% !important;" class="image-speaker" src="{{patrocinador.imageUrl}}" />
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<footer class="site-footer">
     <section class="sobre">
         <div class="localizacao">
             <h3>Local</h3>
 
             <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d115219.07928028076!2d-54.629102221759304!3d-25.518509313430922!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94f690ebae530a43%3A0x21979473b4c4a952!2sFoz%20do%20Igua%C3%A7u%2C%20PR!5e0!3m2!1spt-BR!2sbr!4v1778337371467!5m2!1spt-BR!2sbr"
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3598.8421872453373!2d-54.55108972368053!3d-25.57691663872266!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94f691af44db375b%3A0x6d76cb33d07ca2de!2sGrand%20Carim%C3%A3%20Resort%20%26%20Convention%20Center!5e0!3m2!1spt-BR!2sbr!4v1786445332461!5m2!1spt-BR!2sbr"
                 width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
                 referrerpolicy="no-referrer-when-downgrade" title="Foz do Iguaçu, PR">
             </iframe>
             <address>
-                <!-- <p><strong>Centro de Convenções ExpoRio</strong></p> -->
+                <p><strong>Grand Carimã Resort & Convention Center</strong></p>
                 <p>
-                    <!-- R. Beatriz Larragoiti Lucas, s/n<br /> -->
+                    Av. das Cataratas, 4790 - Carimã<br />
                     Foz do Iguaçu, PR
                 </p>
             </address>

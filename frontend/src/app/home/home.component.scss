@@ -336,11 +336,6 @@ p {
   }
 }
 
-.session-divider {
-  margin-bottom: 30px;
-  max-width: 450px;
-}
-
 ul.icons {
         padding: 0px !important;
 }
@@ -387,4 +382,9 @@ ul.icons li .icon {
 .community .session-keynotes {
     padding: 0;
     align-content: center;
+}
+
+
+.profiles.session-keynotes {
+    display: flex !important;
 }

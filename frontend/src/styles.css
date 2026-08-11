@@ -178,3 +178,10 @@ header p{
     min-height: 50vh;
     width: 100%;
 }
+
+
+
+.session-divider {
+  margin-bottom: 30px;
+  max-width: 450px;
+}

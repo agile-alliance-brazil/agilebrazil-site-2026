@@ -39,7 +39,7 @@ ul.icons li .icon {
     position: relative;
 }
 
-.icon > .label {
+.icon>.label {
     display: none;
 }
 
@@ -58,40 +58,51 @@ ul.icons li .icon {
 .hastag-speakers.desenvolvimento {
     background-color: #FFC107 !important;
 }
+
 .hastag-speakers.design {
     background-color: #9C27B0 !important;
 }
+
 .hastag-speakers.lideranca {
     background-color: #F44336 !important;
 }
+
 .hastag-speakers.inteligencia-artificial {
     background-color: #00BCD4 !important;
 }
-.hastag-speakers.projetos { 
+
+.hastag-speakers.projetos {
     background-color: #FF9800 !important;
 }
-.hastag-speakers.estrategia { 
+
+.hastag-speakers.estrategia {
     background-color: #9E9E9E !important;
 }
-.hastag-speakers.governanca { 
+
+.hastag-speakers.governanca {
     background-color: #607D8B !important;
 }
-.hastag-speakers.transformacao-digital { 
+
+.hastag-speakers.transformacao-digital {
     background-color: #4CAF50 !important;
 }
-.hastag-speakers.gestao { 
+
+.hastag-speakers.gestao {
     background-color: #FF5722 !important;
 }
 
-.hastag-speakers.inovacao { 
+.hastag-speakers.inovacao {
     background-color: #FF9800 !important;
 }
-.hastag-speakers.carreira-mulheres { 
+
+.hastag-speakers.carreira-mulheres {
     background-color: #E91E63 !important;
 }
-.hastag-speakers.transicao-carreira { 
+
+.hastag-speakers.transicao-carreira {
     background-color: #9C27B0 !important;
 }
+
 .hastag-speakers {
     color: #fff;
     padding: 5px;
@@ -117,7 +128,7 @@ ul.icons.hastag {
 
 .profile {
     position: relative;
-    display: inline-grid;
+    display: inline-block;
 }
 
 .image-keynotes:hover .text-comunidade-flow {
@@ -139,4 +150,96 @@ ul.icons.hastag {
 
 .text-comunidade-flow p {
     margin: 5px !important;
+}
+
+
+.class-version2 {
+    ul.icons.hastag {
+        justify-content: left !important;
+        height: 64px !important;
+        overflow-y: auto;
+        scrollbar-width: thin;
+        scrollbar-color: transparent transparent;
+    }
+
+    ul.icons.hastag::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    ul.icons.hastag::-webkit-scrollbar-thumb {
+        background: transparent;
+        border-radius: 10px;
+    }
+
+    /* Mostra a barra quando o mouse estiver por cima ou rolando */
+    ul.icons.hastag:hover {
+        scrollbar-color: rgba(0, 0, 0, 0.5) transparent;
+    }
+
+    ul.icons.hastag:hover::-webkit-scrollbar-thumb {
+        background: rgba(0, 0, 0, 0.5);
+    }
+
+    ul {
+        padding-left: 0px !important;
+    }
+
+    .button.primary {
+        white-space: unset;
+        height: 66px;
+        padding: 10px;
+        line-height: 1.5;
+    }
+
+    .image-keynotes {
+        padding: 0 0 0 0 !important;
+    }
+
+    .cupom-desconto {
+        display: flex;
+    }
+
+    .cupom-desconto img {
+        margin-right: 5px;
+    }
+
+    ul.icons li .icon {
+        margin: 0 auto 10px auto;
+    }
+}
+
+
+.class-version3 {
+    ul.icons.hastag {
+        justify-content: left !important;
+        text-align: left !important;
+        height: 80px !important;
+    }
+
+    ul {
+        padding-left: 0px !important;
+    }
+
+    .button.primary {
+        white-space: unset;
+        height: 66px;
+        padding: 10px;
+        line-height: 1.5;
+    }
+
+    .image-keynotes {
+        padding: 0 0 0 0 !important;
+    }
+
+    .cupom-desconto {
+        display: flex;
+    }
+
+    .cupom-desconto img {
+        margin-right: 5px;
+    }
+
+    ul.icons li .icon {
+        margin: 0 auto 10px auto;
+    }
 }

@@ -6,6 +6,8 @@ import { Component } from '@angular/core';
   styleUrls: ['./community.component.scss']
 })
 export class CommunityComponent {
+  version: number = 3;
+
   comunidades = [
     {
       name: '6 e Byte',
@@ -13,7 +15,8 @@ export class CommunityComponent {
       imageUrl: '/2026/assets/images/comunidade_6_byte.jpg',
       tags: ['Produto'],
       instagram: 'https://www.instagram.com/6ebyte',
-      youtube: 'https://www.youtube.com/@6ebyte'
+      youtube: 'https://www.youtube.com/@6ebyte',
+      nivel: 2
     },
     {
       name: 'DEVPIRA',
@@ -21,14 +24,16 @@ export class CommunityComponent {
       imageUrl: '/2026/assets/images/comunidade_devpira.png',
       tags: ['Agilidade', 'Produto', 'Tecnologia', 'Desenvolvimento', 'Inteligência Artificial', 'Design', 'Liderança'],
       instagram: 'https://www.instagram.com/devpira/',
-      link: 'https://www.devpira.com.br/'
+      link: 'https://www.devpira.com.br/',
+      nivel: 1
     },
     {
       name: 'Agile Campinas & região',
       description: '<p class="title"> <strong>Agile Campinas & região</strong> <br/> A comunidade Agile Campinas & Região é um grupo inclusivo para entusiastas da agilidade, do desenvolvimento de software a áreas como RH, Marketing, Financeiro e Jurídico. Missão: compartilhar conhecimento e fortalecer conexões. Diferencial: expandir a agilidade para cidades do interior.</p>',
       imageUrl: '/2026/assets/images/comunidade_agile_campinas.png',
       tags: ['Agilidade', 'Produto', 'Liderança'],
-      instagram: 'https://www.instagram.com/agilecampinas/'
+      instagram: 'https://www.instagram.com/agilecampinas/',
+      nivel: 1
     },
     {
       name: 'MINAS Conecta',
@@ -36,7 +41,8 @@ export class CommunityComponent {
       imageUrl: '/2026/assets/images/comunidade_minas_conecta.png',
       tags: ['Desenvolvimento', 'Tecnologia', 'Design', 'Liderança'],
       instagram: 'https://www.instagram.com/minasconecta.co/',
-      linkedin: 'https://www.linkedin.com/company/minas-conecta/'
+      linkedin: 'https://www.linkedin.com/company/minas-conecta/',
+      nivel: 1
     },
     {
       name: 'DevLimeira',
@@ -44,7 +50,8 @@ export class CommunityComponent {
       imageUrl: '/2026/assets/images/comunidade_dev_limeira.png',
       tags: ['Desenvolvimento'],
       instagram: 'https://www.instagram.com/devlimeira?igsh=MXFpbzNocm1neHZkbQ==',
-      linkedin: 'https://www.linkedin.com/company/devlimeira/'
+      linkedin: 'https://www.linkedin.com/company/devlimeira/',
+      nivel: 1
     },
     {
       name: 'Comunidade Progirls',
@@ -52,7 +59,8 @@ export class CommunityComponent {
       imageUrl: '/2026/assets/images/comunidade_pro_girl.png',
       tags: ['Desenvolvimento', 'Tecnologia', 'Inteligência Artificial', 'Design', 'Liderança'],
       instagram: 'https://www.instagram.com/comunidade_progirls/',
-      linkedin: 'https://www.linkedin.com/company/pro-girls/?viewAsMember=true'
+      linkedin: 'https://www.linkedin.com/company/pro-girls/?viewAsMember=true',
+      nivel: 1
     },
     {
       name: 'Pipoca Ágil',
@@ -60,14 +68,16 @@ export class CommunityComponent {
       imageUrl: '/2026/assets/images/comunidade_pipoca_agil.jpeg',
       tags: ['Agilidade', 'Produto', 'Desenvolvimento', 'Tecnologia', 'Inteligência Artificial'],
       linkedin: 'https://www.linkedin.com/company/pipoca-%C3%A1gil/',
-      youtube: 'https://youtube.com/@pipocaagil?si=NANblTHyrAS8q49t'
+      youtube: 'https://youtube.com/@pipocaagil?si=NANblTHyrAS8q49t',
+      nivel: 1
     },
     {
       name: 'Associação Codaqui',
       description: '<p class="title"> <strong>Associação Codaqui</strong> <br/> A Codaqui hoje atua como uma comunidade de comunidades, ajudando a fortalecer conexões e iniciativas locais.</p>',
       imageUrl: '/2026/assets/images/comunidade_codaqui.png',
       tags: ['Desenvolvimento', 'Tecnologia'],
-      link: 'https://www.codaqui.dev'
+      link: 'https://www.codaqui.dev',
+      nivel: 1
     },
     {
       name: 'Agile Serra Gaúcha',
@@ -75,7 +85,8 @@ export class CommunityComponent {
       imageUrl: '/2026/assets/images/comunidade_agile_serra_gaucha.png',
       tags: ['Agilidade', 'Tecnologia', 'Liderança'],
       instagram: 'https://www.instagram.com/agileserragaucha/',
-      linkedin: 'https://www.linkedin.com/company/agile-serra-ga-cha/posts/?feedView=all'
+      linkedin: 'https://www.linkedin.com/company/agile-serra-ga-cha/posts/?feedView=all',
+      nivel: 1
     },
     {
       name: 'Comunidade Ágil',
@@ -83,7 +94,8 @@ export class CommunityComponent {
       imageUrl: '/2026/assets/images/comunidade_agil.jpg',
       tags: ['Desenvolvimento', 'Tecnologia'],
       link: 'https://comunidadeagil.com.br/',
-      whatsapp: 'https://chat.whatsapp.com/BqGrdjmHiibGV5H1NKoNrc'
+      whatsapp: 'https://chat.whatsapp.com/BqGrdjmHiibGV5H1NKoNrc',
+      nivel: 1
     },
     {
       name: 'AGILIZEM',
@@ -91,7 +103,8 @@ export class CommunityComponent {
       imageUrl: '/2026/assets/images/comunidade_agilizem_podcast.png',
       tags: ['Agilidade'],
       linkedin: 'https://www.linkedin.com/company/agilizem-podcast/',
-      instagram: 'https://www.instagram.com/agilizempodcast/'
+      instagram: 'https://www.instagram.com/agilizempodcast/',
+      nivel: 1
     },
     {
       name: 'Universo ÁGIL HUB',
@@ -99,7 +112,8 @@ export class CommunityComponent {
       imageUrl: '/2026/assets/images/comunidade_universo_agil.png',
       tags: ['Agilidade', 'Produto', 'Desenvolvimento', 'Tecnologia', 'Inteligência Artificial', 'Design', 'Liderança'],
       linkedin: 'https://www.universoagilhub.com/linkedin',
-      youtube: 'https://www.universoagilhub.com/youtube'
+      youtube: 'https://www.universoagilhub.com/youtube',
+      nivel: 2
     },
     {
       name: 'The Liberators Brazil User Group',
@@ -107,7 +121,8 @@ export class CommunityComponent {
       imageUrl: '/2026/assets/images/comunidade_the_liberators_brazil_user_group.jpg',
       tags: ['Agilidade', 'Produto', 'Projetos', 'Liderança'],
       linkedin: 'https://www.linkedin.com/company/the-liberators-network-brazil-user-group',
-      whatsapp: 'https://chat.whatsapp.com/LbP7LDrOqMqGNuptGfb4Ud'
+      whatsapp: 'https://chat.whatsapp.com/LbP7LDrOqMqGNuptGfb4Ud',
+      nivel: 1
     },
     {
       name: 'LeanCoffeeSP',
@@ -115,21 +130,24 @@ export class CommunityComponent {
       imageUrl: '/2026/assets/images/comunidade_lean_coffee_sp.jpeg',
       tags: ['Agilidade', 'Produto', 'Liderança'],
       linkedin: 'https://www.linkedin.com/company/leancoffeesp/',
-      whatsapp: 'https://chat.whatsapp.com/FNZzp14sSVZ3vrPw20y2Ee?mode=gi_t'
+      whatsapp: 'https://chat.whatsapp.com/FNZzp14sSVZ3vrPw20y2Ee?mode=gi_t',
+      nivel: 1
     },
     {
       name: 'Produteiros Br',
       description: '<p class="title"> <strong>Produteiros Br</strong> <br/> 🚀 Comunidade brasileira de Produto, IA e inovação. Um espaço para Product Managers, POs, UX, dados e tecnologia trocarem experiências, aprenderem juntos e criarem produtos com impacto real. 💡🔥</p>',
       imageUrl: '/2026/assets/images/comunidade_produteiros_br.png',
       tags: ['Agilidade', 'Produto', 'Design', 'Liderança'],
-      whatsapp: 'https://chat.whatsapp.com/HZbYt7DK9K0ABvtN7HAWM1?mode=gi_t'
+      whatsapp: 'https://chat.whatsapp.com/HZbYt7DK9K0ABvtN7HAWM1?mode=gi_t',
+      nivel: 1
     },
     {
       name: 'Claude IA Brasil',
       description: '<p class="title"> <strong>Claude IA Brasil</strong> <br/> 🤖 Comunidade brasileira focada em IA Generativa, Claude, automação e tecnologia. Compartilhe ideias, prompts, projetos e aprenda como usar IA para criar, inovar e crescer. 🚀🧠</p>',
       imageUrl: '/2026/assets/images/comunidade_claude_ia.png',
       tags: ['Agilidade', 'Produto', 'Tecnologia', 'Inteligência Artificial', 'Liderança'],
-      whatsapp: 'https://chat.whatsapp.com/JWCarcSBcfaDjDqMh2V3DL?mode=gi_t'
+      whatsapp: 'https://chat.whatsapp.com/JWCarcSBcfaDjDqMh2V3DL?mode=gi_t',
+      nivel: 1
     },
     {
       name: 'Agile Minas',
@@ -137,7 +155,8 @@ export class CommunityComponent {
       imageUrl: '/2026/assets/images/agile-minas.png',
       tags: ['Agilidade'],
       linkedin: 'https://www.linkedin.com/company/agile-minas/posts/?feedView=all',
-      instagram: 'https://www.instagram.com/agileminas/'
+      instagram: 'https://www.instagram.com/agileminas/',
+      nivel: 1
     },
     {
       name: 'Agile Curitiba',
@@ -145,14 +164,16 @@ export class CommunityComponent {
       imageUrl: '/2026/assets/images/comunidade_agile_curitiba.png',
       tags: ['Agilidade', 'Produto', 'Liderança'],
       linkedin: 'https://www.linkedin.com/company/agile-curitiba',
-      meetup: 'https://www.meetup.com/comunidade-agile-curitiba'
+      meetup: 'https://www.meetup.com/comunidade-agile-curitiba',
+      nivel: 1
     },
     {
       name: 'Café Debug',
       description: '<p class="title"> <strong>Café Debug</strong> <br/> O Café Debug é um popular podcast brasileiro focado no universo de ciência e tecnologia. Fundado em 2017 por Jéssica Nathany, o programa traz entrevistas quinzenais com especialistas para discutir desenvolvimento de software, arquitetura, tendências de mercado, inteligência artificial e carreira.</p>',
       imageUrl: '/2026/assets/images/comunidade_cafe_debug.jpg',
       tags: ['Desenvolvimento', 'Tecnologia'],
-      instagram: 'https://www.instagram.com/cafedebugpodcast?igsh=b3dnbXNueTNoNWZ1'
+      instagram: 'https://www.instagram.com/cafedebugpodcast?igsh=b3dnbXNueTNoNWZ1',
+      nivel: 1
     },
     {
       name: 'WaveAgile',
@@ -160,7 +181,8 @@ export class CommunityComponent {
       imageUrl: '/2026/assets/images/comunidade_wave_agile.png',
       tags: ['Agilidade', 'Produto', 'Desenvolvimento', 'Tecnologia', 'Inteligência Artificial', 'Design', 'Liderança'],
       instagram: 'https://instagram.com/waveagile',
-      youtube: 'https://www.youtube.com/@WaveAgile'
+      youtube: 'https://www.youtube.com/@WaveAgile',
+      nivel: 2
     },
     {
       name: 'Agilidade preta',
@@ -168,7 +190,8 @@ export class CommunityComponent {
       imageUrl: '/2026/assets/images/comunidade_agilidade_preta.png',
       tags: ['Agilidade', 'Tecnologia', 'Liderança'],
       instagram: 'https://www.instagram.com/agilidadepreta/',
-      linkedin: 'https://www.linkedin.com/company/agilidade-preta'
+      linkedin: 'https://www.linkedin.com/company/agilidade-preta',
+      nivel: 1
     },
     {
       name: 'JORNADA COLABORATIVA',
@@ -176,7 +199,8 @@ export class CommunityComponent {
       imageUrl: '/2026/assets/images/comunidade_jornada_colaborativa.jpg',
       tags: ['Agilidade', 'Produto', 'Desenvolvimento', 'Tecnologia', 'Inteligência Artificial', 'Design', 'Liderança'],
       instagram: 'https://www.instagram.com/jornadacolaborativa',
-      linkedin: 'https://www.linkedin.com/company/jornadacolaborativa/'
+      linkedin: 'https://www.linkedin.com/company/jornadacolaborativa/',
+      nivel: 1
     },
     {
       name: 'Tá Safo!',
@@ -184,7 +208,8 @@ export class CommunityComponent {
       imageUrl: '/2026/assets/images/comunidade_ta_safo.png',
       tags: ['Agilidade', 'Produto', 'Desenvolvimento', 'Tecnologia', 'Inteligência Artificial', 'Design', 'Liderança'],
       instagram: 'https://www.instagram.com/comunidadetasafo/',
-      linkedin: 'https://www.linkedin.com/company/tasafo'
+      linkedin: 'https://www.linkedin.com/company/tasafo',
+      nivel: 1
     },
     {
       name: 'Inspira Tech Cast',
@@ -192,7 +217,8 @@ export class CommunityComponent {
       imageUrl: '/2026/assets/images/comunidade_inspira_tech_cast.png',
       tags: ['Tecnologia', 'Liderança'],
       instagram: 'https://www.instagram.com/inspira.tech.cast',
-      youtube: 'https://youtube.com/@inspira_tech'
+      youtube: 'https://youtube.com/@inspira_tech',
+      nivel: 2
     },
     {
       name: 'DevRioClaro',
@@ -200,7 +226,8 @@ export class CommunityComponent {
       imageUrl: '/2026/assets/images/comunidade_dev_rio_claro.png',
       tags: ['Desenvolvimento', 'Tecnologia', 'Inteligência Artificial'],
       linkedin: 'https://www.linkedin.com/company/devrioclaro/',
-      link: 'https://www.devrioclaro.com.br/'
+      link: 'https://www.devrioclaro.com.br/',
+      nivel: 1
     },
     {
       name: 'Agile RiseUp Group',
@@ -208,7 +235,8 @@ export class CommunityComponent {
       imageUrl: '/2026/assets/images/comunidade_agile_rise_up.png',
       tags: ['Agilidade', 'Produto', 'Desenvolvimento', 'Tecnologia', 'Inteligência Artificial', 'Design', 'Liderança'],
       linkedin: 'https://www.linkedin.com/company/agile-riseup/',
-      youtube: 'https://www.youtube.com/@AgileRiseUp'
+      youtube: 'https://www.youtube.com/@AgileRiseUp',
+      nivel: 1
     },
     {
       name: 'Tech Hub JF',
@@ -216,7 +244,8 @@ export class CommunityComponent {
       imageUrl: '/2026/assets/images/comunidade_tech_hub_jf.png',
       tags: ['Tecnologia'],
       link: 'https://techhubjf.org/',
-      instagram: 'https://www.instagram.com/techhubjf/'
+      instagram: 'https://www.instagram.com/techhubjf/',
+      nivel: 1
     },
     {
       name: 'Pessoas de Produto',
@@ -224,7 +253,8 @@ export class CommunityComponent {
       imageUrl: '/2026/assets/images/comunidade_pessoas_de_produtos.png',
       tags: ['Produto', 'Design'],
       link: 'https://www.pessoasdeproduto.com.br',
-      linkedin: 'https://www.linkedin.com/company/pessoasdeproduto/'
+      linkedin: 'https://www.linkedin.com/company/pessoasdeproduto/',
+      nivel: 1
     },
     {
       name: 'Agile Flow Curitiba',
@@ -232,7 +262,8 @@ export class CommunityComponent {
       imageUrl: '/2026/assets/images/comunidade_agile_flow.png',
       tags: ['Agilidade', 'Produto', 'Liderança'],
       instagram: 'https://www.instagram.com/agileflowcwb',
-      linkedin: 'https://www.linkedin.com/company/agileflowcwb/'
+      linkedin: 'https://www.linkedin.com/company/agileflowcwb/',
+      nivel: 1
     },
     {
       name: 'Manas Tech',
@@ -240,7 +271,8 @@ export class CommunityComponent {
       imageUrl: '/2026/assets/images/comunidade_manas_tech.png',
       tags: ['Agilidade', 'Produto', 'Desenvolvimento', 'Tecnologia', 'Inteligência Artificial', 'Liderança'],
       instagram: 'https://www.instagram.com/manastech_',
-      linkedin: 'https://www.linkedin.com/company/manas-tech-oficial/'
+      linkedin: 'https://www.linkedin.com/company/manas-tech-oficial/',
+      nivel: 1
     },
     {
       name: 'Love The Problem Podcast',
@@ -248,7 +280,8 @@ export class CommunityComponent {
       imageUrl: '/2026/assets/images/comunidade_love_the_problem_podcast.png',
       tags: ['Agilidade', 'Produto', 'Inteligência Artificial', 'Liderança', 'Estratégia', 'Governança', 'Transformação Digital', 'Gestão'],
       instagram: 'https://www.instagram.com/lovetheproblem/',
-      link: 'https://br.k21.global/podcast'
+      link: 'https://br.k21.global/podcast',
+      nivel: 1
     },
     {
       name: 'PHP Manaus',
@@ -256,14 +289,16 @@ export class CommunityComponent {
       imageUrl: '/2026/assets/images/comunidade_comunidade_php_manus.png',
       tags: ['Tecnologia'],
       instagram: 'https://www.instagram.com/phpmanaus?igsh=ZWdxMnB4eHI5aHI0',
-      youtube: 'https://youtube.com/@phpmanaus?si=4wGh36VFP1MHangr'
+      youtube: 'https://youtube.com/@phpmanaus?si=4wGh36VFP1MHangr',
+      nivel: 1
     },
     {
       name: 'SouJava',
       description: '<p class="title"> <strong>SouJava</strong> <br/> O SouJava é um grupo de usuários formado por desenvolvedores e evangelistas que promove o fortalecimento e a profissionalização do Java no Brasil. Referência mundial, realiza eventos, encontros e ações online, apoiando a comunidade na aplicação da tecnologia Java em projetos reais.</p>',
       imageUrl: '/2026/assets/images/comunidade_sou_java.png',
       tags: ['Desenvolvimento'],
-      linkedin: 'https://www.linkedin.com/company/soujava/'
+      linkedin: 'https://www.linkedin.com/company/soujava/',
+      nivel: 1
     },
     {
       name: 'Product Guru\'s',
@@ -272,7 +307,8 @@ Entrevistas reais e sem filtro com PMs, founders, builders de IA e líderes de N
       imageUrl: '/2026/assets/images/comunidade_product_gurus.png',
       tags: ['Produto', 'Inteligência Artificial', 'Liderança'],
       youtube: 'https://www.youtube.com/@productgurus',
-      link: 'https://www.productgurus.com.br/'
+      link: 'https://www.productgurus.com.br/',
+      nivel: 1
     },
     {
       name: 'DevParana',
@@ -280,7 +316,8 @@ Entrevistas reais e sem filtro com PMs, founders, builders de IA e líderes de N
       imageUrl: '/2026/assets/images/comunidade_dev_parana.png',
       tags: ['Agilidade', 'Desenvolvimento', 'Tecnologia'],
       instagram: 'http://instagram.com/devparana',
-      meetup: 'http://meetup.com/developerparana'
+      meetup: 'http://meetup.com/developerparana',
+      nivel: 1
     },
     {
       name: 'Coletivo Ação',
@@ -288,7 +325,8 @@ Entrevistas reais e sem filtro com PMs, founders, builders de IA e líderes de N
       imageUrl: '/2026/assets/images/comunidade_coletivo_acao.png',
       tags: ['Agilidade', 'Liderança'],
       instagram: 'https://www.instagram.com/somoscoletivoacao/',
-      linkedin: 'https://www.linkedin.com/company/coletivo-acao/'
+      linkedin: 'https://www.linkedin.com/company/coletivo-acao/',
+      nivel: 1
     },
     {
       name: 'Agile Club',
@@ -296,7 +334,8 @@ Entrevistas reais e sem filtro com PMs, founders, builders de IA e líderes de N
       imageUrl: '/2026/assets/images/comunidade_agile_club.jpg',
       tags: ['Agilidade', 'Produto', 'Liderança'],
       link: 'https://agileclub.yevenb.com',
-      whatsapp: 'https://chat.whatsapp.com/LVscrtfCKzK2rEAOtP8iSL'
+      whatsapp: 'https://chat.whatsapp.com/LVscrtfCKzK2rEAOtP8iSL',
+      nivel: 1
     },
     {
       name: 'ProductTank São Paulo',
@@ -304,7 +343,8 @@ Entrevistas reais e sem filtro com PMs, founders, builders de IA e líderes de N
       imageUrl: '/2026/assets/images/comunidade_product_tank_sao_paulo.png',
       tags: ['Agilidade', 'Produto', 'Liderança'],
       linkedin: 'https://www.linkedin.com/company/product-tank-s%C3%A3o-paulo/',
-      instagram: 'https://www.instagram.com/producttanksp/'
+      instagram: 'https://www.instagram.com/producttanksp/',
+      nivel: 1
     },
     {
       name: 'WoHackers',
@@ -312,7 +352,8 @@ Entrevistas reais e sem filtro com PMs, founders, builders de IA e líderes de N
       imageUrl: '/2026/assets/images/comunidade_wo_hackers.png',
       tags: ['Agilidade', 'Produto', 'Desenvolvimento', 'Tecnologia', 'Inteligência Artificial', 'Design', 'Liderança'],
       linkedin: 'https://www.linkedin.com/company/wohackers/?viewAsMember=true',
-      whatsapp: 'https://chat.whatsapp.com/EHz7v2d8dXxKoXwfEeDtQC'
+      whatsapp: 'https://chat.whatsapp.com/EHz7v2d8dXxKoXwfEeDtQC',
+      nivel: 1
     },
     {
       name: 'BRAVAS In Tech',
@@ -320,14 +361,16 @@ Entrevistas reais e sem filtro com PMs, founders, builders de IA e líderes de N
       imageUrl: '/2026/assets/images/comunidade_bravas_in_tech.png',
       tags: ['Desenvolvimento', 'Tecnologia', 'Inteligência Artificial', 'Design', 'Liderança'],
       linkedin: 'https://www.linkedin.com/company/bravasintech',
-      link: 'https://www.bravasintech.com/'
+      link: 'https://www.bravasintech.com/',
+      nivel: 1
     },
     {
       name: 'Java Amazonas',
       description: '<p class="title"> <strong>Java Amazonas</strong> <br/> A comunidade foi criada com o intuito de promover a linguagem de programação Java no Amazonas. Ela representa uma forma de conectar, comunicar e colaborar com outros desenvolvedores do estado, compartilhando conhecimentos com o objetivo de expandir e fortalecer as comunidades de tecnologia da região.</p>',
       imageUrl: '/2026/assets/images/comunidade_java_amazonas.png',
       tags: ['Desenvolvimento', 'Tecnologia'],
-      link: 'https://javaamazonas.com.br/'
+      link: 'https://javaamazonas.com.br/',
+      nivel: 1
     },
     {
       name: 'Agile Jampa',
@@ -335,7 +378,8 @@ Entrevistas reais e sem filtro com PMs, founders, builders de IA e líderes de N
       imageUrl: '/2026/assets/images/comunidade_agile_jampa.png',
       tags: ['Agilidade', 'Produto', 'Tecnologia', 'Inteligência Artificial', 'Liderança', 'Inovação'],
       linkedin: 'https://www.linkedin.com/company/agile-jampa/',
-      instagram: 'https://www.instagram.com/agile.jampa/'
+      instagram: 'https://www.instagram.com/agile.jampa/',
+      nivel: 1
     },
     {
       name: 'Queens of Deploy',
@@ -343,7 +387,8 @@ Entrevistas reais e sem filtro com PMs, founders, builders de IA e líderes de N
       imageUrl: '/2026/assets/images/comunidade_queens_of_deploy.jpeg',
       tags: ['Desenvolvimento', 'Tecnologia', 'Carreira de mulheres'],
       linkedin: 'https://www.linkedin.com/company/code-queens-dev/',
-      whatsapp: 'https://chat.whatsapp.com/KOKFfsXGD1PBVWvAXXNbcb'
+      whatsapp: 'https://chat.whatsapp.com/KOKFfsXGD1PBVWvAXXNbcb',
+      nivel: 1
     },
     {
       name: 'Mulheres Agilistas',
@@ -351,7 +396,20 @@ Entrevistas reais e sem filtro com PMs, founders, builders de IA e líderes de N
       imageUrl: '/2026/assets/images/mulheres_agilistas.png',
       tags: ['Agilidade', 'Tecnologia', 'Inteligência Artificial', 'Liderança', 'Transição de Carreira'],
       linkedin: 'https://www.linkedin.com/company/mulheres-agilistas',
-      instagram: 'https://www.instagram.com/mulheresagilistas/'
+      instagram: 'https://www.instagram.com/mulheresagilistas/',
+      nivel: 1
     }
   ];
+
+  changeVersion(params: number) {
+    this.version = params;
+  }
+
+  get comunidadesEngajadas() {
+    return this.comunidades.filter(comunidade => comunidade.nivel === 2);
+  }
+
+  get comunidadesParceiras() {
+    return this.comunidades.filter(comunidade => comunidade.nivel === 1);
+  }
 }

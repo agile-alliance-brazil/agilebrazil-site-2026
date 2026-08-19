@@ -149,7 +149,7 @@ ul.actions.special {
 
 #main{
     max-width:1600px;
-    margin: 50px  clamp(50px, 3vw, 50px);
+    margin: auto;
     padding:0 16px
 }
 

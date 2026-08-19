@@ -2,10 +2,10 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-community',
-  templateUrl: './community.component.html',
-  styleUrls: ['./community.component.scss']
+  templateUrl: './community-tmp.component.html',
+  styleUrls: ['./community-tmp.component.scss']
 })
-export class CommunityComponent {
+export class CommunityTmpComponent {
   version: number = 3;
 
   comunidades = [

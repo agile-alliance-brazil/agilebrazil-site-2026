@@ -155,3 +155,95 @@ ul.icons.hastag {
 .text-comunidade-flow p {
     margin: 5px !important;
 }
+
+
+.class-version2 {
+    ul.icons.hastag {
+        justify-content: left !important;
+        height: 64px !important;
+        overflow-y: auto;
+        scrollbar-width: thin;
+        scrollbar-color: transparent transparent;
+    }
+
+    ul.icons.hastag::-webkit-scrollbar {
+        width: 6px;
+    }
+
+    ul.icons.hastag::-webkit-scrollbar-thumb {
+        background: transparent;
+        border-radius: 10px;
+    }
+
+    /* Mostra a barra quando o mouse estiver por cima ou rolando */
+    ul.icons.hastag:hover {
+        scrollbar-color: rgba(0, 0, 0, 0.5) transparent;
+    }
+
+    ul.icons.hastag:hover::-webkit-scrollbar-thumb {
+        background: rgba(0, 0, 0, 0.5);
+    }
+
+    ul {
+        padding-left: 0px !important;
+    }
+
+    .button.primary {
+        white-space: unset;
+        height: 66px;
+        padding: 10px;
+        line-height: 1.5;
+    }
+
+    .image-keynotes {
+        padding: 0 0 0 0 !important;
+    }
+
+    .cupom-desconto {
+        display: flex;
+    }
+
+    .cupom-desconto img {
+        margin-right: 5px;
+    }
+
+    ul.icons li .icon {
+        margin: 0 auto 10px auto;
+    }
+}
+
+
+.class-version3 {
+    ul.icons.hastag {
+        justify-content: left !important;
+        text-align: left !important;
+        height: 80px !important;
+    }
+
+    ul {
+        padding-left: 0px !important;
+    }
+
+    .button.primary {
+        white-space: unset;
+        height: 66px;
+        padding: 10px;
+        line-height: 1.5;
+    }
+
+    .image-keynotes {
+        padding: 0 0 0 0 !important;
+    }
+
+    .cupom-desconto {
+        display: flex;
+    }
+
+    .cupom-desconto img {
+        margin-right: 5px;
+    }
+
+    ul.icons li .icon {
+        margin: 0 auto 10px auto;
+    }
+}

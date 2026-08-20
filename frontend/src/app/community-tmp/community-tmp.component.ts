@@ -16,7 +16,8 @@ export class CommunityTmpComponent {
       tags: ['Produto'],
       instagram: 'https://www.instagram.com/6ebyte',
       youtube: 'https://www.youtube.com/@6ebyte',
-      nivel: 2
+      nivel: 2,
+      linkCupom: 'https://www.even3.com.br/agilebrazil2026-746128?cp=6eByte'
     },
     {
       name: 'DEVPIRA',
@@ -25,7 +26,8 @@ export class CommunityTmpComponent {
       tags: ['Agilidade', 'Produto', 'Tecnologia', 'Desenvolvimento', 'Inteligência Artificial', 'Design', 'Liderança'],
       instagram: 'https://www.instagram.com/devpira/',
       link: 'https://www.devpira.com.br/',
-      nivel: 1
+      nivel: 1,
+      linkCupom: 'https://www.even3.com.br/agilebrazil2026-746128?cp=DEVPIRA'
     },
     {
       name: 'Agile Campinas & região',
@@ -33,7 +35,8 @@ export class CommunityTmpComponent {
       imageUrl: '/2026/assets/images/comunidade_agile_campinas.png',
       tags: ['Agilidade', 'Produto', 'Liderança'],
       instagram: 'https://www.instagram.com/agilecampinas/',
-      nivel: 1
+      nivel: 1,
+      linkCupom: 'https://www.even3.com.br/agilebrazil2026-746128?cp=AgileCampinas'
     },
     {
       name: 'MINAS Conecta',
@@ -42,7 +45,8 @@ export class CommunityTmpComponent {
       tags: ['Desenvolvimento', 'Tecnologia', 'Design', 'Liderança'],
       instagram: 'https://www.instagram.com/minasconecta.co/',
       linkedin: 'https://www.linkedin.com/company/minas-conecta/',
-      nivel: 1
+      nivel: 1,
+      linkCupom: 'https://www.even3.com.br/agilebrazil2026-746128?cp=MINASConecta'
     },
     {
       name: 'DevLimeira',
@@ -51,7 +55,8 @@ export class CommunityTmpComponent {
       tags: ['Desenvolvimento'],
       instagram: 'https://www.instagram.com/devlimeira?igsh=MXFpbzNocm1neHZkbQ==',
       linkedin: 'https://www.linkedin.com/company/devlimeira/',
-      nivel: 1
+      nivel: 1,
+      linkCupom: 'https://www.even3.com.br/agilebrazil2026-746128?cp=DevLimeira'
     },
     {
       name: 'Comunidade Progirls',
@@ -60,7 +65,8 @@ export class CommunityTmpComponent {
       tags: ['Desenvolvimento', 'Tecnologia', 'Inteligência Artificial', 'Design', 'Liderança'],
       instagram: 'https://www.instagram.com/comunidade_progirls/',
       linkedin: 'https://www.linkedin.com/company/pro-girls/?viewAsMember=true',
-      nivel: 1
+      nivel: 1,
+      linkCupom: 'https://www.even3.com.br/agilebrazil2026-746128?cp=Progirls'
     },
     {
       name: 'Pipoca Ágil',
@@ -69,7 +75,8 @@ export class CommunityTmpComponent {
       tags: ['Agilidade', 'Produto', 'Desenvolvimento', 'Tecnologia', 'Inteligência Artificial'],
       linkedin: 'https://www.linkedin.com/company/pipoca-%C3%A1gil/',
       youtube: 'https://youtube.com/@pipocaagil?si=NANblTHyrAS8q49t',
-      nivel: 1
+      nivel: 1,
+      linkCupom: 'https://www.even3.com.br/agilebrazil2026-746128?cp=Pipocaagil'
     },
     {
       name: 'Associação Codaqui',
@@ -77,7 +84,8 @@ export class CommunityTmpComponent {
       imageUrl: '/2026/assets/images/comunidade_codaqui.png',
       tags: ['Desenvolvimento', 'Tecnologia'],
       link: 'https://www.codaqui.dev',
-      nivel: 1
+      nivel: 1,
+      linkCupom: 'https://www.even3.com.br/agilebrazil2026-746128?cp=Codaqui'
     },
     {
       name: 'Agile Serra Gaúcha',
@@ -86,7 +94,8 @@ export class CommunityTmpComponent {
       tags: ['Agilidade', 'Tecnologia', 'Liderança'],
       instagram: 'https://www.instagram.com/agileserragaucha/',
       linkedin: 'https://www.linkedin.com/company/agile-serra-ga-cha/posts/?feedView=all',
-      nivel: 1
+      nivel: 1,
+      linkCupom: 'https://www.even3.com.br/agilebrazil2026-746128?cp=AgileSerraGaucha'
     },
     {
       name: 'Comunidade Ágil',
@@ -95,7 +104,8 @@ export class CommunityTmpComponent {
       tags: ['Desenvolvimento', 'Tecnologia'],
       link: 'https://comunidadeagil.com.br/',
       whatsapp: 'https://chat.whatsapp.com/BqGrdjmHiibGV5H1NKoNrc',
-      nivel: 1
+      nivel: 1,
+      linkCupom: 'https://www.even3.com.br/agilebrazil2026-746128?cp=ComunidadeAgil'
     },
     {
       name: 'AGILIZEM',
@@ -104,7 +114,8 @@ export class CommunityTmpComponent {
       tags: ['Agilidade'],
       linkedin: 'https://www.linkedin.com/company/agilizem-podcast/',
       instagram: 'https://www.instagram.com/agilizempodcast/',
-      nivel: 1
+      nivel: 1,
+      linkCupom: 'https://www.even3.com.br/agilebrazil2026-746128?cp=AGILIZEM'
     },
     {
       name: 'Universo ÁGIL HUB',
@@ -113,7 +124,8 @@ export class CommunityTmpComponent {
       tags: ['Agilidade', 'Produto', 'Desenvolvimento', 'Tecnologia', 'Inteligência Artificial', 'Design', 'Liderança'],
       linkedin: 'https://www.universoagilhub.com/linkedin',
       youtube: 'https://www.universoagilhub.com/youtube',
-      nivel: 2
+      nivel: 2,
+      linkCupom: 'https://www.even3.com.br/agilebrazil2026-746128?cp=UniversoAGIL'
     },
     {
       name: 'The Liberators Brazil User Group',
@@ -122,7 +134,8 @@ export class CommunityTmpComponent {
       tags: ['Agilidade', 'Produto', 'Projetos', 'Liderança'],
       linkedin: 'https://www.linkedin.com/company/the-liberators-network-brazil-user-group',
       whatsapp: 'https://chat.whatsapp.com/LbP7LDrOqMqGNuptGfb4Ud',
-      nivel: 1
+      nivel: 1,
+      linkCupom: 'https://www.even3.com.br/agilebrazil2026-746128?cp=TheLiberatorsBrazil'
     },
     {
       name: 'LeanCoffeeSP',
@@ -131,7 +144,8 @@ export class CommunityTmpComponent {
       tags: ['Agilidade', 'Produto', 'Liderança'],
       linkedin: 'https://www.linkedin.com/company/leancoffeesp/',
       whatsapp: 'https://chat.whatsapp.com/FNZzp14sSVZ3vrPw20y2Ee?mode=gi_t',
-      nivel: 1
+      nivel: 1,
+      linkCupom: 'https://www.even3.com.br/agilebrazil2026-746128?cp=LeanCoffeeSP'
     },
     {
       name: 'Produteiros Br',
@@ -139,7 +153,8 @@ export class CommunityTmpComponent {
       imageUrl: '/2026/assets/images/comunidade_produteiros_br.png',
       tags: ['Agilidade', 'Produto', 'Design', 'Liderança'],
       whatsapp: 'https://chat.whatsapp.com/HZbYt7DK9K0ABvtN7HAWM1?mode=gi_t',
-      nivel: 1
+      nivel: 1,
+      linkCupom: 'https://www.even3.com.br/agilebrazil2026-746128?cp=ProduteirosBr'
     },
     {
       name: 'Claude IA Brasil',
@@ -147,7 +162,8 @@ export class CommunityTmpComponent {
       imageUrl: '/2026/assets/images/comunidade_claude_ia.png',
       tags: ['Agilidade', 'Produto', 'Tecnologia', 'Inteligência Artificial', 'Liderança'],
       whatsapp: 'https://chat.whatsapp.com/JWCarcSBcfaDjDqMh2V3DL?mode=gi_t',
-      nivel: 1
+      nivel: 1,
+      linkCupom: 'https://www.even3.com.br/agilebrazil2026-746128?cp=ClaudeIA'
     },
     {
       name: 'Agile Minas',
@@ -156,7 +172,8 @@ export class CommunityTmpComponent {
       tags: ['Agilidade'],
       linkedin: 'https://www.linkedin.com/company/agile-minas/posts/?feedView=all',
       instagram: 'https://www.instagram.com/agileminas/',
-      nivel: 1
+      nivel: 1,
+      linkCupom: 'https://www.even3.com.br/agilebrazil2026-746128?cp=AgileMinas'
     },
     {
       name: 'Agile Curitiba',
@@ -165,7 +182,8 @@ export class CommunityTmpComponent {
       tags: ['Agilidade', 'Produto', 'Liderança'],
       linkedin: 'https://www.linkedin.com/company/agile-curitiba',
       meetup: 'https://www.meetup.com/comunidade-agile-curitiba',
-      nivel: 1
+      nivel: 1,
+      linkCupom: 'https://www.even3.com.br/agilebrazil2026-746128?cp=AgileCuritiba'
     },
     {
       name: 'Café Debug',
@@ -173,7 +191,8 @@ export class CommunityTmpComponent {
       imageUrl: '/2026/assets/images/comunidade_cafe_debug.jpg',
       tags: ['Desenvolvimento', 'Tecnologia'],
       instagram: 'https://www.instagram.com/cafedebugpodcast?igsh=b3dnbXNueTNoNWZ1',
-      nivel: 1
+      nivel: 1,
+      linkCupom: 'https://www.even3.com.br/agilebrazil2026-746128?cp=CafeDebug'
     },
     {
       name: 'WaveAgile',
@@ -182,7 +201,8 @@ export class CommunityTmpComponent {
       tags: ['Agilidade', 'Produto', 'Desenvolvimento', 'Tecnologia', 'Inteligência Artificial', 'Design', 'Liderança'],
       instagram: 'https://instagram.com/waveagile',
       youtube: 'https://www.youtube.com/@WaveAgile',
-      nivel: 2
+      nivel: 2,
+      linkCupom: 'https://www.even3.com.br/agilebrazil2026-746128?cp=WaveAgile'
     },
     {
       name: 'Agilidade preta',
@@ -191,7 +211,8 @@ export class CommunityTmpComponent {
       tags: ['Agilidade', 'Tecnologia', 'Liderança'],
       instagram: 'https://www.instagram.com/agilidadepreta/',
       linkedin: 'https://www.linkedin.com/company/agilidade-preta',
-      nivel: 1
+      nivel: 1,
+      linkCupom: 'https://www.even3.com.br/agilebrazil2026-746128?cp=Agilidadepreta'
     },
     {
       name: 'JORNADA COLABORATIVA',
@@ -200,7 +221,8 @@ export class CommunityTmpComponent {
       tags: ['Agilidade', 'Produto', 'Desenvolvimento', 'Tecnologia', 'Inteligência Artificial', 'Design', 'Liderança'],
       instagram: 'https://www.instagram.com/jornadacolaborativa',
       linkedin: 'https://www.linkedin.com/company/jornadacolaborativa/',
-      nivel: 1
+      nivel: 1,
+      linkCupom: 'https://www.even3.com.br/agilebrazil2026-746128?cp=JORNADaCOLABORATIVA'
     },
     {
       name: 'Tá Safo!',
@@ -209,7 +231,8 @@ export class CommunityTmpComponent {
       tags: ['Agilidade', 'Produto', 'Desenvolvimento', 'Tecnologia', 'Inteligência Artificial', 'Design', 'Liderança'],
       instagram: 'https://www.instagram.com/comunidadetasafo/',
       linkedin: 'https://www.linkedin.com/company/tasafo',
-      nivel: 1
+      nivel: 1,
+      linkCupom: 'https://www.even3.com.br/agilebrazil2026-746128?cp=TaSafo'
     },
     {
       name: 'Inspira Tech Cast',
@@ -218,7 +241,8 @@ export class CommunityTmpComponent {
       tags: ['Tecnologia', 'Liderança'],
       instagram: 'https://www.instagram.com/inspira.tech.cast',
       youtube: 'https://youtube.com/@inspira_tech',
-      nivel: 2
+      nivel: 2,
+      linkCupom: 'https://www.even3.com.br/agilebrazil2026-746128?cp=InspiraTechCast'
     },
     {
       name: 'DevRioClaro',
@@ -227,7 +251,8 @@ export class CommunityTmpComponent {
       tags: ['Desenvolvimento', 'Tecnologia', 'Inteligência Artificial'],
       linkedin: 'https://www.linkedin.com/company/devrioclaro/',
       link: 'https://www.devrioclaro.com.br/',
-      nivel: 1
+      nivel: 1,
+      linkCupom: 'https://www.even3.com.br/agilebrazil2026-746128?cp=DevRioClaro'
     },
     {
       name: 'Agile RiseUp Group',
@@ -236,7 +261,8 @@ export class CommunityTmpComponent {
       tags: ['Agilidade', 'Produto', 'Desenvolvimento', 'Tecnologia', 'Inteligência Artificial', 'Design', 'Liderança'],
       linkedin: 'https://www.linkedin.com/company/agile-riseup/',
       youtube: 'https://www.youtube.com/@AgileRiseUp',
-      nivel: 1
+      nivel: 1,
+      linkCupom: 'https://www.even3.com.br/agilebrazil2026-746128?cp=AgileRiseUpGroup'
     },
     {
       name: 'Tech Hub JF',
@@ -245,7 +271,8 @@ export class CommunityTmpComponent {
       tags: ['Tecnologia'],
       link: 'https://techhubjf.org/',
       instagram: 'https://www.instagram.com/techhubjf/',
-      nivel: 1
+      nivel: 1,
+      linkCupom: 'https://www.even3.com.br/agilebrazil2026-746128?cp=TechHubJF'
     },
     {
       name: 'Pessoas de Produto',
@@ -254,7 +281,8 @@ export class CommunityTmpComponent {
       tags: ['Produto', 'Design'],
       link: 'https://www.pessoasdeproduto.com.br',
       linkedin: 'https://www.linkedin.com/company/pessoasdeproduto/',
-      nivel: 1
+      nivel: 1,
+      linkCupom: 'https://www.even3.com.br/agilebrazil2026-746128?cp=PessoasdeProduto'
     },
     {
       name: 'Agile Flow Curitiba',
@@ -263,7 +291,8 @@ export class CommunityTmpComponent {
       tags: ['Agilidade', 'Produto', 'Liderança'],
       instagram: 'https://www.instagram.com/agileflowcwb',
       linkedin: 'https://www.linkedin.com/company/agileflowcwb/',
-      nivel: 1
+      nivel: 1,
+      linkCupom: 'https://www.even3.com.br/agilebrazil2026-746128?cp=AgileFlowCuritiba'
     },
     {
       name: 'Manas Tech',
@@ -272,7 +301,8 @@ export class CommunityTmpComponent {
       tags: ['Agilidade', 'Produto', 'Desenvolvimento', 'Tecnologia', 'Inteligência Artificial', 'Liderança'],
       instagram: 'https://www.instagram.com/manastech_',
       linkedin: 'https://www.linkedin.com/company/manas-tech-oficial/',
-      nivel: 1
+      nivel: 1,
+      linkCupom: 'https://www.even3.com.br/agilebrazil2026-746128?cp=ManasTech'
     },
     {
       name: 'Love The Problem Podcast',
@@ -281,7 +311,8 @@ export class CommunityTmpComponent {
       tags: ['Agilidade', 'Produto', 'Inteligência Artificial', 'Liderança', 'Estratégia', 'Governança', 'Transformação Digital', 'Gestão'],
       instagram: 'https://www.instagram.com/lovetheproblem/',
       link: 'https://br.k21.global/podcast',
-      nivel: 1
+      nivel: 1,
+      linkCupom: 'https://www.even3.com.br/agilebrazil2026-746128?cp=LoveTheProblem'
     },
     {
       name: 'PHP Manaus',
@@ -290,7 +321,8 @@ export class CommunityTmpComponent {
       tags: ['Tecnologia'],
       instagram: 'https://www.instagram.com/phpmanaus?igsh=ZWdxMnB4eHI5aHI0',
       youtube: 'https://youtube.com/@phpmanaus?si=4wGh36VFP1MHangr',
-      nivel: 1
+      nivel: 1,
+      linkCupom: 'https://www.even3.com.br/agilebrazil2026-746128?cp=PHPManaus'
     },
     {
       name: 'SouJava',
@@ -298,7 +330,8 @@ export class CommunityTmpComponent {
       imageUrl: '/2026/assets/images/comunidade_sou_java.png',
       tags: ['Desenvolvimento'],
       linkedin: 'https://www.linkedin.com/company/soujava/',
-      nivel: 1
+      nivel: 1,
+      linkCupom: 'https://www.even3.com.br/agilebrazil2026-746128?cp=SouJava'
     },
     {
       name: 'Product Guru\'s',
@@ -308,7 +341,8 @@ Entrevistas reais e sem filtro com PMs, founders, builders de IA e líderes de N
       tags: ['Produto', 'Inteligência Artificial', 'Liderança'],
       youtube: 'https://www.youtube.com/@productgurus',
       link: 'https://www.productgurus.com.br/',
-      nivel: 1
+      nivel: 1,
+      linkCupom: 'https://www.even3.com.br/agilebrazil2026-746128?cp=ProductGurus'
     },
     {
       name: 'DevParana',
@@ -317,7 +351,8 @@ Entrevistas reais e sem filtro com PMs, founders, builders de IA e líderes de N
       tags: ['Agilidade', 'Desenvolvimento', 'Tecnologia'],
       instagram: 'http://instagram.com/devparana',
       meetup: 'http://meetup.com/developerparana',
-      nivel: 1
+      nivel: 1,
+      linkCupom: 'https://www.even3.com.br/agilebrazil2026-746128?cp=DevParana'
     },
     {
       name: 'Coletivo Ação',
@@ -326,7 +361,8 @@ Entrevistas reais e sem filtro com PMs, founders, builders de IA e líderes de N
       tags: ['Agilidade', 'Liderança'],
       instagram: 'https://www.instagram.com/somoscoletivoacao/',
       linkedin: 'https://www.linkedin.com/company/coletivo-acao/',
-      nivel: 1
+      nivel: 1,
+      linkCupom: 'https://www.even3.com.br/agilebrazil2026-746128?cp=ColetivoACAo'
     },
     {
       name: 'Agile Club',
@@ -335,7 +371,8 @@ Entrevistas reais e sem filtro com PMs, founders, builders de IA e líderes de N
       tags: ['Agilidade', 'Produto', 'Liderança'],
       link: 'https://agileclub.yevenb.com',
       whatsapp: 'https://chat.whatsapp.com/LVscrtfCKzK2rEAOtP8iSL',
-      nivel: 1
+      nivel: 1,
+      linkCupom: 'https://www.even3.com.br/agilebrazil2026-746128?cp=AgileClub'
     },
     {
       name: 'ProductTank São Paulo',
@@ -344,7 +381,8 @@ Entrevistas reais e sem filtro com PMs, founders, builders de IA e líderes de N
       tags: ['Agilidade', 'Produto', 'Liderança'],
       linkedin: 'https://www.linkedin.com/company/product-tank-s%C3%A3o-paulo/',
       instagram: 'https://www.instagram.com/producttanksp/',
-      nivel: 1
+      nivel: 1,
+      linkCupom: 'https://www.even3.com.br/agilebrazil2026-746128?cp=ProductTankSP'
     },
     {
       name: 'WoHackers',
@@ -353,7 +391,8 @@ Entrevistas reais e sem filtro com PMs, founders, builders de IA e líderes de N
       tags: ['Agilidade', 'Produto', 'Desenvolvimento', 'Tecnologia', 'Inteligência Artificial', 'Design', 'Liderança'],
       linkedin: 'https://www.linkedin.com/company/wohackers/?viewAsMember=true',
       whatsapp: 'https://chat.whatsapp.com/EHz7v2d8dXxKoXwfEeDtQC',
-      nivel: 1
+      nivel: 1,
+      linkCupom: 'https://www.even3.com.br/agilebrazil2026-746128?cp=WoHackers'
     },
     {
       name: 'BRAVAS In Tech',
@@ -362,7 +401,8 @@ Entrevistas reais e sem filtro com PMs, founders, builders de IA e líderes de N
       tags: ['Desenvolvimento', 'Tecnologia', 'Inteligência Artificial', 'Design', 'Liderança'],
       linkedin: 'https://www.linkedin.com/company/bravasintech',
       link: 'https://www.bravasintech.com/',
-      nivel: 1
+      nivel: 1,
+      linkCupom: 'https://www.even3.com.br/agilebrazil2026-746128?cp=BRAVASInTech'
     },
     {
       name: 'Java Amazonas',
@@ -370,7 +410,8 @@ Entrevistas reais e sem filtro com PMs, founders, builders de IA e líderes de N
       imageUrl: '/2026/assets/images/comunidade_java_amazonas.png',
       tags: ['Desenvolvimento', 'Tecnologia'],
       link: 'https://javaamazonas.com.br/',
-      nivel: 1
+      nivel: 1,
+      linkCupom: 'https://www.even3.com.br/agilebrazil2026-746128?cp=JavaAmazonas'
     },
     {
       name: 'Agile Jampa',
@@ -379,7 +420,8 @@ Entrevistas reais e sem filtro com PMs, founders, builders de IA e líderes de N
       tags: ['Agilidade', 'Produto', 'Tecnologia', 'Inteligência Artificial', 'Liderança', 'Inovação'],
       linkedin: 'https://www.linkedin.com/company/agile-jampa/',
       instagram: 'https://www.instagram.com/agile.jampa/',
-      nivel: 1
+      nivel: 1,
+      linkCupom: 'https://www.even3.com.br/agilebrazil2026-746128?cp=AgileJampa'
     },
     {
       name: 'Queens of Deploy',
@@ -388,7 +430,8 @@ Entrevistas reais e sem filtro com PMs, founders, builders de IA e líderes de N
       tags: ['Desenvolvimento', 'Tecnologia', 'Carreira de mulheres'],
       linkedin: 'https://www.linkedin.com/company/code-queens-dev/',
       whatsapp: 'https://chat.whatsapp.com/KOKFfsXGD1PBVWvAXXNbcb',
-      nivel: 1
+      nivel: 1,
+      linkCupom: 'https://www.even3.com.br/agilebrazil2026-746128?cp=QueensofDeploy'
     },
     {
       name: 'Mulheres Agilistas',
@@ -397,7 +440,8 @@ Entrevistas reais e sem filtro com PMs, founders, builders de IA e líderes de N
       tags: ['Agilidade', 'Tecnologia', 'Inteligência Artificial', 'Liderança', 'Transição de Carreira'],
       linkedin: 'https://www.linkedin.com/company/mulheres-agilistas',
       instagram: 'https://www.instagram.com/mulheresagilistas/',
-      nivel: 1
+      nivel: 1,
+      linkCupom: 'https://www.even3.com.br/agilebrazil2026-746128?cp=MulheresAgilistas'
     },
     {
       name: 'Agile Healthcare',
@@ -406,7 +450,8 @@ Entrevistas reais e sem filtro com PMs, founders, builders de IA e líderes de N
       tags: ['Agilidade', 'Liderança', 'Saúde'],
       linkedin: 'https://www.linkedin.com/company/agile-healthcare-institute/',
       instagram: 'https://www.instagram.com/agilehealthcare/',
-      nivel: 1
+      nivel: 1,
+      linkCupom: 'https://www.even3.com.br/agilebrazil2026-746128?cp=AGILEHealthcare'
     }
   ];
 

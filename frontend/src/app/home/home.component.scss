@@ -42,12 +42,6 @@ p {
   margin: auto;
 }
 
-@media screen and (max-width: 900px) {
-  #banner {
-    min-height: 30vh;
-  }
-}
-
 
 .wrapper.style1 {
   background-color: #f3f3f3;
@@ -92,6 +86,13 @@ p {
 
   #banner {
     min-height: 50vh;
+  }
+}
+
+
+@media screen and (max-width: 600px) {
+  #banner {
+    min-height: 30vh;
   }
 }
 

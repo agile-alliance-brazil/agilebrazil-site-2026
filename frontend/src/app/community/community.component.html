@@ -18,7 +18,48 @@
 
             <div class="profiles session-speakers community">
 
-                    <h2>🚀 Comunidades Engajadas</h2>
+                    <h2>⭐ Comunidades em Destaque</h2>
+                    <p style="text-align: center;">Comunidades que se destacam pela participação consistente, geração de conteúdo e resultados para o ecossistema das comunidades.</p>
+                    <hr class="session-divider" />
+                    <div *ngFor="let comunidade of comunidadesDestaque" class="profile" style="min-width: 250px !important; max-width: 18%;     padding: 10px;
+border-radius: 10px; box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5); margin: 15px !important; /*  border: 1px solid; */ ">
+                        <div  (click)="openPopup(comunidade)" class="image-keynotes">
+                            <img style="max-width: 175px !important;
+                            max-height: 100px !important;
+                            border-radius: 0% !important;" class="image-speaker" src="{{comunidade.imageUrl}}" />
+                        </div>
+                        <ul class="icons">
+                            <li *ngIf="comunidade.linkedin"><a href="{{comunidade.linkedin}}"
+                                    class="icon fa-brands fa-linkedin-in" target="_blank"><span
+                                        class="label">LinkedIn</span></a></li>
+                            <li *ngIf="comunidade.whatsapp"><a href="{{comunidade.whatsapp}}"
+                                    class="icon fa-brands fa-whatsapp" target="_blank"><span
+                                        class="label">WhatsApp</span></a></li>
+                            <li *ngIf="comunidade.link">
+                                <a href="{{comunidade.link}}" class="icon" target="_blank">
+                                    <i class="fa-solid fa-link"></i>
+                                </a>
+                            </li>
+                            <li *ngIf="comunidade.instagram"><a href="{{comunidade.instagram}}"
+                                    class="icon fa-brands fa-instagram" target="_blank"><span
+                                        class="label">Instagram</span></a></li>
+                            <li *ngIf="comunidade.youtube"><a href="{{comunidade.youtube}}"
+                                    class="icon fa-brands fa-youtube" target="_blank"><span
+                                        class="label">YouTube</span></a></li>
+                            <li *ngIf="comunidade.meetup"><a href="{{comunidade.meetup}}"
+                                    class="icon fa-brands fa-meetup" target="_blank"><span
+                                        class="label">Meetup</span></a></li>
+                        </ul>
+
+                        <ul class="actions special">
+                            <li><a href="{{comunidade.linkCupom}}" class="button primary cupom-desconto" target="_blank"> <img
+                                        src="assets/images/ticket.png" alt="Ticket" style="width: 30px; height: 30px;">
+                                    <div>Comprar ingresso com 20% OFF</div>
+                                </a></li>
+                        </ul>
+                    </div>
+
+                    <h2  style="margin-top: 100px;">🚀 Comunidades Engajadas</h2>
                     <p style="text-align: center;"> Comunidades que participam de algumas iniciativas e / ou campanhas com Agile Brazil.</p>
                     <hr class="session-divider" />
                     <div *ngFor="let comunidade of comunidadesEngajadas" class="profile" style="min-width: 250px !important; max-width: 18%;     padding: 10px;

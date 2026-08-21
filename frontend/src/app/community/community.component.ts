@@ -134,7 +134,7 @@ export class CommunityComponent {
       tags: ['Agilidade', 'Produto', 'Projetos', 'Liderança'],
       linkedin: 'https://www.linkedin.com/company/the-liberators-network-brazil-user-group',
       whatsapp: 'https://chat.whatsapp.com/LbP7LDrOqMqGNuptGfb4Ud',
-      nivel: 1,
+      nivel: 2,
       linkCupom: 'https://www.even3.com.br/agilebrazil2026-746128?cp=TheLiberatorsBrazil'
     },
     {
@@ -201,7 +201,7 @@ export class CommunityComponent {
       tags: ['Agilidade', 'Produto', 'Desenvolvimento', 'Tecnologia', 'Inteligência Artificial', 'Design', 'Liderança'],
       instagram: 'https://instagram.com/waveagile',
       youtube: 'https://www.youtube.com/@WaveAgile',
-      nivel: 2,
+      nivel: 3,
       linkCupom: 'https://www.even3.com.br/agilebrazil2026-746128?cp=WaveAgile'
     },
     {
@@ -471,6 +471,9 @@ Entrevistas reais e sem filtro com PMs, founders, builders de IA e líderes de N
     return this.comunidades.filter(comunidade => comunidade.nivel === 1);
   }
 
+  get comunidadesDestaque() {
+    return this.comunidades.filter(comunidade => comunidade.nivel === 3);
+  }
 
   openPopup(comunidade: any): void {
     this.comunidadeSelecionada = comunidade;

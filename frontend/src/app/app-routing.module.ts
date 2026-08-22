@@ -20,6 +20,10 @@ const routes: Routes = [
     loadChildren: () => import('./community/community.module').then(m => m.CommunityModule)
   },
   {
+    path: 'programa',
+    loadChildren: () => import('./program/program.module').then(m => m.ProgramModule)
+  },
+  {
     path: 'codigo-de-conduta',
     loadChildren: () => import('./code-of-conduct/code-of-conduct.module').then(m => m.CodeOfConductModule)
   },

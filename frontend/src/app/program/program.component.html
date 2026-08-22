@@ -1,0 +1,643 @@
+<!-- 1. TEMPLATE REUTILIZÁVEL (Substitui o jQuery HTML Injection) -->
+<ng-template #sessionCard let-id="id">
+    <ng-container *ngIf="dataProgram[currentDay]?.[id] as session">
+
+        <!-- COFFEE / ALMOÇO -->
+        <div *ngIf="session.type === 'Coffee' || session.type === 'Almoço'" class="activity full-space card-program">
+            {{ session.title }}
+        </div>
+
+        <!-- INTERVALO -->
+        <div *ngIf="session.type === 'Intervalo'" class="interval card-program">
+            {{ session.title }}
+        </div>
+
+        <!-- ENCERRAMENTO -->
+        <div *ngIf="session.type === 'Encerramento'" class="activity full-space card-program">
+            <div style="font-weight: bold; font-size: 18px;">{{ session.title }}</div>
+        </div>
+
+        <!-- KEYNOTE -->
+        <div *ngIf="session.type === 'Keynote'" class="activity full-space keynote card-program">
+            <div class="text-clicavel" (click)="openPopup(session, 2)">
+                <p class="keynote-program">{{ session.title }}</p>
+            </div>
+        </div>
+
+        <!-- PALESTRAS / WORKSHOPS / ETC -->
+        <div *ngIf="['Palestra 30', 'Workshop 120', 'Comunidade', 'Geral', 'TBD', 'Pitch'].includes(session.type)"
+            class="activity card-program" [ngClass]="session.cssClass">
+
+            <p class="hashtag-trilha" *ngIf="session.track && session.track !== 'Geral'">{{ session.track }}</p>
+            <div class="local-palestra responsivo" *ngIf="session.track !== 'Arena Comunidades'">{{ session.location }}</div>
+
+            <p class="title">
+                <a [ngClass]="{'text-clicavel': session.hasDescription}"
+                    (click)="session.hasDescription ? openPopup(session, 1) : null">
+                    {{ session.title }}
+                </a>
+            </p>
+
+            <div class="autor" *ngIf="session.speakers?.length">
+                <div class="text-clicavel" (click)="openPopup(session, 2)">{{ session.speakers[0].autor }}</div>
+                <ng-container *ngIf="session.speakers.length > 1">
+                    &amp; <div class="text-clicavel" (click)="openPopup(session, 3)">{{ session.speakers[1].autor }}
+                    </div>
+                </ng-container>
+            </div>
+
+        </div>
+
+    </ng-container>
+</ng-template>
+
+
+<!-- 2. CORPO DA PÁGINA -->
+<div id="main" class="wrapper style1">
+    <div class="inner-full">
+        <header class="heading major">
+            <h1>Programação Agile Brazil 2025</h1>
+        </header>
+        <section id="program-intregration-v2" class="program">
+            <h3>Trilhas:</h3>
+            <ul class="legend-trilha">
+                <li>
+                    <div class="legend raizes"></div>
+                    <div>Raizes da Agilidade</div>
+                </li>
+                <li>
+                    <div class="legend futuro"></div>
+                    <div>Future AI/Agility</div>
+                </li>
+                <li>
+                    <div class="legend cliente"></div>
+                    <div> Produto e Foco no Cliente</div>
+                </li>
+                <li>
+                    <div class="legend lideranca"></div>
+                    <div>Liderança, Estratégia e Gestão da Mudança</div>
+                </li>
+            </ul>
+            <hr />
+
+            <!-- Botões de Controle dos Dias -->
+            <div class="dias">
+                <ul class="actions special">
+                    <li>
+                        <div class="button primary"
+                            [ngStyle]="{'background-color': currentDay === 12 ? '#147332' : '#063676'}"
+                            (click)="setDay(12)">Dia 12</div>
+                    </li>
+                    <li>
+                        <div class="button primary"
+                            [ngStyle]="{'background-color': currentDay === 13 ? '#147332' : '#063676'}"
+                            (click)="setDay(13)">Dia 13</div>
+                    </li>
+                </ul>
+            </div>
+
+            <div *ngIf="isLoading" style="text-align: center; margin: 20px;">Carregando programação...</div>
+
+            <!-- ESTRUTURA DIA 12 (Desktop) -->
+            <div id="estrutura-desktop" *ngIf="!isLoading">
+                <table class="full-screen">
+                    <thead>
+                        <tr class="locais">
+                            <th class="horario"></th>
+                            <th class="trilhas">
+                                <div class="local palestra card-program">Palco - Brasil</div>
+                            </th>
+                            <th class="trilhas">
+                                <div class="local palestra card-program">Palco - Argentina</div>
+                            </th>
+                            <th class="trilhas">
+                                <div class="local palestra card-program">Palco - Paraguai</div>
+                            </th>
+                            <th class="trilhas">
+                                <div class="local workshop card-program">Sala Workshop - Usina de Itaipú</div>
+                            </th>
+                            <th class="trilhas">
+                                <div class="local workshop card-program">Sala Workshop - Cataratas do Iguaçu</div>
+                            </th>
+                            <th class="trilhas">
+                                <div class="local workshop card-program">Arena Comunidade</div>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div id="identificacao-900-0" class="time card-program">9:00</div>
+                            </td>
+                            <td colspan="7" id="identificacao-900">
+                                <ng-container
+                                    *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-900' }"></ng-container>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="align-content: center;">
+                                <div id="identificacao-1020-0" class="time card-program">10:20</div>
+                            </td>
+                            <td colspan="7" id="identificacao-1020">
+                                <ng-container
+                                    *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1020' }"></ng-container>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div id="identificacao-1045-0" class="time card-program">
+                                    <p>10:45</p>
+                                </div>
+                            </td>
+                            <td id="identificacao-1045-1"><ng-container
+                                    *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1045-1' }"></ng-container>
+                            </td>
+                            <td id="identificacao-1045-2"><ng-container
+                                    *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1045-2' }"></ng-container>
+                            </td>
+                            <td id="identificacao-1045-3"><ng-container
+                                    *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1045-3' }"></ng-container>
+                            </td>
+                            <td id="identificacao-1045-4"><ng-container
+                                    *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1045-4' }"></ng-container>
+                            </td>
+                            <td id="identificacao-1045-5" rowspan="4"><ng-container
+                                    *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1045-5' }"></ng-container>
+                            </td>
+                            <td id="identificacao-1045-6" rowspan="4"><ng-container
+                                    *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1045-6' }"></ng-container>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div id="identificacao-1120-0" class="time card-program">
+                                    <p>11:20</p>
+                                </div>
+                            </td>
+                            <td id="identificacao-1120-1"><ng-container
+                                    *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1120-1' }"></ng-container>
+                            </td>
+                            <td id="identificacao-1120-2"><ng-container
+                                    *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1120-2' }"></ng-container>
+                            </td>
+                            <td id="identificacao-1120-3"><ng-container
+                                    *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1120-3' }"></ng-container>
+                            </td>
+                            <td id="identificacao-1120-4"><ng-container
+                                    *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1120-4' }"></ng-container>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div id="identificacao-1155-0" class="time card-program">
+                                    <p>11:55</p>
+                                </div>
+                            </td>
+                            <td id="identificacao-1155-1"><ng-container
+                                    *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1155-1' }"></ng-container>
+                            </td>
+                            <td id="identificacao-1155-2"><ng-container
+                                    *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1155-2' }"></ng-container>
+                            </td>
+                            <td id="identificacao-1155-3"><ng-container
+                                    *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1155-3' }"></ng-container>
+                            </td>
+                            <td id="identificacao-1155-4"><ng-container
+                                    *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1155-4' }"></ng-container>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div id="identificacao-1230-0" class="time card-program">
+                                    <p>12:30</p>
+                                </div>
+                            </td>
+                            <td id="identificacao-1230-1"><ng-container
+                                    *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1230-1' }"></ng-container>
+                            </td>
+                            <td id="identificacao-1230-2"><ng-container
+                                    *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1230-2' }"></ng-container>
+                            </td>
+                            <td id="identificacao-1230-3"><ng-container
+                                    *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1230-3' }"></ng-container>
+                            </td>
+                            <td id="identificacao-1230-4"><ng-container
+                                    *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1230-4' }"></ng-container>
+                            </td>
+                        </tr>
+                         <tr>
+                            <td style="align-content: center;">
+                                <div id="identificacao-1300-0" class="time card-program">13:00</div>
+                            </td>
+                            <td colspan="7" id="identificacao-1300">
+                                <ng-container
+                                    *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1300' }"></ng-container>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div id="identificacao-1430-0" class="time card-program">
+                                    <p>14:30</p>
+                                </div>
+                            </td>
+                            <td id="identificacao-1430-1"><ng-container
+                                    *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1430-1' }"></ng-container>
+                            </td>
+                            <td id="identificacao-1430-2"><ng-container
+                                    *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1430-2' }"></ng-container>
+                            </td>
+                            <td id="identificacao-1430-3"><ng-container
+                                    *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1430-3' }"></ng-container>
+                            </td>
+                            <td id="identificacao-1430-4"><ng-container
+                                    *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1430-4' }"></ng-container>
+                            </td>
+                            <td id="identificacao-1430-5" rowspan="3"><ng-container
+                                    *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1430-5' }"></ng-container>
+                            </td>
+                            <td id="identificacao-1430-6" rowspan="3"><ng-container
+                                    *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1430-6' }"></ng-container>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div id="identificacao-1510-0" class="time card-program">
+                                    <p>15:10</p>
+                                </div>
+                            </td>
+                            <td id="identificacao-1510-1"><ng-container
+                                    *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1510-1' }"></ng-container>
+                            </td>
+                            <td id="identificacao-1510-2"><ng-container
+                                    *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1510-2' }"></ng-container>
+                            </td>
+                            <td id="identificacao-1510-3"><ng-container
+                                    *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1510-3' }"></ng-container>
+                            </td>
+                            <td id="identificacao-1510-4"><ng-container
+                                    *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1510-4' }"></ng-container>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div id="identificacao-1550-0" class="time card-program">
+                                    <p>15:50</p>
+                                </div>
+                            </td>
+                            <td id="identificacao-1550-1"><ng-container
+                                    *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1550-1' }"></ng-container>
+                            </td>
+                            <td id="identificacao-1550-2"><ng-container
+                                    *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1550-2' }"></ng-container>
+                            </td>
+                            <td id="identificacao-1550-3"><ng-container
+                                    *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1550-3' }"></ng-container>
+                            </td>
+                            <td id="identificacao-1550-4"><ng-container
+                                    *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1550-4' }"></ng-container>
+                            </td>
+                        </tr>
+                         <tr>
+                            <td style="align-content: center;">
+                                <div id="identificacao-1630-0" class="time card-program">16:30</div>
+                            </td>
+                            <td colspan="7" id="identificacao-1630">
+                                <ng-container
+                                    *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1630' }"></ng-container>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div id="identificacao-1700-0" class="time card-program">17:10</div>
+                            </td>
+                            <td colspan="7" id="identificacao-1700">
+                                <ng-container
+                                    *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1700' }"></ng-container>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <div id="estrutura-mobile" *ngIf="!isLoading">
+                <table class="response-version-screen">
+                    <tbody>
+                        <tr>
+                            <td>
+                                <div id="identificacao-900-0" class="time card-program">9:00</div>
+                            </td>
+                            <td id="identificacao-900">
+                                <ng-container
+                                    *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-900' }"></ng-container>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td style="align-content: center;">
+                                <div id="identificacao-1020-0" class="time card-program">10:20</div>
+                            </td>
+                            <td id="identificacao-1020">
+                                <ng-container
+                                    *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1020' }"></ng-container>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td rowspan="4">
+                                <div id="identificacao-1045-0" class="time card-program">
+                                    <p>10:45</p>
+                                </div>
+                            </td>
+                            <td id="identificacao-1045-1"><ng-container
+                                    *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1045-1' }"></ng-container>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td id="identificacao-1045-2"><ng-container
+                                    *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1045-2' }"></ng-container>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td id="identificacao-1045-3"><ng-container
+                                    *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1045-3' }"></ng-container>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td id="identificacao-1045-4"><ng-container
+                                    *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1045-4' }"></ng-container>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td rowspan="4">
+                                <div id="identificacao-1120-0" class="time card-program">
+                                    <p>11:20</p>
+                                </div>
+                            </td>
+                            <td id="identificacao-1120-1"><ng-container
+                                    *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1120-1' }"></ng-container>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td id="identificacao-1120-2"><ng-container
+                                    *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1120-2' }"></ng-container>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td id="identificacao-1120-3"><ng-container
+                                    *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1120-3' }"></ng-container>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td id="identificacao-1120-4"><ng-container
+                                    *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1120-4' }"></ng-container>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td rowspan="4">
+                                <div id="identificacao-1155-0" class="time card-program">
+                                    <p>11:55</p>
+                                </div>
+                            </td>
+                            <td id="identificacao-1155-1"><ng-container
+                                    *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1155-1' }"></ng-container>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td id="identificacao-1155-2"><ng-container
+                                    *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1155-2' }"></ng-container>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td id="identificacao-1155-3"><ng-container
+                                    *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1155-3' }"></ng-container>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td id="identificacao-1155-4"><ng-container
+                                    *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1155-4' }"></ng-container>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td rowspan="4">
+                                <div id="identificacao-1230-0" class="time card-program">
+                                    <p>12:30</p>
+                                </div>
+                            </td>
+                            <td id="identificacao-1230-1"><ng-container
+                                    *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1230-1' }"></ng-container>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td id="identificacao-1230-2"><ng-container
+                                    *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1230-2' }"></ng-container>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td id="identificacao-1230-3"><ng-container
+                                    *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1230-3' }"></ng-container>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td id="identificacao-1230-4"><ng-container
+                                    *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1230-4' }"></ng-container>
+                            </td>
+                        </tr>
+                         <tr>
+                            <td style="align-content: center;">
+                                <div id="identificacao-1300-0" class="time card-program">13:00</div>
+                            </td>
+                            <td id="identificacao-1300">
+                                <ng-container
+                                    *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1300' }"></ng-container>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td rowspan="4">
+                                <div id="identificacao-1430-0" class="time card-program">
+                                    <p>14:30</p>
+                                </div>
+                            </td>
+                            <td id="identificacao-1430-1"><ng-container
+                                    *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1430-1' }"></ng-container>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td id="identificacao-1430-2"><ng-container
+                                    *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1430-2' }"></ng-container>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td id="identificacao-1430-3"><ng-container
+                                    *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1430-3' }"></ng-container>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td id="identificacao-1430-4"><ng-container
+                                    *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1430-4' }"></ng-container>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td rowspan="4">
+                                <div id="identificacao-1510-0" class="time card-program">
+                                    <p>15:10</p>
+                                </div>
+                            </td>
+                            <td id="identificacao-1510-1"><ng-container
+                                    *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1510-1' }"></ng-container>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td id="identificacao-1510-2"><ng-container
+                                    *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1510-2' }"></ng-container>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td id="identificacao-1510-3"><ng-container
+                                    *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1510-3' }"></ng-container>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td id="identificacao-1510-4"><ng-container
+                                    *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1510-4' }"></ng-container>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td rowspan="4">
+                                <div id="identificacao-1550-0" class="time card-program">
+                                    <p>15:50</p>
+                                </div>
+                            </td>
+                            <td id="identificacao-1550-1"><ng-container
+                                    *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1550-1' }"></ng-container>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td id="identificacao-1550-2"><ng-container
+                                    *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1550-2' }"></ng-container>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td id="identificacao-1550-3"><ng-container
+                                    *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1550-3' }"></ng-container>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td id="identificacao-1550-4"><ng-container
+                                    *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1550-4' }"></ng-container>
+                            </td>
+                        </tr>
+                         <tr>
+                            <td style="align-content: center;">
+                                <div id="identificacao-1630-0" class="time card-program">16:30</div>
+                            </td>
+                            <td id="identificacao-1630">
+                                <ng-container
+                                    *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1630' }"></ng-container>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <div id="identificacao-1700-0" class="time card-program">17:10</div>
+                            </td>
+                            <td id="identificacao-1700">
+                                <ng-container
+                                    *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1700' }"></ng-container>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+
+                <table class="response-version-screen">
+                    <tbody>
+                        <tr>
+                            <td>
+                            </td>
+                            <td>
+                                <div class="activity full-space default card-program">
+                                    <div>
+                                        <p class="keynote-program">Workshops</p>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td rowspan="2">
+                                <div id="identificacao-1045-0" class="time card-program">
+                                    <p>10:45</p>
+                                </div>
+                            </td>
+                            <td id="identificacao-1045-5"><ng-container
+                                    *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1045-5' }"></ng-container>
+                            </td>
+                        </tr>
+                         <tr>
+                            <td id="identificacao-1045-6"><ng-container
+                                    *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1045-6' }"></ng-container>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td rowspan="2">
+                                <div id="identificacao-1430-0" class="time card-program">
+                                    <p>14:30</p>
+                                </div>
+                            </td>
+                            <td id="identificacao-1430-5"><ng-container
+                                    *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1430-5' }"></ng-container>
+                            </td>
+                        </tr>
+                         <tr>
+                            <td id="identificacao-1430-6"><ng-container
+                                    *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1430-6' }"></ng-container>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </section>
+    </div>
+</div>
+
+
+<!-- MODAL (Renderizado via Angular de forma reativa) -->
+<div class="backgroud-modal" *ngIf="isModalOpen" (click)="closePopup()"
+    style="display: block; opacity: 1; background-color: #61606078 !important;">
+    <div class="modal-inscricao modal-descricao-programacao" style="max-height: 90% !important;"
+        (click)="$event.stopPropagation()">
+        <div class="fechar" (click)="closePopup()">
+            <img src="assets/images/fechar.png" />
+        </div>
+
+        <div id="conteudo-popup-programacao" style="max-height: 80vh; overflow-y: auto;">
+            <div class="profile">
+
+                <!-- VISÃO 1: Informações da Sessão -->
+                <ng-container *ngIf="modalViewType === 1 && modalSession">
+                    <p><b>{{ modalSession.title }}</b></p>
+                    <p>{{ modalSession.description }}</p>
+                    <p *ngIf="modalSession.capacity">Capacidade: {{ modalSession.capacity }} pessoas</p>
+                </ng-container>
+
+                <!-- VISÃO 2/3: Informações do Palestrante -->
+                <ng-container *ngIf="(modalViewType === 2 || modalViewType === 3) && modalSpeaker">
+                    <div class="image-keynotes"
+                        style="width: 125px; height: 125px; border-radius: 50%; margin: auto; background-size: cover;"
+                        [style.background-image]="'url(' + modalSpeaker.foto + ')'">
+                    </div>
+                    <p><b>{{ modalSpeaker.autor }}</b></p>
+                    <p style="text-align: center;">{{ modalSpeaker.miniBiografia }}</p>
+
+                    <ul style="margin: 0" class="icons" *ngIf="modalSpeaker.linkedin">
+                        <li>
+                            <a [href]="modalSpeaker.linkedin" class="icon brands fa-linkedin-in" target="_blank">
+                                <span class="label">LinkedIn</span>
+                            </a>
+                        </li>
+                    </ul>
+                </ng-container>
+
+            </div>
+        </div>
+
+        <div style="margin-top: 10px;" class="button primary" (click)="closePopup()">fechar</div>
+    </div>
+</div>

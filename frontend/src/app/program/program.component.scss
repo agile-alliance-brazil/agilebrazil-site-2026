@@ -1,0 +1,372 @@
+.responsivo {
+  display: none;
+}
+
+@media (max-width: 1020px) {
+  .responsivo {
+    display: block;
+  }
+}
+
+/* 
+===================================================
+VARIÁVEIS DE CORES E LAYOUT
+=================================================== 
+*/
+$color-white: #FFFFFF;
+$color-white-transparent: #ffffffab;
+$color-black: #000;
+$color-black-transparent: #00000025;
+$color-grey-light: #f3f3f3;
+$color-bg-interval: rgba(0, 0, 0, 0.075);
+
+// Cores das Trilhas
+$trilha-raizes: #147332;
+$trilha-lideranca: #FFA505;
+$trilha-executivo: #D75413;
+$trilha-metrica: #004AAD;
+$trilha-cliente: #2D87FF;
+$trilha-futuro: #43AC4B;
+$default: #063676;
+
+/* 
+===================================================
+PROGRAMAÇÃO V2
+=================================================== 
+*/
+#program-intregration-v2 {
+    
+    .dias ul {
+        margin-bottom: 20px;
+        justify-content: flex-start;
+    }
+
+    table {
+        width: 100%;
+
+        thead {
+            border-bottom: none !important;
+        }
+
+        td {
+            padding: 2px;
+            height: 1px;
+            padding-bottom: 5px !important;
+            align-content: center;
+        }
+
+        th {
+            &.horario { width: 9%; }
+            &.trilhas { width: 13%; }
+        }
+
+        /*tr {
+            background-color: $color-grey-light !important;
+            border-color: $color-grey-light !important;
+        }*/
+
+        div {
+            font-weight: 400;
+            text-transform: initial;
+            font-size: 18px;
+
+            &.time p {
+                font-weight: bold;
+            }
+        }
+
+        div.card-program {
+            border-radius: 10px !important;
+            text-align: center;
+            color: $color-white !important;
+            padding: 5px 0px;
+            min-width: 50px;
+            font-weight: bold;
+            height: 100%;
+            display: inline-table;
+            width: 100%;
+
+            p {
+                color: $color-white !important;
+                font-weight: 400;
+                text-transform: initial;
+                font-size: 18px;
+                margin: 5px;
+
+                &.title {
+                    font-weight: bold !important;
+                }
+
+                &.autor {
+                    background-color: $color-white-transparent;
+                    border-radius: 10px;
+                    color: $color-black !important;
+                }
+
+                &.hashtag-trilha {
+                    margin: 0px;
+                    background-color: $color-black-transparent;
+                    color: $color-white !important;
+                    border-radius: 10px 10px 0px 0px !important;
+                    font-size: 16px !important;
+                    margin-bottom: 10px !important;
+                    border-bottom: solid 1px;
+                }
+            }
+
+            div.autor {
+                background-color: $color-white-transparent;
+                border-radius: 10px;
+                color: $color-black !important;
+                margin: 5px;
+                padding: 5px;
+            }
+
+            &.keynote {
+                background-color: $trilha-raizes !important;
+
+                p {
+                    font-size: 32px !important;
+                    margin: 5px !important;
+                    font-weight: bold !important;
+                }
+            }
+
+            &.interval {
+                background-color: $color-bg-interval;
+                color: $default !important;
+            }
+        }
+    }
+
+    div.local, 
+    div.time { 
+        background-color: $default;
+    }
+
+    div.activity {
+        &.full-space, 
+        &.workspace, 
+        &.default { 
+            background-color: $default;
+        }
+        
+        // Cores Dinâmicas das Trilhas
+        &.raizes { background-color: $trilha-raizes !important; }
+        &.lideranca { background-color: $trilha-lideranca !important; }
+        &.executivo { background-color: $trilha-executivo !important; }
+        &.metrica { background-color: $trilha-metrica !important; }
+        &.cliente { background-color: $trilha-cliente !important; }
+        &.futuro { background-color: $trilha-futuro !important; }
+    }
+
+    div.legend {   
+        height: 25px;
+        width: 25px;
+        border-radius: 4px;
+        margin: auto 5px auto 0px;
+
+        &.raizes { background-color: $trilha-raizes !important; }
+        &.lideranca { background-color: $trilha-lideranca !important; }
+        &.executivo { background-color: $trilha-executivo !important; }
+        &.metrica { background-color: $trilha-metrica !important; }
+        &.cliente { background-color: $trilha-cliente !important; }
+        &.futuro { background-color: $trilha-futuro !important; }
+    }
+}
+
+/* 
+===================================================
+CLASSES GERAIS E RESPONSIVIDADE
+=================================================== 
+*/
+.local-palestra, 
+.trilha {
+    background-color: $color-black;
+    width: 120px;
+    margin: auto;
+    border-radius: 7px;
+}
+
+.legend-trilha {
+    margin-bottom: 20px !important;
+    justify-content: flex-start !important;
+
+    li {
+        display: flex;
+    }
+}
+
+.modal-descricao-programacao {
+    max-width: 800px !important; 
+
+    @media screen and (max-width: 1000px) {
+        max-width: 90% !important;
+    }
+}
+
+.resolution-default {
+    display: inline-block !important;
+
+    @media screen and (max-width: 720px) {
+        display: none !important;
+    }
+}
+
+.resolution-responsive {
+    display: none !important;
+
+    @media screen and (max-width: 720px) {
+        display: inline-block !important;
+    }
+}
+
+table {
+    &.full-screen {
+        @media screen and (max-width: 1000px) {
+            display: none;
+        }
+
+        .local-palestra {
+            display: none;
+        }
+    }
+
+    &.response-version-screen {
+        display: none;
+        
+        @media screen and (max-width: 1000px) {
+            display: block;
+        }
+    }
+}
+
+.sessao-potrocinio {
+    max-width: 33.333%;
+    width: 33.333%;
+    display: block;
+
+    @media screen and (max-width: 1000px) {
+        max-width: 100%;
+        width: 100%;
+    }
+}
+
+.sessao-potrocinio-full {
+    max-width: 100%;
+    display: block;
+    width: 100%;
+}
+
+.inner-full {
+    max-width: calc(100% - 6rem) !important;
+    margin: auto;
+}
+
+
+/* 
+===================================================
+PROGRAMAÇÃO V1
+=================================================== 
+*/
+#program-intregration-v1 {
+    position: relative;
+    padding-top: 120px;
+    color: $color-white;
+
+    .dias {
+        position: absolute;
+        top: 0;
+    }
+
+    ul.actions.special {
+        justify-content: flex-start;
+    }
+
+    p {
+        margin: 0 auto !important;
+    }
+
+    .local {
+        width: 12% !important;
+        display: inline-block;
+        border-radius: 10px !important;
+        padding: 0px;
+        text-align: center;
+        line-height: 40px;
+        font-weight: bold;
+
+        &.auditorio {
+            margin-left: 10%;
+        }
+    }
+
+    .locais {
+        position: absolute;
+        top: 70px;
+        width: 100%;
+
+        .local {
+            background-color: $default;
+            height: 40px;
+        }
+    }
+
+    .activity {    
+        margin: 2px !important;
+        line-height: normal !important;
+        padding: 2px;
+
+        &.full-space {
+            background-color: $default;
+            height: 40px;
+            display: inline-block;
+            border-radius: 10px !important;
+            padding: 0px;
+            text-align: center;
+            line-height: 40px !important;
+            font-weight: bold;
+            width: 85.2%;
+        }
+    }
+
+    .time-30, 
+    .time-10, 
+    .time-50, 
+    .time-130 {
+        width: 10%;
+        display: inline-flex;
+        background-color: $default;
+        border-radius: 10px !important;
+        text-align: center;
+        line-height: 40px;
+        font-weight: bold;
+        margin: 2px 0px!important;
+    }
+
+    .time-30 {
+        height: 150px;
+        
+        &.full-space {
+            height: 40px;
+        }
+    }
+
+    .time-130 {
+        height: 450px;
+    }
+}
+
+.full-screen, .response-version-screen {
+    margin-top: 25px;
+    margin-bottom: 75px;
+}
+
+li .button.primary, .legend-trilha li {
+    margin-right: 20px;
+}
+
+.legend-trilha {
+    display: flex;
+    justify-content: flex-start;
+}

@@ -77,7 +77,8 @@ export class ProgramComponent{
       const id = row[2];
       const time = row[1];
       const title = row[4] ?? 'Em definição';
-      const track = row[5];
+      const track = this.getTrack(row[5]);
+      const cssClass = this.getClassCss(row[5]);
       const location = row[3];
       const type = row[6] ?? row[4] ?? 'Geral';
       const description = row[7];
@@ -119,7 +120,7 @@ export class ProgramComponent{
         hasDescription: !!row[10] || !!description,
         capacity: capacity ?? false,
         speakers,
-        cssClass: this.getClassCss(track)
+        cssClass
       };
     });
 
@@ -159,6 +160,16 @@ export class ProgramComponent{
            .replace('drive.google.com/file/d/', 'drive.google.com/thumbnail?id=')
            .replace('/view?usp=sharing', '')
       : url;
+  }
+
+  private getTrack(track: string): string {
+    switch (track) {
+      case 'LEGM': return 'Liderança, Estratégia e Gestão da Mudança';
+      case 'FA': return 'Future AI/Agility';
+      case 'RA': return 'Raizes da Agilidade';
+      case 'PFC': return 'Produto e Foco no Cliente';
+      default: return null;
+    }
   }
 
   private getClassCss(track: string): string {

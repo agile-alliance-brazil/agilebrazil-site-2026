@@ -374,3 +374,126 @@ li .button.primary, .legend-trilha li {
 .hashtag-trilha {
     text-align: center !important;
 }
+
+
+
+
+/* 
+===================================================
+VARIÁVEIS ADICIONAIS (Popups)
+=================================================== 
+*/
+$color-modal-overlay: #ffffff78; // Fundo translúcido do modal
+$color-text-muted: rgba(255, 255, 255, 0.5);
+$color-text-dark: #020202;
+
+/*
+===================================================
+POPUPS E MODAIS
+===================================================
+*/
+
+.backgroud-modal {
+    top: 0px;
+    background-color: $color-modal-overlay;
+    height: 100%;
+    width: 100%;
+    position: fixed;
+    display: flex;
+    z-index: 100101;
+}
+
+.modal-inscricao {
+    width: 95% !important; // Ajustado para trabalhar em conjunto com o max-width
+    max-width: 800px !important; 
+    color: $color-text-muted !important;
+    text-align: center !important;
+    margin: auto !important;
+
+    // Sub-elementos aninhados dentro de .modal-inscricao
+    img.chamada-inscricao {
+        color: $color-text-muted !important; // Herdado, mas mantido para fidelidade
+        text-align: center !important;
+        width: 100% !important;
+        height: 100% !important;
+        border-radius: 35px;
+    }
+
+    .fechar {
+        cursor: pointer !important;
+        text-align: end;
+
+        img {
+            max-width: 40px;
+            max-height: 40px;
+        }
+    }
+
+    .button {
+        height: 2.25rem !important;
+        line-height: 2.375rem !important;
+    }
+}
+
+// Classe específica isolada
+.Software.Zen {
+    max-width: 200px !important;
+}
+
+#conteudo-popup-programacao {
+    background-color: $color-white; // Usando a variável criada no arquivo anterior
+    border-radius: 20px !important;
+    padding: 20px;
+    color: $color-text-dark !important;
+}
+
+// Utilizando o "&" comercial para pseudo-classes
+.text-clicavel {
+    &:hover {
+        cursor: pointer;
+        text-decoration: underline;
+    }
+}
+
+
+ul.icons {
+        padding: 0px !important;
+}
+
+ul.icons li {
+    display: inline-block;
+    padding: 5px;
+    text-align: center;
+}
+
+ul.icons li .icon {
+    -moz-transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, color 0.2s ease-in-out;
+    -webkit-transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, color 0.2s ease-in-out;
+    -ms-transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, color 0.2s ease-in-out;
+    transition: background-color 0.2s ease-in-out, border-color 0.2s ease-in-out, color 0.2s ease-in-out;
+    background-color: transparent;
+    border-radius: 100%;
+    box-shadow: inset 0 0 0 1px #010e9b;
+    color: #010e9b;
+    display: block;
+    font-size: 1.25rem;
+    font-weight: 400;
+    height: 2.75rem;
+    line-height: 2.75rem;
+    margin: 0 auto 0rem auto;
+    width: 2.75rem;
+}
+
+.icon {
+    text-decoration: none;
+    border-bottom: none;
+    position: relative;
+}
+
+.icon > .label {
+    display: none;
+}
+
+#conteudo-popup-programacao p, .keynote-program {
+    text-align: center !important;
+}

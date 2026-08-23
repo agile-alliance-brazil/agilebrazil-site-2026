@@ -132,7 +132,7 @@ export class ProgramComponent{
   }
 
   public openPopup(session: ProgramSession, viewType: 1 | 2 | 3): void {
-    return;
+    //return;
     this.modalSession = session;
     this.modalViewType = viewType;
 

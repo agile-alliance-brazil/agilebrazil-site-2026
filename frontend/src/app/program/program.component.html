@@ -56,7 +56,7 @@
 <div id="main" class="wrapper style1">
     <div class="inner-full">
         <header class="heading major">
-            <h1>Programação Agile Brazil 2025</h1>
+            <h1>Programação Agile Brazil 2026</h1>
         </header>
         <section id="program-intregration-v2" class="program">
             <h3>Trilhas:</h3>
@@ -600,7 +600,7 @@
 
 <!-- MODAL (Renderizado via Angular de forma reativa) -->
 <div class="backgroud-modal" *ngIf="isModalOpen" (click)="closePopup()"
-    style="display: block; opacity: 1; background-color: #61606078 !important;">
+    style="display: flex; opacity: 1; background-color: #61606078 !important;">
     <div class="modal-inscricao modal-descricao-programacao" style="max-height: 90% !important;"
         (click)="$event.stopPropagation()">
         <div class="fechar" (click)="closePopup()">
@@ -627,12 +627,9 @@
                     <p style="text-align: center;">{{ modalSpeaker.miniBiografia }}</p>
 
                     <ul style="margin: 0" class="icons" *ngIf="modalSpeaker.linkedin">
-                        <li>
-                            <a [href]="modalSpeaker.linkedin" class="icon brands fa-linkedin-in" target="_blank">
-                                <span class="label">LinkedIn</span>
-                            </a>
-                        </li>
-                    </ul>
+                        <li><a href="{{modalSpeaker.linkedin}}" class="icon fa-brands fa-linkedin-in"
+                                target="_blank"><span class="label">LinkedIn</span></a></li>
+                        </ul>
                 </ng-container>
 
             </div>

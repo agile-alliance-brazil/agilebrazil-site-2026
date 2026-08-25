@@ -24,6 +24,10 @@ const routes: Routes = [
     loadChildren: () => import('./program/program.module').then(m => m.ProgramModule)
   },
   {
+    path: 'atualizar-programacao',
+    loadChildren: () => import('./alter-program/alter-program.module').then(m => m.AlterProgramModule)
+  },
+  {
     path: 'codigo-de-conduta',
     loadChildren: () => import('./code-of-conduct/code-of-conduct.module').then(m => m.CodeOfConductModule)
   },

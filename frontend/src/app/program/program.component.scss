@@ -197,6 +197,16 @@ CLASSES GERAIS E RESPONSIVIDADE
     }
 }
 
+@media screen and (max-width: 1140px) {
+    .legend-trilha {
+        display: block !important;
+
+        li {
+            margin-bottom: 5px !important;
+        }
+    }
+}
+
 .modal-descricao-programacao {
     max-width: 800px !important; 
 

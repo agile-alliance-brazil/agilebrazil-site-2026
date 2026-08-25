@@ -50,11 +50,14 @@ export class ProgramComponent{
   iniciarProgramacao(atualizar: boolean = false): void {
     this.isLoading = true;
     this.hasError = false;
-    const url = 'https://docs.google.com/spreadsheets/d/1tpt4sl5tiphfqvlgloND-dGrYBSRRfLbFliw4XTJTgo/gviz/tq?tqx=out:json';
+    // const url = 'https://docs.google.com/spreadsheets/d/1tpt4sl5tiphfqvlgloND-dGrYBSRRfLbFliw4XTJTgo/gviz/tq?tqx=out:json';
+    const url = 'https://insc.faculdadefacit.edu.br/chamada_agile_brazil_2024.php';
 
     this.http.get(url, { responseType: 'text' }).subscribe({
       next: (responseText) => {
-        const jsonString = responseText.slice(47, -2);
+        console.log(responseText);
+        const jsonString = responseText.slice(responseText.indexOf('setResponse(') + 'setResponse('.length, responseText.lastIndexOf(')'));
+        console.log(jsonString);
         const responseJSON = JSON.parse(jsonString);
 
         this.processarDadosPlanilha(responseJSON.table.rows);

@@ -183,7 +183,7 @@ CLASSES GERAIS E RESPONSIVIDADE
 .local-palestra, 
 .trilha {
     background-color: $color-black;
-    width: 120px;
+    max-width: 200px;
     margin: auto;
     border-radius: 7px;
 }

@@ -104,7 +104,7 @@ export class CommunityComponent {
       tags: ['Desenvolvimento', 'Tecnologia'],
       link: 'https://comunidadeagil.com.br/',
       whatsapp: 'https://chat.whatsapp.com/BqGrdjmHiibGV5H1NKoNrc',
-      nivel: 2,
+      nivel: 3,
       linkCupom: 'https://www.even3.com.br/agilebrazil2026-746128?cp=ComunidadeAgil'
     },
     {

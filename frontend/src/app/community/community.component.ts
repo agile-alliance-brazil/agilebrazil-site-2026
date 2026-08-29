@@ -29,9 +29,8 @@ export class CommunityComponent implements OnInit {
   carregarComunidades(): void {
     this.isLoading = true;
     this.hasError = false;
-    
-    // Substitua o ID da planilha pela URL real no formato do Google Visualization API
-    const url = 'https://docs.google.com/spreadsheets/d/SEU_ID_DA_PLANILHA/gviz/tq?tqx=out:json';
+
+    const url = 'https://docs.google.com/spreadsheets/d/1O4vXWQXyYHGoZuGwu4R-GOYEw3gPml6iJHEUbQcVJMI/gviz/tq?tqx=out:json';
 
     this.http.get(url, { responseType: 'text' }).subscribe({
       next: (responseText) => {
@@ -52,13 +51,9 @@ export class CommunityComponent implements OnInit {
   private processarDadosPlanilha(rows: any[]): void {
     this.comunidadesBase = [];
 
-    // O CSV gerado possui as seguintes colunas (na ordem):
-    // 0: name, 1: description, 2: imageUrl, 3: tags, 4: instagram, 5: youtube, 
-    // 6: linkedin, 7: link, 8: whatsapp, 9: meetup, 10: nivel, 11: pontuacao, 12: linkCupom
-    
     rows.forEach(rowNode => {
       const row = rowNode.c.map((prop: any) => prop ? prop.v : null);
-      
+
       const comunidade: any = {
         name: row[0],
         description: row[1],
@@ -74,15 +69,13 @@ export class CommunityComponent implements OnInit {
         pontuacao: row[11] ? parseInt(row[11], 10) : 2,
         linkCupom: row[12]
       };
-      
-      // Remover propriedades nulas/vazias para manter compatibilidade
+
       Object.keys(comunidade).forEach(key => !comunidade[key] && delete comunidade[key]);
 
       this.comunidadesBase.push(comunidade);
     });
 
     this.comunidades = [...this.comunidadesBase].sort((a, b) => b.pontuacao - a.pontuacao);
-    console.log('Comunidades carregadas:', this.comunidades);
   }
 
   changeVersion(params: number) {

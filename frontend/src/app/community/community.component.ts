@@ -452,6 +452,16 @@ Entrevistas reais e sem filtro com PMs, founders, builders de IA e líderes de N
       instagram: 'https://www.instagram.com/agilehealthcare/',
       nivel: 1,
       linkCupom: 'https://www.even3.com.br/agilebrazil2026-746128?cp=AGILEHealthcare'
+    },
+    {
+      name: 'Scrum Master Diferenciado',
+      description: 'Somos uma comunidade de Scrum Masters que tem como objetivo ensinar, através de palestras, cursos e Lean Coffees a prática do dia a dia do SM na Liderança de uma Squad. A comunicade existe há 2 anos e conta com 611 Scrum Masters. Luiz Ribeiro é o organizador de todos os eventos.',
+      imageUrl: '/2026/assets/images/scrum_master_diferenciado.png',
+      tags: ['Agilidade', 'Tecnologia', 'Inteligência Artificial', 'Liderança'],
+      whatsapp: 'https://chat.whatsapp.com/HVY5bNHJ4xmLKtqNccvCgK',
+      linkedin: 'https://www.linkedin.com/company/scrum-master-diferenciado/',
+      nivel: 1,
+      linkCupom: 'https://www.even3.com.br/agilebrazil2026-746128?cp=SMDiferenciado'
     }
   ];
 

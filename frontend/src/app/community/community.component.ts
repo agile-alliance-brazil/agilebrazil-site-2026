@@ -30,7 +30,8 @@ export class CommunityComponent implements OnInit {
     this.isLoading = true;
     this.hasError = false;
 
-    const url = 'https://docs.google.com/spreadsheets/d/1O4vXWQXyYHGoZuGwu4R-GOYEw3gPml6iJHEUbQcVJMI/gviz/tq?tqx=out:json';
+    // const url = 'https://docs.google.com/spreadsheets/d/1O4vXWQXyYHGoZuGwu4R-GOYEw3gPml6iJHEUbQcVJMI/gviz/tq?tqx=out:json';
+    const url = 'https://insc.faculdadefacit.edu.br/agile_brazil_comunidade.php';
 
     this.http.get(url, { responseType: 'text' }).subscribe({
       next: (responseText) => {

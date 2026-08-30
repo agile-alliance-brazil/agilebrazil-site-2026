@@ -15,7 +15,7 @@
   </div>
 </section>
 
-<section id="section-sponsor" class="wrapper">
+<section id="section-sponsor" class="wrapper ">
   <div class="inner body-page">
     <div class="be-a-sponsor feature">
       <header class="heading">
@@ -34,29 +34,23 @@
     <div class="be-a-sponsor feature">
       <header class="heading">
         <h2>Nossos Keynotes 2026</h2>
-        <hr class="session-divider"/>
+        <hr class="session-divider" />
       </header>
       <div class="profiles session-keynotes">
 
-        <div class="profile" style="display: inline-block; max-width: 350px !important; min-width: 220px !important; width: 30%;"
-          *ngFor="let keynote of keynotes">
+        <div class="profile" *ngFor="let keynote of keynotes">
           <div class="image-keynotes">
-            <img style="max-width: 300px !important;
-                            max-height: 300px !important;
-                            border-radius: 50% !important;
-                            border: 5px solid;
-                            width: 90% !important;
-                            border-color: rgb(254 165 6);" class="image-speaker" src="{{keynote.imageUrl}}" />
+            <img class="image-speaker" src="{{keynote.imageUrl}}" />
           </div>
-           <ul class="icons hastag">
-              <li>
-                  <span class="hastag-speakers name">{{keynote.name}}</span>
-              </li>
+          <ul class="icons hastag">
+            <li>
+              <span class="hastag-speakers name">{{keynote.name}}</span>
+            </li>
           </ul>
-           <ul class="icons hastag">
-              <li>
-                  <span class="hastag-speakers function">{{keynote.function}}</span>
-              </li>
+          <ul class="icons hastag">
+            <li>
+              <span class="hastag-speakers function">{{keynote.function}}</span>
+            </li>
           </ul>
           <p class="title">
             {{keynote.description}}
@@ -86,14 +80,15 @@
   </div>
 </section>
 
-<section id="section-sponsor" class="wrapper">
+<section id="section-sponsor" class="wrapper ">
   <div class="inner body-page">
     <div class="be-a-sponsor feature">
       <header class="heading">
         <h2>Onde ficar</h2>
       </header>
-      <p>Que tal se hospedar no mesmo local do evento?<br/>
-      Garanta condições exclusivas de hospedagem no <a href="https://grandcarima.com.br/" target="_blank">Grand Carimã</a>!</p>
+      <p>Que tal se hospedar no mesmo local do evento?<br />
+        Garanta condições exclusivas de hospedagem no <a href="https://grandcarima.com.br/" target="_blank">Grand
+          Carimã</a>!</p>
       <p>Utilize o cupom de desconto: <strong>agile2026</strong>.</p>
       <div class="carousel" (mouseenter)="stopAutoplay()" (mouseleave)="startAutoplay()">
         <div class="carousel-track">
@@ -133,7 +128,7 @@
   </div>
 </section>
 
-<section id="protocolos" class="wrapper">
+<section id="protocolos" class="wrapper ">
   <div class="inner body-page">
     <header class="heading">
       <h2>Sobre a Agile Brazil</h2>
@@ -192,14 +187,15 @@
   </div>
 </section>
 
+
 <!-- Modal Popup Dialog -->
 <div class="popup-overlay" *ngIf="showPopup" (click)="closePopup()">
   <div class="popup-content" (click)="$event.stopPropagation()">
     <button class="popup-close-btn" (click)="closePopup()" aria-label="Fechar">&times;</button>
     <div class="popup-body">
       <a href="inscricao" (click)="closePopup()" class="popup-image-link">
-        <img src="/2026/assets/images/popup-inscricoes-2026-2.png"
-          alt="Granta sua vaga no Agile Brazil 2026" class="popup-image" />
+        <img src="/2026/assets/images/popup-inscricoes-2026-2.png" alt="Granta sua vaga no Agile Brazil 2026"
+          class="popup-image" />
       </a>
     </div>
   </div>

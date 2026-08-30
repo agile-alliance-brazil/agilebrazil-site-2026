@@ -21,4 +21,17 @@ export class AlterProgramComponent {
       }
     });
   }
+
+  atualizarComunidade () {
+    const url = 'https://insc.faculdadefacit.edu.br/chamada_agile_brazil_comunidade.php';
+
+    this.http.get(url, { responseType: 'text' }).subscribe({
+      next: (responseText) => {
+        console.log(responseText);
+      },
+      error: (err) => {
+        console.error('Erro ao buscar programação', err);
+      }
+    });
+  }
 }

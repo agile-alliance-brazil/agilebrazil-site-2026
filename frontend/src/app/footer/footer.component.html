@@ -1,14 +1,15 @@
-
 <section style="background-color: #f3f3f3;" class="patrocinadores">
     <h2>Patrocinadoras</h2>
     <p>Conheça as empresas que apoiam a Agile Brazil</p>
-    <hr class="session-divider"/>
+    <hr class="session-divider" />
     <h1>Patrocínio ouro</h1>
     <div class="session-sponsor">
-        <div class="profile" style="max-width: 300px !important; min-width: 220px !important; width: 30%;" *ngFor="let patrocinador of patrocinadores">
+        <div class="profile" style="max-width: 300px !important; min-width: 220px !important; width: 30%;"
+            *ngFor="let patrocinador of patrocinadores">
             <div *ngIf="patrocinador.nivel == 'Gold'">
-                <a href="{{patrocinador.link}}" title="{{patrocinador.name}}"  target="_blank">
-                    <img style="max-width: 300px !important; max-height: 250px !important; border-radius: 0% !important;" class="image-speaker" src="{{patrocinador.imageUrl}}" />
+                <a href="{{patrocinador.link}}" title="{{patrocinador.name}}" target="_blank">
+                    <img style="max-width: 300px !important; max-height: 250px !important; border-radius: 0% !important;"
+                        class="image-speaker" src="{{patrocinador.imageUrl}}" />
                 </a>
             </div>
         </div>

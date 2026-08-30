@@ -1,4 +1,4 @@
-import { Component, OnInit, Renderer2, Inject, AfterViewInit } from '@angular/core';
+import { Component, OnDestroy, OnInit, Renderer2, Inject, AfterViewInit } from '@angular/core';
 import { DOCUMENT } from '@angular/common';
 
 declare var RDStationForms: any;
@@ -16,5 +16,6 @@ export class FooterComponent {
       nivel: 'Gold',
       link: 'https://ginoterentim.com/'
     }
-  ]
+  ];
+
 }

@@ -49,7 +49,6 @@ export class HomeComponent implements OnInit, OnDestroy {
   intervalId: any = null;
   autoplayDelay = 3000; // ms
   showPopup = false;
-
   constructor(
     private renderer: Renderer2,
     @Inject(DOCUMENT) private document: Document

@@ -1,0 +1,67 @@
+<!-- CORPO DA PÁGINA -->
+<div id="main" class="wrapper style1">
+    <div class="inner-full">
+        <header class="heading major">
+            <h1>Palestrantes Agile Brazil 2026</h1>
+        </header>
+        <section id="program-intregration-v2" class="program">
+            <div *ngIf="isLoading" style="text-align: center; margin: 20px;">Carregando palestrantes...</div>
+
+            <div class="speakers-grid" *ngIf="!isLoading">
+                <div class="speaker-card" *ngFor="let card of speakerCards">
+                    <div class="speaker-photo" 
+                         [style.background-image]="card.speaker.foto ? 'url(' + card.speaker.foto + ')' : null"
+                         (click)="openSpeakerPopup(card.speaker)">
+                         <i *ngIf="!card.speaker.foto" class="fa-solid fa-user"></i>
+                    </div>
+                    <div class="speaker-name" (click)="openSpeakerPopup(card.speaker)">
+                        {{ card.speaker.autor }}
+                    </div>
+                    <div class="speaker-tracks">
+                        <span class="speaker-track" *ngFor="let track of card.tracks" [ngClass]="track.cssClass">
+                            #{{ track.name }}
+                        </span>
+                    </div>
+                    <div class="speaker-linkedin" *ngIf="card.speaker.linkedin">
+                         <ul style="margin: 0" class="icons">
+                            <li><a [href]="card.speaker.linkedin" class="icon fa-brands fa-linkedin-in" target="_blank" (click)="$event.stopPropagation()"><span class="label">LinkedIn</span></a></li>
+                         </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+</div>
+
+<!-- MODAL (Renderizado via Angular de forma reativa) -->
+<div class="backgroud-modal" *ngIf="isModalOpen" (click)="closePopup()"
+    style="display: flex; opacity: 1; background-color: #61606078 !important;">
+    <div class="modal-inscricao modal-descricao-programacao" style="max-height: 90% !important;"
+        (click)="$event.stopPropagation()">
+        <div class="fechar" (click)="closePopup()">
+            <img src="assets/images/fechar.png" />
+        </div>
+
+        <div id="conteudo-popup-programacao" style="max-height: 80vh; overflow-y: auto;">
+            <div class="profile">
+                <!-- VISÃO: Informações do Palestrante -->
+                <ng-container *ngIf="modalSpeaker">
+                    <div class="image-keynotes"
+                        style="width: 125px; height: 125px; border-radius: 50%; margin: auto; background-size: cover; display: flex; align-items: center; justify-content: center; font-size: 4rem; color: #666; background-color: #ddd;"
+                        [style.background-image]="modalSpeaker.foto ? 'url(' + modalSpeaker.foto + ')' : null">
+                        <i *ngIf="!modalSpeaker.foto" class="fa-solid fa-user"></i>
+                    </div>
+                    <p style="margin-top: 15px;"><b>{{ modalSpeaker.autor }}</b></p>
+                    <p style="text-align: center;">{{ modalSpeaker.miniBiografia }}</p>
+
+                    <ul style="margin: 0" class="icons" *ngIf="modalSpeaker.linkedin">
+                        <li><a href="{{modalSpeaker.linkedin}}" class="icon fa-brands fa-linkedin-in"
+                                target="_blank"><span class="label">LinkedIn</span></a></li>
+                    </ul>
+                </ng-container>
+            </div>
+        </div>
+
+        <div style="margin-top: 10px;" class="button primary" (click)="closePopup()">fechar</div>
+    </div>
+</div>

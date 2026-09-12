@@ -24,6 +24,10 @@ const routes: Routes = [
     loadChildren: () => import('./program/program.module').then(m => m.ProgramModule)
   },
   {
+    path: 'palestrantes',
+    loadChildren: () => import('./speaker/speaker.module').then(m => m.SpeakerModule)
+  },
+  {
     path: 'atualizar-programacao',
     loadChildren: () => import('./alter-program/alter-program.module').then(m => m.AlterProgramModule)
   },

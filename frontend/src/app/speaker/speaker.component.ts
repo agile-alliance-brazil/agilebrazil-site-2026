@@ -7,6 +7,7 @@ export interface Speaker {
   miniBiografia: string;
   foto: string;
   linkedin: string | false;
+  palestras: string[];
 }
 
 export interface SpeakerCard {
@@ -63,6 +64,7 @@ export class SpeakerComponent implements OnInit {
       const row = rowNode.c.map((prop: any) => prop ? prop.v : null);
       const track = this.getTrack(row[5]);
       const cssClass = this.getClassCss(row[5]);
+      const title = row[4] ?? 'Em definição';
 
       const addSpeakerToMap = (autor: string, fotoUrl: string, miniBio: string, linkedinUrl: string) => {
         if (!autor) return;
@@ -77,7 +79,8 @@ export class SpeakerComponent implements OnInit {
               autor,
               foto,
               miniBiografia: miniBio,
-              linkedin
+              linkedin,
+              palestras: []
             },
             tracks: []
           };
@@ -86,6 +89,10 @@ export class SpeakerComponent implements OnInit {
 
         if (track && track !== 'Geral' && !card.tracks.find(t => t.name === track)) {
           card.tracks.push({ name: track, cssClass });
+        }
+
+        if (title && !card.speaker.palestras.includes(title)) {
+          card.speaker.palestras.push(title);
         }
       };
 

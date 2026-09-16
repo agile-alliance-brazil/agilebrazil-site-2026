@@ -86,10 +86,12 @@
       <header class="heading">
         <h2>Onde ficar</h2>
       </header>
-      <p>Que tal se hospedar no mesmo local do evento?<br />
+      <p style="
+    max-width: 900px;
+    margin: auto;
+">Que tal se hospedar no mesmo local do evento?<br />
         Garanta condições exclusivas de hospedagem no <a href="https://grandcarima.com.br/" target="_blank">Grand
-          Carimã</a>!</p>
-      <p>Utilize o cupom de desconto: <strong>agile2026</strong>.</p>
+          Carimã</a>! Entre em contato com o departamento de reservas pelo WhatsApp <a target="_blank" href="https://api.whatsapp.com/send/?phone=554535213061&text&type=phone_number&app_absent=0"> 45 3521-3061 </a> e informe o nome do evento <strong>Agile Brazil</strong>.</p>
       <div class="carousel" (mouseenter)="stopAutoplay()" (mouseleave)="startAutoplay()">
         <div class="carousel-track">
           <img *ngFor="let img of images; let i = index" [src]="img" [class.active]="i === current"

@@ -42,6 +42,15 @@ export class HomeComponent implements OnInit, OnDestroy {
       instagram: 'https://www.instagram.com/rodrigo.detoledo/',
       linkedin: 'https://www.linkedin.com/in/rodrigodetoledo/',
       facebook: 'https://www.facebook.com/rodrigodetoledo'
+    },
+    {
+      name: 'Manoel Pais',
+      function: 'Keynote Speaker, Team Topologies (book & academy) co-author, Author of the Platform Manifesto, Fast Flow Thought Leader',
+      description: 'Coautor do livro "Team Topologies" — uma obra que transformou o setor —, Manuel tem a missão de tornar o trabalho mais humano e as empresas mais valiosas para os clientes. Ele realiza palestras inspiradoras e compartilha ideias de referência sobre os princípios e padrões para o #fastflow, gerando impacto em toda a organização, desde executivos de alto escalão até as equipes operacionais. Manuel capacitou milhares de líderes do setor por meio de seus cursos e workshops e ajudou diversas organizações a trilhar o caminho para o fast flow com avaliações estratégicas e organizacionais diretas e pragmáticas. Ele vive em Madri, mas considera Lisboa o seu lar.',
+      imageUrl: '/2026/assets/images/manuel_pais.jpeg',
+      instagram: 'https://www.instagram.com/manuel.team.topologies/',
+      linkedin: 'https://www.linkedin.com/in/manuelpais/',
+      twitter: 'https://x.com/manupaisable'
     }
   ];
 

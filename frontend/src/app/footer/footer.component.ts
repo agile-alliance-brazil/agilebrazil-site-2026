@@ -15,6 +15,12 @@ export class FooterComponent {
       imageUrl: '/2026/assets/images/ginoterentim.png',
       nivel: 'Gold',
       link: 'https://ginoterentim.com/'
+    },
+    {
+      name: 'Os Agilistas',
+      imageUrl: '/2026/assets/images/osagilistasdti.png',
+      nivel: 'Silver',
+      link: 'https://osagilistas.com/'
     }
   ];
 

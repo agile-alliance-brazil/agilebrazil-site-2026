@@ -16,6 +16,12 @@ export class FooterComponent {
       nivel: 'Gold',
       link: 'https://ginoterentim.com/'
     },
+     {
+      name: 'K21',
+      imageUrl: '/2026/assets/images/sponsors/k21.png',
+      nivel: 'Gold',
+      link: 'https://br.k21.global/'
+    },
     {
       name: 'Os Agilistas',
       imageUrl: '/2026/assets/images/osagilistasdti.png',
@@ -24,4 +30,11 @@ export class FooterComponent {
     }
   ];
 
+   get patrocinadoresOuro() {
+    return this.patrocinadores.filter(patrocinador => patrocinador.nivel === 'Gold');
+  }
+
+   get patrocinadoresPrata() {
+    return this.patrocinadores.filter(patrocinador => patrocinador.nivel === 'Silver');
+  }
 }

@@ -1,6 +1,6 @@
 <!-- 1. TEMPLATE REUTILIZÁVEL (Substitui o jQuery HTML Injection) -->
-<ng-template #sessionCard let-id="id">
-    <ng-container *ngIf="dataProgram[currentDay]?.[id] as session">
+<ng-template #sessionCard let-id="id" let-isComunity="isComunity">
+    <ng-container *ngIf="(isComunity ? comunityProgram[currentDay]?.[id] : dataProgram[currentDay]?.[id]) as session">
 
         <!-- COFFEE / ALMOÇO -->
         <div *ngIf="session.type === 'Coffee' || session.type === 'Almoço'" class="activity full-space card-program">
@@ -29,7 +29,8 @@
             class="activity card-program" [ngClass]="session.cssClass">
 
             <p class="hashtag-trilha" *ngIf="session.track && session.track !== 'Geral'">{{ session.track }}</p>
-            <div class="local-palestra responsivo" *ngIf="session.track !== 'Arena Comunidades'">{{ session.location }}</div>
+            <div class="local-palestra responsivo" *ngIf="session.track !== 'Arena Comunidades'">{{ session.location }}
+            </div>
 
             <p class="title">
                 <a [ngClass]="{'text-clicavel': session.hasDescription}"
@@ -99,7 +100,7 @@
             <div *ngIf="isLoading" style="text-align: center; margin: 20px;">Carregando programação...</div>
 
             <!-- ESTRUTURA DIA 12 (Desktop) -->
-            <div id="estrutura-desktop" *ngIf="!isLoading">
+            <div id="estrutura-desktop" *ngIf="!isLoading" style="display: flex; gap: 20px;">
                 <table class="full-screen">
                     <thead>
                         <tr class="locais">
@@ -114,9 +115,6 @@
                                 <div class="local palestra card-program">Palco - Paraguai</div>
                             </th>
                             <th class="trilhas">
-                                <div class="local workshop card-program">Arena Comunidade</div>
-                            </th>
-                            <th class="trilhas">
                                 <div class="local workshop card-program">Sala Workshop - Usina de Itaipú</div>
                             </th>
                             <th class="trilhas">
@@ -129,7 +127,7 @@
                             <td>
                                 <div id="identificacao-900-0" class="time card-program">9:00</div>
                             </td>
-                            <td colspan="7" id="identificacao-900">
+                            <td colspan="6" id="identificacao-900">
                                 <ng-container
                                     *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-900' }"></ng-container>
                             </td>
@@ -138,7 +136,7 @@
                             <td style="align-content: center;">
                                 <div id="identificacao-1020-0" class="time card-program">10:20</div>
                             </td>
-                            <td colspan="7" id="identificacao-1020">
+                            <td colspan="6" id="identificacao-1020">
                                 <ng-container
                                     *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1020' }"></ng-container>
                             </td>
@@ -157,9 +155,6 @@
                             </td>
                             <td id="identificacao-1045-3"><ng-container
                                     *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1045-3' }"></ng-container>
-                            </td>
-                            <td id="identificacao-1045-4"><ng-container
-                                    *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1045-4' }"></ng-container>
                             </td>
                             <td id="identificacao-1045-5" rowspan="4"><ng-container
                                     *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1045-5' }"></ng-container>
@@ -183,9 +178,6 @@
                             <td id="identificacao-1120-3"><ng-container
                                     *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1120-3' }"></ng-container>
                             </td>
-                            <td id="identificacao-1120-4"><ng-container
-                                    *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1120-4' }"></ng-container>
-                            </td>
                         </tr>
                         <tr>
                             <td>
@@ -201,9 +193,6 @@
                             </td>
                             <td id="identificacao-1155-3"><ng-container
                                     *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1155-3' }"></ng-container>
-                            </td>
-                            <td id="identificacao-1155-4"><ng-container
-                                    *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1155-4' }"></ng-container>
                             </td>
                         </tr>
                         <tr>
@@ -221,15 +210,12 @@
                             <td id="identificacao-1230-3"><ng-container
                                     *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1230-3' }"></ng-container>
                             </td>
-                            <td id="identificacao-1230-4"><ng-container
-                                    *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1230-4' }"></ng-container>
-                            </td>
                         </tr>
-                         <tr>
+                        <tr>
                             <td style="align-content: center;">
                                 <div id="identificacao-1300-0" class="time card-program">13:00</div>
                             </td>
-                            <td colspan="7" id="identificacao-1300">
+                            <td colspan="6" id="identificacao-1300">
                                 <ng-container
                                     *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1300' }"></ng-container>
                             </td>
@@ -248,9 +234,6 @@
                             </td>
                             <td id="identificacao-1430-3"><ng-container
                                     *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1430-3' }"></ng-container>
-                            </td>
-                            <td id="identificacao-1430-4"><ng-container
-                                    *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1430-4' }"></ng-container>
                             </td>
                             <td id="identificacao-1430-5" rowspan="3"><ng-container
                                     *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1430-5' }"></ng-container>
@@ -274,9 +257,6 @@
                             <td id="identificacao-1510-3"><ng-container
                                     *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1510-3' }"></ng-container>
                             </td>
-                            <td id="identificacao-1510-4"><ng-container
-                                    *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1510-4' }"></ng-container>
-                            </td>
                         </tr>
                         <tr>
                             <td>
@@ -293,15 +273,12 @@
                             <td id="identificacao-1550-3"><ng-container
                                     *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1550-3' }"></ng-container>
                             </td>
-                            <td id="identificacao-1550-4"><ng-container
-                                    *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1550-4' }"></ng-container>
-                            </td>
                         </tr>
-                         <tr>
+                        <tr>
                             <td style="align-content: center;">
                                 <div id="identificacao-1630-0" class="time card-program">16:30</div>
                             </td>
-                            <td colspan="7" id="identificacao-1630">
+                            <td colspan="6" id="identificacao-1630">
                                 <ng-container
                                     *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1630' }"></ng-container>
                             </td>
@@ -310,11 +287,41 @@
                             <td>
                                 <div id="identificacao-1700-0" class="time card-program">17:10</div>
                             </td>
-                            <td colspan="7" id="identificacao-1700">
+                            <td colspan="6" id="identificacao-1700">
                                 <ng-container
                                     *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1700' }"></ng-container>
                             </td>
                         </tr>
+                    </tbody>
+                </table>
+
+                <table class="full-screen"
+                    style="width: 350px;flex-shrink: 0;margin-top: 25px !important;height: fit-content;">
+                    <tbody>
+                        <tr>
+                            <td></td>
+                            <td>
+                                <div class="activity full-space default card-program"
+                                    style="background-color: #063676;">
+                                    <div>
+                                        <p class="keynote-program">Arena Comunidades</p>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <ng-container *ngFor="let item of (comunityProgram[currentDay] | keyvalue)">
+                            <tr>
+                                <td>
+                                    <div class="time card-program">
+                                        <p>{{ item.value.time.split(' ')[0] }}</p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <ng-container
+                                        *ngTemplateOutlet="sessionCard; context: { id: item.key, isComunity: true }"></ng-container>
+                                </td>
+                            </tr>
+                        </ng-container>
                     </tbody>
                 </table>
             </div>
@@ -341,7 +348,7 @@
                             </td>
                         </tr>
                         <tr>
-                            <td rowspan="4">
+                            <td rowspan="3">
                                 <div id="identificacao-1045-0" class="time card-program">
                                     <p>10:45</p>
                                 </div>
@@ -361,12 +368,7 @@
                             </td>
                         </tr>
                         <tr>
-                            <td id="identificacao-1045-4"><ng-container
-                                    *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1045-4' }"></ng-container>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td rowspan="4">
+                            <td rowspan="3">
                                 <div id="identificacao-1120-0" class="time card-program">
                                     <p>11:20</p>
                                 </div>
@@ -386,12 +388,7 @@
                             </td>
                         </tr>
                         <tr>
-                            <td id="identificacao-1120-4"><ng-container
-                                    *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1120-4' }"></ng-container>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td rowspan="4">
+                            <td rowspan="3">
                                 <div id="identificacao-1155-0" class="time card-program">
                                     <p>11:55</p>
                                 </div>
@@ -411,12 +408,7 @@
                             </td>
                         </tr>
                         <tr>
-                            <td id="identificacao-1155-4"><ng-container
-                                    *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1155-4' }"></ng-container>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td rowspan="4">
+                            <td rowspan="3">
                                 <div id="identificacao-1230-0" class="time card-program">
                                     <p>12:30</p>
                                 </div>
@@ -436,11 +428,6 @@
                             </td>
                         </tr>
                         <tr>
-                            <td id="identificacao-1230-4"><ng-container
-                                    *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1230-4' }"></ng-container>
-                            </td>
-                        </tr>
-                         <tr>
                             <td style="align-content: center;">
                                 <div id="identificacao-1300-0" class="time card-program">13:00</div>
                             </td>
@@ -450,7 +437,7 @@
                             </td>
                         </tr>
                         <tr>
-                            <td rowspan="4">
+                            <td rowspan="3">
                                 <div id="identificacao-1430-0" class="time card-program">
                                     <p>14:30</p>
                                 </div>
@@ -470,12 +457,7 @@
                             </td>
                         </tr>
                         <tr>
-                            <td id="identificacao-1430-4"><ng-container
-                                    *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1430-4' }"></ng-container>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td rowspan="4">
+                            <td rowspan="3">
                                 <div id="identificacao-1510-0" class="time card-program">
                                     <p>15:10</p>
                                 </div>
@@ -495,12 +477,7 @@
                             </td>
                         </tr>
                         <tr>
-                            <td id="identificacao-1510-4"><ng-container
-                                    *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1510-4' }"></ng-container>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td rowspan="4">
+                            <td rowspan="3">
                                 <div id="identificacao-1550-0" class="time card-program">
                                     <p>15:50</p>
                                 </div>
@@ -520,11 +497,6 @@
                             </td>
                         </tr>
                         <tr>
-                            <td id="identificacao-1550-4"><ng-container
-                                    *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1550-4' }"></ng-container>
-                            </td>
-                        </tr>
-                         <tr>
                             <td style="align-content: center;">
                                 <div id="identificacao-1630-0" class="time card-program">16:30</div>
                             </td>
@@ -569,7 +541,7 @@
                                     *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1045-5' }"></ng-container>
                             </td>
                         </tr>
-                         <tr>
+                        <tr>
                             <td id="identificacao-1045-6"><ng-container
                                     *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1045-6' }"></ng-container>
                             </td>
@@ -584,13 +556,43 @@
                                     *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1430-5' }"></ng-container>
                             </td>
                         </tr>
-                         <tr>
+                        <tr>
                             <td id="identificacao-1430-6"><ng-container
                                     *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1430-6' }"></ng-container>
                             </td>
                         </tr>
                     </tbody>
                 </table>
+
+                <table class="response-version-screen">
+                    <tbody>
+                        <tr>
+                            <td></td>
+                            <td>
+                                <div class="activity full-space default card-program"
+                                    style="background-color: #063676;">
+                                    <div>
+                                        <p class="keynote-program">Arena Comunidades</p>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <ng-container *ngFor="let item of (comunityProgram[currentDay] | keyvalue)">
+                            <tr>
+                                <td>
+                                    <div class="time card-program">
+                                        <p>{{ item.value.time.split(' ')[0] }}</p>
+                                    </div>
+                                </td>
+                                <td>
+                                    <ng-container
+                                        *ngTemplateOutlet="sessionCard; context: { id: item.key, isComunity: true }"></ng-container>
+                                </td>
+                            </tr>
+                        </ng-container>
+                    </tbody>
+                </table>
+
             </div>
 
         </section>
@@ -621,15 +623,34 @@
                 <ng-container *ngIf="(modalViewType === 2 || modalViewType === 3) && modalSpeaker">
                     <div class="image-keynotes"
                         style="width: 125px; height: 125px; border-radius: 50%; margin: auto; background-size: cover;"
-                        [style.background-image]="'url(' + modalSpeaker.foto + ')'">
+                        [style.background-image]="'url(' + (modalSpeaker.foto || 'assets/images/placeholder_user.png') + ')'">
                     </div>
-                    <p><b>{{ modalSpeaker.autor }}</b></p>
-                    <p style="text-align: center;">{{ modalSpeaker.miniBiografia }}</p>
 
-                    <ul style="margin: 0" class="icons" *ngIf="modalSpeaker.linkedin">
-                        <li><a href="{{modalSpeaker.linkedin}}" class="icon fa-brands fa-linkedin-in"
-                                target="_blank"><span class="label">LinkedIn</span></a></li>
-                        </ul>
+                    <p *ngIf="modalSpeaker.comunidade"><b>{{ modalSpeaker.autor }} - {{ modalSpeaker.comunidade }}</b>
+                    </p>
+                    <p *ngIf="!modalSpeaker.comunidade"><b>{{ modalSpeaker.autor }}</b></p>
+
+                    <p *ngIf="modalSpeaker.comunidade" style="text-align: center;">{{ modalSpeaker.autor }}
+                        representando a comunidade {{ modalSpeaker.comunidade }}</p>
+                    <p *ngIf="!modalSpeaker.comunidade" style="text-align: center;">{{ modalSpeaker.miniBiografia }}</p>
+
+                    <img *ngIf="modalSpeaker.imgComunidade" [src]="modalSpeaker.imgComunidade"
+                        style="max-width: 200px; display: block; margin: 20px auto;" />
+
+                    <div *ngIf="modalSpeaker.comunidade" style="text-align: center; margin-bottom: 15px;">
+                        <span
+                            style="background-color: #147332; color: white; padding: 5px 10px; border-radius: 5px; font-size: 14px;">Agilidade</span>
+                    </div>
+
+                    <ul style="margin: 0; text-align: center;" class="icons"
+                        *ngIf="modalSpeaker.linkedin || modalSpeaker.youtube">
+                        <li *ngIf="modalSpeaker.youtube"><a href="{{modalSpeaker.youtube}}"
+                                class="icon fa-brands fa-youtube" target="_blank"><span class="label">YouTube</span></a>
+                        </li>
+                        <li *ngIf="modalSpeaker.linkedin"><a href="{{modalSpeaker.linkedin}}"
+                                class="icon fa-brands fa-linkedin-in" target="_blank"><span
+                                    class="label">LinkedIn</span></a></li>
+                    </ul>
                 </ng-container>
 
             </div>

@@ -60,6 +60,7 @@ Nesta dinâmica, você vai explorar as dimensões física, psicológica e social
         speakers: [
           {
             autor: 'Alle Petra',
+            foto: '/2026/assets/images/alessandrapetra.jpeg',
             linkedin: 'https://www.linkedin.com/in/alessandrapetra/',
             comunidade: 'Agile Healthcare',
             imgComunidade: '/2026/assets/images/agile_healthcare.png',
@@ -109,6 +110,7 @@ No Ideathon Hack – Agile IA Challenge, você vai entrar em um desafio prático
         speakers: [
           {
             autor: 'Cris',
+            foto: '/2026/assets/images/cristianecursino.jpeg',
             linkedin: 'https://www.linkedin.com/in/cristianecursino/',
             comunidade: 'WoHackers',
             imgComunidade: '/2026/assets/images/comunidade_wo_hackers.png',
@@ -133,7 +135,8 @@ No Lean Coffee, você traz os temas, dúvidas e desafios que realmente importam.
         speakers: [
           {
             autor: 'Baldin',
-            linkedin: '',
+            foto: '/2026/assets/images/fabiobaldin.jpeg',
+            linkedin: 'https://www.linkedin.com/in/fabiobaldin/',
             comunidade: 'AGILE CAMPINAS',
             imgComunidade: '/2026/assets/images/comunidade_agile_campinas.png',
             miniBiografia: '',

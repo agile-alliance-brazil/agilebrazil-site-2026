@@ -49,7 +49,7 @@ export class ProgramComponent{
         id: 'identificacao-comunity-1045',
         hourId: 'identificacao-comunity-1045',
         time: '10:45 - 12:15',
-        title: 'Dinâmica de OKRs com Saúde',
+        title: 'Projeto Eu: OKRs para uma Vida Mais Saudável',
         type: 'Comunidade',
         track: 'Comunidade',
         location: 'Arena Comunidades',
@@ -62,7 +62,7 @@ Nesta dinâmica, você vai explorar as dimensões física, psicológica e social
             autor: 'Alle Petra',
             foto: '/2026/assets/images/alessandrapetra.jpeg',
             linkedin: 'https://www.linkedin.com/in/alessandrapetra/',
-            comunidade: 'Agile Healthcare',
+            comunidade: 'Agile Health Care',
             imgComunidade: '/2026/assets/images/agile_healthcare.png',
             miniBiografia: 'Alle Petra é Agile Coach.',
 

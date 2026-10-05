@@ -40,7 +40,8 @@
             </p>
 
             <div class="autor" *ngIf="session.speakers?.length">
-                <div class="text-clicavel" (click)="openPopup(session, 2)">{{ session.speakers[0].autor }}</div>
+                <div *ngIf="session.type !== 'Comunidade' || !session.speakers[0].comunidade" class="text-clicavel" (click)="openPopup(session, 2)">{{ session.speakers[0].autor }}</div>
+                <div *ngIf="session.type === 'Comunidade' && session.speakers[0].comunidade" class="text-clicavel" (click)="openPopup(session, 2)">{{ session.speakers[0].autor }} - {{ session.speakers[0].comunidade }}</div>
                 <ng-container *ngIf="session.speakers.length > 1">
                     &amp; <div class="text-clicavel" (click)="openPopup(session, 3)">{{ session.speakers[1].autor }}
                     </div>

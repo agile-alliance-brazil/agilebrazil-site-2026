@@ -99,7 +99,7 @@ Nesta dinâmica, você vai explorar as dimensões física, psicológica e social
       'identificacao-comunity-1045': {
         id: 'identificacao-comunity-1045',
         hourId: 'identificacao-comunity-1045',
-        time: '10:45 - 12:45',
+        time: '10:45 - 13:15',
         title: 'Ideathon Hack - Agile IA Challenge',
         type: 'Comunidade',
         track: 'Comunidade',
@@ -149,7 +149,7 @@ No Lean Coffee, você traz os temas, dúvidas e desafios que realmente importam.
       'identificacao-comunity-1530': {
         id: 'identificacao-comunity-1530',
         hourId: 'identificacao-comunity-1530',
-        time: '15:30 - 16:30',
+        time: '15:40 - 16:40',
         title: 'Laboratório Coletivo da Guilda no Itaú ser Relevante e Duradoura',
         type: 'Comunidade',
         track: 'Comunidade',

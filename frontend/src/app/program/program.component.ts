@@ -79,8 +79,9 @@ Nesta dinâmica, você vai explorar as dimensões física, psicológica e social
         type: 'Comunidade',
         track: 'Comunidade',
         location: 'Arena Comunidades',
-        description: ``,
-        hasDescription: false,
+        description: `Vamos mergulhar nos aspectos políticos e simbólicos que todo agente de mudança precisa dominar para gerar impacto de verdade, mas que muitas vezes acabam ignorados na correria do dia a dia.
+Vem repensar a agilidade com foco nas pessoas e na realidade das organizações.`,
+        hasDescription: true,
         capacity: false,
         speakers: [
           {

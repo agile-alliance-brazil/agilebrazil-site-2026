@@ -65,6 +65,7 @@ Nesta dinâmica, você vai explorar as dimensões física, psicológica e social
             comunidade: 'Agile Health Care',
             imgComunidade: '/2026/assets/images/agile_healthcare.png',
             miniBiografia: 'Alle Petra é Agile Coach.',
+            tags: ['Agilidade', 'Liderança', 'Saúde']
 
           }
         ],
@@ -84,11 +85,11 @@ Nesta dinâmica, você vai explorar as dimensões física, psicológica e social
         speakers: [
           {
             autor: 'Ravi',
-            linkedin: '',
-            comunidade: '',
-            imgComunidade: '',
-            miniBiografia: '',
-
+            foto: '/2026/assets/images/ravi.jpeg',
+            linkedin: 'https://www.linkedin.com/in/raviresck/',
+            comunidade: 'Target Teal',
+            imgComunidade: '/2026/assets/images/target_teal.png',
+            miniBiografia: ''
           }
         ],
         cssClass: 'default'
@@ -115,7 +116,7 @@ No Ideathon Hack – Agile IA Challenge, você vai entrar em um desafio prático
             comunidade: 'WoHackers',
             imgComunidade: '/2026/assets/images/comunidade_wo_hackers.png',
             miniBiografia: '',
-
+            tags: ['Agilidade', 'Produto', 'Desenvolvimento', 'Tecnologia', 'Inteligência Artificial', 'Design', 'Liderança']
           }
         ],
         cssClass: 'default'
@@ -130,7 +131,7 @@ No Ideathon Hack – Agile IA Challenge, você vai entrar em um desafio prático
         location: 'Arena Comunidade',
         description: `E se a pauta mais relevante para você hoje viesse de quem está ao seu lado? ☕🚀
 No Lean Coffee, você traz os temas, dúvidas e desafios que realmente importam. Juntos, vamos priorizar as conversas e aprender com diferentes perspectivas e experiências. Uma oportunidade de trocar ideias, encontrar novos caminhos e sair com insights práticos para problemas reais do seu trabalho.`,
-        hasDescription: false,
+        hasDescription: true,
         capacity: false,
         speakers: [
           {
@@ -140,7 +141,7 @@ No Lean Coffee, você traz os temas, dúvidas e desafios que realmente importam.
             comunidade: 'AGILE CAMPINAS',
             imgComunidade: '/2026/assets/images/comunidade_agile_campinas.png',
             miniBiografia: '',
-
+            tags: ['Agilidade', 'Liderança', 'Produto']
           }
         ],
         cssClass: 'default'
@@ -155,16 +156,17 @@ No Lean Coffee, você traz os temas, dúvidas e desafios que realmente importam.
         location: 'Arena Comunidade',
         description: `O que faz uma comunidade ou grupo de trabalho ser relevante e duradouro? 🚀
 Venha explorar essa pergunta em um laboratório coletivo e interativo. A partir da experiência da Guilda no Itaú, casos reais, provocações e trocas com o público, vamos investigar o que sustenta participação, aprendizagem, crescimento e continuidade. Saia com novas perspectivas, critérios para avaliar a saúde desses grupos e ideias práticas para aplicar na sua realidade.`,
-        hasDescription: false,
+        hasDescription: true,
         capacity: false,
         speakers: [
           {
             autor: 'Andre',
-            linkedin: '',
+            foto: '/2026/assets/images/andre.jpeg',
+            linkedin: 'https://www.linkedin.com/in/andre-fernandes/',
             comunidade: '6eByte',
             imgComunidade: '/2026/assets/images/comunidade_6_byte.jpg',
             miniBiografia: '',
-
+            tags: ['Produto']
           }
         ],
         cssClass: 'default'

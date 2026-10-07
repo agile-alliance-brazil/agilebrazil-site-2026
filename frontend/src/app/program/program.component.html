@@ -40,8 +40,11 @@
             </p>
 
             <div class="autor" *ngIf="session.speakers?.length">
-                <div *ngIf="session.type !== 'Comunidade' || !session.speakers[0].comunidade" class="text-clicavel" (click)="openPopup(session, 2)">{{ session.speakers[0].autor }}</div>
-                <div *ngIf="session.type === 'Comunidade' && session.speakers[0].comunidade" class="text-clicavel" (click)="openPopup(session, 2)">{{ session.speakers[0].autor }} - {{ session.speakers[0].comunidade }}</div>
+                <div *ngIf="session.type !== 'Comunidade' || !session.speakers[0].comunidade" class="text-clicavel"
+                    (click)="openPopup(session, 2)">{{ session.speakers[0].autor }}</div>
+                <div *ngIf="session.type === 'Comunidade' && session.speakers[0].comunidade" class="text-clicavel"
+                    (click)="openPopup(session, 2)">{{ session.speakers[0].autor }} - {{ session.speakers[0].comunidade
+                    }}</div>
                 <ng-container *ngIf="session.speakers.length > 1">
                     &amp; <div class="text-clicavel" (click)="openPopup(session, 3)">{{ session.speakers[1].autor }}
                     </div>
@@ -314,7 +317,8 @@
                             <tr>
                                 <td>
                                     <div class="time card-program">
-                                        <p>{{ item.value.time.split(' ')[0] }}</p>
+                                        <p style="text-align: center;">{{ item.value.time.split(' ')[0] }} <br /> -
+                                            <br /> {{ item.value.time.split(' ')[2] }} </p>
                                     </div>
                                 </td>
                                 <td>
@@ -582,7 +586,8 @@
                             <tr>
                                 <td>
                                     <div class="time card-program">
-                                        <p>{{ item.value.time.split(' ')[0] }}</p>
+                                        <p style="text-align: center;">{{ item.value.time.split(' ')[0] }} <br /> -
+                                            <br /> {{ item.value.time.split(' ')[2] }} </p>
                                     </div>
                                 </td>
                                 <td>
@@ -639,8 +644,33 @@
                         style="max-width: 200px; display: block; margin: 20px auto;" />
 
                     <div *ngIf="modalSpeaker.comunidade" style="text-align: center; margin-bottom: 15px;">
-                        <span
-                            style="background-color: #147332; color: white; padding: 5px 10px; border-radius: 5px; font-size: 14px;">Agilidade</span>
+                        <ul class="icons hastag">
+                            <li *ngFor="let tag of modalSpeaker.tags">
+                                <span *ngIf="tag == 'Agilidade'" class="hastag-speakers agilidade">Agilidade</span>
+                                <span *ngIf="tag == 'Tecnologia'" class="hastag-speakers tecnologia">Tecnologia</span>
+                                <span *ngIf="tag == 'Produto'" class="hastag-speakers produto">Produto</span>
+                                <span *ngIf="tag == 'Desenvolvimento'"
+                                    class="hastag-speakers desenvolvimento">Desenvolvimento</span>
+                                <span *ngIf="tag == 'Design'" class="hastag-speakers design">Design</span>
+                                <span *ngIf="tag == 'Liderança'" class="hastag-speakers lideranca">Liderança</span>
+                                <span *ngIf="tag == 'Projetos'" class="hastag-speakers projetos">Projetos</span>
+                                <span *ngIf="tag == 'Estratégia'" class="hastag-speakers estrategia">Estratégia</span>
+                                <span *ngIf="tag == 'Governança'" class="hastag-speakers governanca">Governança</span>
+                                <span *ngIf="tag == 'Transformação Digital'"
+                                    class="hastag-speakers transformacao-digital">Transformação Digital</span>
+                                <span *ngIf="tag == 'Gestão'" class="hastag-speakers gestao">Gestão</span>
+                                <span *ngIf="tag == 'Inteligência Artificial'"
+                                    class="hastag-speakers inteligencia-artificial">Inteligência Artificial</span>
+                                <span *ngIf="tag == 'Inovação'" class="hastag-speakers inovacao">Inovação</span>
+                                <span *ngIf="tag == 'Carreira de mulheres'"
+                                    class="hastag-speakers carreira-mulheres">Carreira de
+                                    mulheres</span>
+                                <span *ngIf="tag == 'Transição de Carreira'"
+                                    class="hastag-speakers transicao-carreira">Transição de
+                                    Carreira</span>
+                                <span *ngIf="tag == 'Saúde'" class="hastag-speakers saude">Saúde</span>
+                            </li>
+                        </ul>
                     </div>
 
                     <ul style="margin: 0; text-align: center;" class="icons"

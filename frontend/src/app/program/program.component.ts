@@ -55,8 +55,8 @@ export class ProgramComponent{
   iniciarProgramacao(atualizar: boolean = false): void {
     this.isLoading = true;
     this.hasError = false;
-    const url = 'https://docs.google.com/spreadsheets/d/1azq9A98HoXqYvhavLLCH-pSFTBN9ZX6-oB3SCoNJUD0/gviz/tq?tqx=out:json';
-    // const url = 'https://insc.faculdadefacit.edu.br/agile_brazil_2026.php';
+    // const url = 'https://docs.google.com/spreadsheets/d/1azq9A98HoXqYvhavLLCH-pSFTBN9ZX6-oB3SCoNJUD0/gviz/tq?tqx=out:json';
+    const url = 'https://insc.faculdadefacit.edu.br/agile_brazil_2026.php';
 
     this.http.get(url, { responseType: 'text' }).subscribe({
       next: (responseText) => {
@@ -78,8 +78,8 @@ export class ProgramComponent{
 
   iniciarProgramacaoComunidade(): void {
     // TODO: substituir pela URL do proxy da planilha de programação da Arena Comunidades
-    const url = 'https://docs.google.com/spreadsheets/d/1DwFxCadmrpsm8sy_sHcG_zikrDyOzVTS0QotCGriZxY/gviz/tq?tqx=out:json';
-    // const url = 'https://insc.faculdadefacit.edu.br/agile_brazil_2026_comunidade_programacao.php';
+    // const url = 'https://docs.google.com/spreadsheets/d/1DwFxCadmrpsm8sy_sHcG_zikrDyOzVTS0QotCGriZxY/gviz/tq?tqx=out:json';
+    const url = 'https://insc.faculdadefacit.edu.br/agile_brazil_2026_comunidade_programacao.php';
 
     this.http.get(url, { responseType: 'text' }).subscribe({
       next: (responseText) => {

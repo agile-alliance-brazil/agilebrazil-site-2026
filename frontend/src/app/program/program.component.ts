@@ -7,6 +7,9 @@ export interface Speaker {
   miniBiografia: string;
   foto: string;
   linkedin: string | false;
+  comunidade?: string;
+  imgComunidade?: string;
+  tags?: string[];
 }
 
 export interface ProgramSession {
@@ -43,146 +46,7 @@ export class ProgramComponent{
   public modalSpeaker: Speaker | null = null;
   public modalViewType: 1 | 2 | 3 = 1; // 1 = Info Sessão, 2 = Speaker 1, 3 = Speaker 2
 
-  public comunityProgram = {
-    12: {
-      'identificacao-comunity-1045': {
-        id: 'identificacao-comunity-1045',
-        hourId: 'identificacao-comunity-1045',
-        time: '10:45 - 12:15',
-        title: 'Projeto Eu: OKRs para uma Vida Mais Saudável',
-        type: 'Comunidade',
-        track: 'Comunidade',
-        location: 'Arena Comunidades',
-        description: `E se você tratasse sua saúde como um objetivo estratégico?
-Nesta dinâmica, você vai explorar as dimensões física, psicológica e social da saúde, refletir sobre sua realidade por meio da Roda da Vida e transformar suas reflexões em OKRs pessoais de saúde. Uma experiência prática para sair da intenção e construir um plano concreto de cuidado com você.`,
-        hasDescription: true,
-        capacity: false,
-        speakers: [
-          {
-            autor: 'Alle Petra',
-            foto: '/2026/assets/images/alessandrapetra.jpeg',
-            linkedin: 'https://www.linkedin.com/in/alessandrapetra/',
-            comunidade: 'Agile Health Care',
-            imgComunidade: '/2026/assets/images/agile_healthcare.png',
-            miniBiografia: 'Alle Petra é Agile Coach.',
-            tags: ['Agilidade', 'Liderança', 'Saúde']
-
-          }
-        ],
-        cssClass: 'default'
-      },
-      'identificacao-comunity-1430': {
-        id: 'identificacao-comunity-1430',
-        hourId: 'identificacao-comunity-1430',
-        time: '14:30 - 16:30',
-        title: 'Workshop Design Organizacional',
-        type: 'Comunidade',
-        track: 'Comunidade',
-        location: 'Arena Comunidades',
-        description: `Vamos mergulhar nos aspectos políticos e simbólicos que todo agente de mudança precisa dominar para gerar impacto de verdade, mas que muitas vezes acabam ignorados na correria do dia a dia.
-Vem repensar a agilidade com foco nas pessoas e na realidade das organizações.`,
-        hasDescription: true,
-        capacity: false,
-        speakers: [
-          {
-            autor: 'Ravi',
-            foto: '/2026/assets/images/ravi.jpeg',
-            linkedin: 'https://www.linkedin.com/in/raviresck/',
-            comunidade: 'Target Teal',
-            imgComunidade: '/2026/assets/images/target_teal.png',
-            miniBiografia: ''
-          }
-        ],
-        cssClass: 'default'
-      }
-    },
-    13: {
-      'identificacao-comunity-1045': {
-        id: 'identificacao-comunity-1045',
-        hourId: 'identificacao-comunity-1045',
-        time: '10:45 - 13:15',
-        title: 'Ideathon Hack - Agile IA Challenge',
-        type: 'Comunidade',
-        track: 'Comunidade',
-        location: 'Arena Comunidade',
-        description: `Você consegue transformar uma dor real em uma solução em apenas 2h30? ⚡
-No Ideathon Hack – Agile IA Challenge, você vai entrar em um desafio prático, passar pelas etapas do game e construir uma solução para uma necessidade real, ao vivo e em equipe. Uma experiência para experimentar, criar, testar e entregar com agilidade e IA na prática!`,
-        hasDescription: true,
-        capacity: false,
-        speakers: [
-          {
-            autor: 'Cris',
-            foto: '/2026/assets/images/cristianecursino.jpeg',
-            linkedin: 'https://www.linkedin.com/in/cristianecursino/',
-            comunidade: 'WoHackers',
-            imgComunidade: '/2026/assets/images/comunidade_wo_hackers.png',
-            miniBiografia: '',
-            tags: ['Agilidade', 'Produto', 'Desenvolvimento', 'Tecnologia', 'Inteligência Artificial', 'Design', 'Liderança']
-          }
-        ],
-        cssClass: 'default'
-      },
-      'identificacao-comunity-1430': {
-        id: 'identificacao-comunity-1430',
-        hourId: 'identificacao-comunity-1430',
-        time: '14:30 - 15:30',
-        title: 'Lean Coffee',
-        type: 'Comunidade',
-        track: 'Comunidade',
-        location: 'Arena Comunidade',
-        description: `E se a pauta mais relevante para você hoje viesse de quem está ao seu lado? ☕🚀
-No Lean Coffee, você traz os temas, dúvidas e desafios que realmente importam. Juntos, vamos priorizar as conversas e aprender com diferentes perspectivas e experiências. Uma oportunidade de trocar ideias, encontrar novos caminhos e sair com insights práticos para problemas reais do seu trabalho.`,
-        hasDescription: true,
-        capacity: false,
-        speakers: [
-          {
-            autor: 'Baldin',
-            foto: '/2026/assets/images/fabiobaldin.jpeg',
-            linkedin: 'https://www.linkedin.com/in/fabiobaldin/',
-            comunidade: 'AGILE CAMPINAS',
-            imgComunidade: '/2026/assets/images/comunidade_agile_campinas.png',
-            miniBiografia: '',
-            tags: ['Agilidade', 'Liderança', 'Produto']
-          }
-        ],
-        cssClass: 'default'
-      },
-      'identificacao-comunity-1530': {
-        id: 'identificacao-comunity-1530',
-        hourId: 'identificacao-comunity-1530',
-        time: '15:40 - 16:40',
-        title: 'Laboratório Coletivo da Guilda no Itaú ser Relevante e Duradoura',
-        type: 'Comunidade',
-        track: 'Comunidade',
-        location: 'Arena Comunidade',
-        description: `O que faz uma comunidade ou grupo de trabalho ser relevante e duradouro? 🚀
-Venha explorar essa pergunta em um laboratório coletivo e interativo. A partir da experiência da Guilda no Itaú, casos reais, provocações e trocas com o público, vamos investigar o que sustenta participação, aprendizagem, crescimento e continuidade. Saia com novas perspectivas, critérios para avaliar a saúde desses grupos e ideias práticas para aplicar na sua realidade.`,
-        hasDescription: true,
-        capacity: false,
-        speakers: [
-          {
-            autor: 'André',
-            foto: '/2026/assets/images/andre.jpeg',
-            linkedin: 'https://www.linkedin.com/in/andre-fernandes/',
-            comunidade: '6eByte',
-            imgComunidade: '/2026/assets/images/comunidade_6_byte.jpg',
-            miniBiografia: '',
-            tags: ['Produto']
-          },
-          {
-            autor: 'Sérgio',
-            foto: '/2026/assets/images/sergiordesouza.jpeg',
-            linkedin: 'https://www.linkedin.com/in/sergiordesouza/',
-            comunidade: '6eByte',
-            imgComunidade: '/2026/assets/images/comunidade_6_byte.jpg',
-            miniBiografia: '',
-            tags: ['Produto']
-          }
-        ],
-        cssClass: 'default'
-      }
-    }
-  };
+  public comunityProgram: Record<number, Record<string, ProgramSession>> = { 12: {}, 13: {} };
 
   ngOnInit(): void {
     this.iniciarProgramacao();
@@ -191,8 +55,8 @@ Venha explorar essa pergunta em um laboratório coletivo e interativo. A partir 
   iniciarProgramacao(atualizar: boolean = false): void {
     this.isLoading = true;
     this.hasError = false;
-    // const url = 'https://docs.google.com/spreadsheets/d/1azq9A98HoXqYvhavLLCH-pSFTBN9ZX6-oB3SCoNJUD0/gviz/tq?tqx=out:json';
-    const url = 'https://insc.faculdadefacit.edu.br/agile_brazil_2026.php';
+    const url = 'https://docs.google.com/spreadsheets/d/1azq9A98HoXqYvhavLLCH-pSFTBN9ZX6-oB3SCoNJUD0/gviz/tq?tqx=out:json';
+    // const url = 'https://insc.faculdadefacit.edu.br/agile_brazil_2026.php';
 
     this.http.get(url, { responseType: 'text' }).subscribe({
       next: (responseText) => {
@@ -208,6 +72,82 @@ Venha explorar essa pergunta em um laboratório coletivo e interativo. A partir 
         this.isLoading = false;
       }
     });
+
+    this.iniciarProgramacaoComunidade();
+  }
+
+  iniciarProgramacaoComunidade(): void {
+    // TODO: substituir pela URL do proxy da planilha de programação da Arena Comunidades
+    const url = 'https://docs.google.com/spreadsheets/d/1DwFxCadmrpsm8sy_sHcG_zikrDyOzVTS0QotCGriZxY/gviz/tq?tqx=out:json';
+    // const url = 'https://insc.faculdadefacit.edu.br/agile_brazil_2026_comunidade_programacao.php';
+
+    this.http.get(url, { responseType: 'text' }).subscribe({
+      next: (responseText) => {
+        const jsonString = responseText.slice(responseText.indexOf('setResponse(') + 'setResponse('.length, responseText.lastIndexOf(')'));
+        const responseJSON = JSON.parse(jsonString);
+
+        this.processarDadosPlanilhaComunidade(responseJSON.table.rows);
+      },
+      error: (err) => {
+        console.error('Erro ao buscar programação da comunidade', err);
+      }
+    });
+  }
+
+  // Colunas: Dia, Horário, ID, Local, Título, Descrição, Capacidade,
+  // depois 7 colunas por palestrante (Nome, Foto, Mini Biografia, LinkedIn, Comunidade, Imagem Comunidade, Tags)
+  private processarDadosPlanilhaComunidade(rows: any[]): void {
+    this.comunityProgram = { 12: {}, 13: {} };
+
+    rows.forEach(rowNode => {
+      const row = rowNode.c.map((prop: any) => prop ? prop.v : null);
+      const day = row[0];
+      const time = row[1];
+      const id = row[2];
+      const location = row[3];
+      const title = row[4] ?? 'Em definição';
+      const description = row[5];
+      const capacity = row[6];
+
+      if (!id) return;
+
+      if (!this.comunityProgram[day]) {
+        this.comunityProgram[day] = {};
+      }
+
+      const speakers: Speaker[] = [];
+
+      [7, 14].forEach(col => {
+        if (!row[col] || row[col] === '-') return;
+
+        speakers.push({
+          autor: row[col],
+          foto: this.formatarUrlImagem(row[col + 1]),
+          miniBiografia: row[col + 2] ?? '',
+          linkedin: row[col + 3] ? (row[col + 3].includes('http') ? row[col + 3] : `https://${row[col + 3]}`) : false,
+          comunidade: row[col + 4],
+          imgComunidade: this.formatarUrlImagem(row[col + 5]),
+          tags: row[col + 6] ? String(row[col + 6]).split(',').map((tag: string) => tag.trim()).filter(Boolean) : []
+        });
+      });
+
+      this.comunityProgram[day][id] = {
+        id,
+        hourId: id,
+        time,
+        title,
+        type: 'Comunidade',
+        track: 'Comunidade',
+        location,
+        description,
+        hasDescription: !!description,
+        capacity: capacity ?? false,
+        speakers,
+        cssClass: 'default'
+      };
+    });
+
+    console.log('Programação da comunidade carregada:', this.comunityProgram);
   }
 
   private processarDadosPlanilha(rows: any[]): void {

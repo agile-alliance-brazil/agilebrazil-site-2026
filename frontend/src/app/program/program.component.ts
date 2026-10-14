@@ -161,9 +161,18 @@ Venha explorar essa pergunta em um laboratório coletivo e interativo. A partir 
         capacity: false,
         speakers: [
           {
-            autor: 'Andre',
+            autor: 'André',
             foto: '/2026/assets/images/andre.jpeg',
             linkedin: 'https://www.linkedin.com/in/andre-fernandes/',
+            comunidade: '6eByte',
+            imgComunidade: '/2026/assets/images/comunidade_6_byte.jpg',
+            miniBiografia: '',
+            tags: ['Produto']
+          },
+          {
+            autor: 'Sérgio',
+            foto: '/2026/assets/images/sergiordesouza.jpeg',
+            linkedin: 'https://www.linkedin.com/in/sergiordesouza/',
             comunidade: '6eByte',
             imgComunidade: '/2026/assets/images/comunidade_6_byte.jpg',
             miniBiografia: '',

@@ -46,8 +46,10 @@
                     (click)="openPopup(session, 2)">{{ session.speakers[0].autor }} - {{ session.speakers[0].comunidade
                     }}</div>
                 <ng-container *ngIf="session.speakers.length > 1">
-                    &amp; <div class="text-clicavel" (click)="openPopup(session, 3)">{{ session.speakers[1].autor }}
-                    </div>
+                    &amp;
+                    <div *ngIf="session.type !== 'Comunidade'" class="text-clicavel" (click)="openPopup(session, 3)">{{ session.speakers[1].autor }}</div>
+                    <div *ngIf="session.type === 'Comunidade'" class="text-clicavel" (click)="openPopup(session, 3)">{{ session.speakers[1].autor }} - {{ session.speakers[1].comunidade
+                    }}</div>
                 </ng-container>
             </div>
 
@@ -129,7 +131,7 @@
                     <tbody>
                         <tr>
                             <td>
-                                <div id="identificacao-900-0" class="time card-program">9:00</div>
+                                <div id="identificacao-900-0" class="time card-program">{{dataProgram[currentDay]?.['identificacao-900'].time}}</div>
                             </td>
                             <td colspan="6" id="identificacao-900">
                                 <ng-container
@@ -138,7 +140,7 @@
                         </tr>
                         <tr>
                             <td style="align-content: center;">
-                                <div id="identificacao-1020-0" class="time card-program">10:20</div>
+                                <div id="identificacao-1020-0" class="time card-program">{{dataProgram[currentDay]?.['identificacao-1020'].time}}</div>
                             </td>
                             <td colspan="6" id="identificacao-1020">
                                 <ng-container
@@ -148,7 +150,7 @@
                         <tr>
                             <td>
                                 <div id="identificacao-1045-0" class="time card-program">
-                                    <p>10:45</p>
+                                    {{dataProgram[currentDay]?.['identificacao-1045-1'].time}}
                                 </div>
                             </td>
                             <td id="identificacao-1045-1"><ng-container
@@ -170,7 +172,7 @@
                         <tr>
                             <td>
                                 <div id="identificacao-1120-0" class="time card-program">
-                                    <p>11:20</p>
+                                    {{dataProgram[currentDay]?.['identificacao-1120-1'].time}}
                                 </div>
                             </td>
                             <td id="identificacao-1120-1"><ng-container
@@ -186,7 +188,7 @@
                         <tr>
                             <td>
                                 <div id="identificacao-1155-0" class="time card-program">
-                                    <p>11:55</p>
+                                    {{dataProgram[currentDay]?.['identificacao-1155-1'].time}}
                                 </div>
                             </td>
                             <td id="identificacao-1155-1"><ng-container
@@ -202,7 +204,7 @@
                         <tr>
                             <td>
                                 <div id="identificacao-1230-0" class="time card-program">
-                                    <p>12:30</p>
+                                    {{dataProgram[currentDay]?.['identificacao-1230-1'].time}}
                                 </div>
                             </td>
                             <td id="identificacao-1230-1"><ng-container
@@ -217,7 +219,7 @@
                         </tr>
                         <tr>
                             <td style="align-content: center;">
-                                <div id="identificacao-1300-0" class="time card-program">13:00</div>
+                                <div id="identificacao-1300-0" class="time card-program">{{dataProgram[currentDay]?.['identificacao-1300'].time}}</div>
                             </td>
                             <td colspan="6" id="identificacao-1300">
                                 <ng-container
@@ -227,7 +229,7 @@
                         <tr>
                             <td>
                                 <div id="identificacao-1430-0" class="time card-program">
-                                    <p>14:30</p>
+                                    {{dataProgram[currentDay]?.['identificacao-1430-1'].time}}
                                 </div>
                             </td>
                             <td id="identificacao-1430-1"><ng-container
@@ -249,7 +251,7 @@
                         <tr>
                             <td>
                                 <div id="identificacao-1510-0" class="time card-program">
-                                    <p>15:10</p>
+                                    {{dataProgram[currentDay]?.['identificacao-1510-1'].time}}
                                 </div>
                             </td>
                             <td id="identificacao-1510-1"><ng-container
@@ -265,7 +267,7 @@
                         <tr>
                             <td>
                                 <div id="identificacao-1550-0" class="time card-program">
-                                    <p>15:50</p>
+                                    {{dataProgram[currentDay]?.['identificacao-1550-1'].time}}
                                 </div>
                             </td>
                             <td id="identificacao-1550-1"><ng-container
@@ -280,7 +282,7 @@
                         </tr>
                         <tr>
                             <td style="align-content: center;">
-                                <div id="identificacao-1630-0" class="time card-program">16:30</div>
+                                <div id="identificacao-1630-0" class="time card-program">{{dataProgram[currentDay]?.['identificacao-1630'].time}}</div>
                             </td>
                             <td colspan="6" id="identificacao-1630">
                                 <ng-container
@@ -289,7 +291,7 @@
                         </tr>
                         <tr>
                             <td>
-                                <div id="identificacao-1700-0" class="time card-program">17:10</div>
+                                <div id="identificacao-1700-0" class="time card-program">{{dataProgram[currentDay]?.['identificacao-1700'].time}}</div>
                             </td>
                             <td colspan="6" id="identificacao-1700">
                                 <ng-container
@@ -336,7 +338,7 @@
                     <tbody>
                         <tr>
                             <td>
-                                <div id="identificacao-900-0" class="time card-program">9:00</div>
+                                <div id="identificacao-900-0" class="time card-program">{{dataProgram[currentDay]?.['identificacao-900'].time}}</div>
                             </td>
                             <td id="identificacao-900">
                                 <ng-container
@@ -345,7 +347,7 @@
                         </tr>
                         <tr>
                             <td style="align-content: center;">
-                                <div id="identificacao-1020-0" class="time card-program">10:20</div>
+                                <div id="identificacao-1020-0" class="time card-program">{{dataProgram[currentDay]?.['identificacao-1020'].time}}</div>
                             </td>
                             <td id="identificacao-1020">
                                 <ng-container
@@ -355,7 +357,7 @@
                         <tr>
                             <td rowspan="3">
                                 <div id="identificacao-1045-0" class="time card-program">
-                                    <p>10:45</p>
+                                    {{dataProgram[currentDay]?.['identificacao-1045-1'].time}}
                                 </div>
                             </td>
                             <td id="identificacao-1045-1"><ng-container
@@ -375,7 +377,7 @@
                         <tr>
                             <td rowspan="3">
                                 <div id="identificacao-1120-0" class="time card-program">
-                                    <p>11:20</p>
+                                    {{dataProgram[currentDay]?.['identificacao-1120-1'].time}}
                                 </div>
                             </td>
                             <td id="identificacao-1120-1"><ng-container
@@ -395,7 +397,7 @@
                         <tr>
                             <td rowspan="3">
                                 <div id="identificacao-1155-0" class="time card-program">
-                                    <p>11:55</p>
+                                    {{dataProgram[currentDay]?.['identificacao-1155-1'].time}}
                                 </div>
                             </td>
                             <td id="identificacao-1155-1"><ng-container
@@ -415,7 +417,7 @@
                         <tr>
                             <td rowspan="3">
                                 <div id="identificacao-1230-0" class="time card-program">
-                                    <p>12:30</p>
+                                    {{dataProgram[currentDay]?.['identificacao-1230-1'].time}}
                                 </div>
                             </td>
                             <td id="identificacao-1230-1"><ng-container
@@ -434,7 +436,7 @@
                         </tr>
                         <tr>
                             <td style="align-content: center;">
-                                <div id="identificacao-1300-0" class="time card-program">13:00</div>
+                                <div id="identificacao-1300-0" class="time card-program">{{dataProgram[currentDay]?.['identificacao-1300'].time}}</div>
                             </td>
                             <td id="identificacao-1300">
                                 <ng-container
@@ -444,7 +446,7 @@
                         <tr>
                             <td rowspan="3">
                                 <div id="identificacao-1430-0" class="time card-program">
-                                    <p>14:30</p>
+                                    {{dataProgram[currentDay]?.['identificacao-1430-1'].time}}
                                 </div>
                             </td>
                             <td id="identificacao-1430-1"><ng-container
@@ -464,7 +466,7 @@
                         <tr>
                             <td rowspan="3">
                                 <div id="identificacao-1510-0" class="time card-program">
-                                    <p>15:10</p>
+                                    {{dataProgram[currentDay]?.['identificacao-1510-1'].time}}
                                 </div>
                             </td>
                             <td id="identificacao-1510-1"><ng-container
@@ -484,7 +486,7 @@
                         <tr>
                             <td rowspan="3">
                                 <div id="identificacao-1550-0" class="time card-program">
-                                    <p>15:50</p>
+                                    {{dataProgram[currentDay]?.['identificacao-1550-1'].time}}
                                 </div>
                             </td>
                             <td id="identificacao-1550-1"><ng-container
@@ -503,7 +505,7 @@
                         </tr>
                         <tr>
                             <td style="align-content: center;">
-                                <div id="identificacao-1630-0" class="time card-program">16:30</div>
+                                <div id="identificacao-1630-0" class="time card-program">{{dataProgram[currentDay]?.['identificacao-1630'].time}}</div>
                             </td>
                             <td id="identificacao-1630">
                                 <ng-container
@@ -512,7 +514,7 @@
                         </tr>
                         <tr>
                             <td>
-                                <div id="identificacao-1700-0" class="time card-program">17:10</div>
+                                <div id="identificacao-1700-0" class="time card-program">{{dataProgram[currentDay]?.['identificacao-1700'].time}}</div>
                             </td>
                             <td id="identificacao-1700">
                                 <ng-container
@@ -539,7 +541,7 @@
                         <tr>
                             <td rowspan="2">
                                 <div id="identificacao-1045-0" class="time card-program">
-                                    <p>10:45</p>
+                                    {{dataProgram[currentDay]?.['identificacao-1045-5'].time}}
                                 </div>
                             </td>
                             <td id="identificacao-1045-5"><ng-container
@@ -554,7 +556,7 @@
                         <tr>
                             <td rowspan="2">
                                 <div id="identificacao-1430-0" class="time card-program">
-                                    <p>14:30</p>
+                                    {{dataProgram[currentDay]?.['identificacao-1430-5'].time}}
                                 </div>
                             </td>
                             <td id="identificacao-1430-5"><ng-container

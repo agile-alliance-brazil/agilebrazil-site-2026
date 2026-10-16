@@ -51,6 +51,13 @@ export class HomeComponent implements OnInit, OnDestroy {
       instagram: 'https://www.instagram.com/manuel.team.topologies/',
       linkedin: 'https://www.linkedin.com/in/manuelpais/',
       twitter: 'https://x.com/manupaisable'
+    },
+    {
+      name: 'Adrielle Malaggi',
+      function: 'Empresária,Palestrante,Influenciadora,Mentora, Arquiteta',
+      description: 'Influencer digital , empresária , mentora, casada , cristã , e hoje quero te mostrar como o poder da influência nas redes sociais pode transformar vidas e negócios. Minha trajetória começou como modelo Miss, mas foi no mundo digital que descobri meu verdadeiro propósito. Enfrentei desafios profundos — estive na UTI, usei bolsa de colostomia e vi minha vida virar de cabeça para baixo. Mas escolhi não desistir. Transformei dor em força, e hoje lidero uma agência que conecta marcas a influenciadores, ajudando empresas a crescer através de conexões reais e estratégicas.',
+      imageUrl: '/2026/assets/images/adrielle_malaggi.png',
+      instagram: 'https://www.instagram.com/adriellemalaggi/'
     }
   ];
 

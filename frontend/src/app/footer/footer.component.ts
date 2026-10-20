@@ -18,7 +18,7 @@ export class FooterComponent {
     },
      {
       name: 'K21',
-      imageUrl: '/2026/assets/images/sponsors/k21.png',
+      imageUrl: '/2026/assets/images/k21.png',
       nivel: 'Gold',
       link: 'https://br.k21.global/'
     },
@@ -27,6 +27,12 @@ export class FooterComponent {
       imageUrl: '/2026/assets/images/osagilistasdti.png',
       nivel: 'Silver',
       link: 'https://osagilistas.com/'
+    },
+    {
+      name: 'Improvee',
+      imageUrl: '/2026/assets/images/improvee.png',
+      nivel: 'Silver',
+      link: 'https://improvee.com.br/'
     }
   ];
 

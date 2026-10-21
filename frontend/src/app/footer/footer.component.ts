@@ -11,6 +11,12 @@ declare var RDStationForms: any;
 export class FooterComponent {
   patrocinadores = [
     {
+      name: 'GLOBO',
+      imageUrl: '/2026/assets/images/globo.png',
+      nivel: 'Platinum',
+      link: 'https://www.globo.com/'
+    },
+    {
       name: 'Gino Terentim',
       imageUrl: '/2026/assets/images/ginoterentim.png',
       nivel: 'Gold',
@@ -42,5 +48,9 @@ export class FooterComponent {
 
    get patrocinadoresPrata() {
     return this.patrocinadores.filter(patrocinador => patrocinador.nivel === 'Silver');
+  }
+
+   get patrocinadoresPlatinum() {
+    return this.patrocinadores.filter(patrocinador => patrocinador.nivel === 'Platinum');
   }
 }

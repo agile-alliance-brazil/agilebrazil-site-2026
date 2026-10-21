@@ -39,6 +39,12 @@ export class FooterComponent {
       imageUrl: '/2026/assets/images/improvee.png',
       nivel: 'Silver',
       link: 'https://improvee.com.br/'
+    },
+    {
+      name: 'Elegant Garden',
+      imageUrl: '/2026/assets/images/elegantgarden.png',
+      nivel: 'Silver',
+      link: 'https://elegantgarden.software/'
     }
   ];
 

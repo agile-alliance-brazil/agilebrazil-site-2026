@@ -32,6 +32,16 @@
                 </a>
         </div>
     </div>
+    <h1>Parceiros Locais</h1>
+    <div class="session-sponsor">
+        <div class="profile" style="max-width: 100px !important; min-width: 100px !important; width: 20%;"
+            *ngFor="let patrocinador of patrocinadoresLocalPartner">
+                <a href="{{patrocinador.link}}" title="{{patrocinador.name}}" target="_blank">
+                    <img style="max-width: 90% !important; max-height: 90% !important; border-radius: 0% !important;"
+                        class="image-speaker" src="{{patrocinador.imageUrl}}" />
+                </a>
+        </div>
+    </div>
 </section>
 
 <footer class="site-footer">

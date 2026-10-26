@@ -45,6 +45,18 @@ export class FooterComponent {
       imageUrl: '/2026/assets/images/elegantgarden.png',
       nivel: 'Silver',
       link: 'https://elegantgarden.software/'
+    },
+    {
+      name: 'Iguassu Valley',
+      imageUrl: '/2026/assets/images/iguassu_valley.png',
+      nivel: 'Local Partner',
+      link: 'https://iguassuvalley.com/'
+    },
+    {
+      name: 'UNIHUB Foz do Iguaçu',
+      imageUrl: '/2026/assets/images/unihub.png',
+      nivel: 'Local Partner',
+      link: 'https://foz-unihub.unioeste.br/'
     }
   ];
 
@@ -58,5 +70,9 @@ export class FooterComponent {
 
    get patrocinadoresPlatinum() {
     return this.patrocinadores.filter(patrocinador => patrocinador.nivel === 'Platinum');
+  }
+
+   get patrocinadoresLocalPartner() {
+    return this.patrocinadores.filter(patrocinador => patrocinador.nivel === 'Local Partner');
   }
 }

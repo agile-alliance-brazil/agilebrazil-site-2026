@@ -57,7 +57,7 @@ PROGRAMAÇÃO V2
 
         th {
             &.horario { width: 9%; }
-            &.trilhas { width: 13%; }
+            &.trilhas { width: 30%; }
         }
 
         /*tr {
@@ -112,6 +112,12 @@ PROGRAMAÇÃO V2
                     margin-bottom: 10px !important;
                     border-bottom: solid 1px;
                 }
+            }
+
+            div.horario-sessao {
+                font-size: 15px;
+                font-weight: bold;
+                margin: 0 5px;
             }
 
             div.autor {

@@ -39,7 +39,8 @@ export class SpeakerComponent implements OnInit {
   iniciarProgramacao(): void {
     this.isLoading = true;
     this.hasError = false;
-    const url = 'https://insc.faculdadefacit.edu.br/agile_brazil_2026.php';
+    const url = 'https://docs.google.com/spreadsheets/d/1n8AK2Pp4CbYo1A6V4431wGjTcXYjw4Dqi57khjqaqvQ/gviz/tq?tqx=out:json';
+    // const url = 'https://insc.faculdadefacit.edu.br/agile_brazil_2026.php';
 
     this.http.get(url, { responseType: 'text' }).subscribe({
       next: (responseText) => {

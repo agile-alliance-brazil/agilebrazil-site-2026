@@ -25,6 +25,21 @@ export interface ProgramSession {
   hasDescription: boolean;
   capacity: number | boolean;
   speakers: Speaker[];
+  fullWidth?: boolean;
+  endTime?: string;
+}
+
+export interface ScheduleCell {
+  session: ProgramSession;
+  rowspan: number;
+}
+
+// Linha da grade: ou uma sessão ocupando todas as colunas (keynote, coffee, almoço...)
+// ou uma célula por sala (undefined = vazia, null = coberta pelo rowspan de uma sessão anterior)
+export interface ScheduleRow {
+  time: string;
+  fullWidth?: ProgramSession;
+  cells: (ScheduleCell | undefined | null)[];
 }
 
 @Component({
@@ -39,7 +54,12 @@ export class ProgramComponent{
   public isLoading: boolean = false;
   public hasError: boolean = false;
 
-  public dataProgram: Record<number, ProgramSession[]> = { 12: [], 13: [] };
+  public dataProgram: Record<number, Record<string, ProgramSession>> = { 12: {}, 13: {} };
+
+  // Sufixo do ID (identificacao-HHMM-N) de cada coluna da grade: 2 palcos + sala de workshop
+  private readonly columnSuffixes = ['1', '2', '3'];
+  public rooms: Record<number, string[]> = { 12: [], 13: [] };
+  public schedule: Record<number, ScheduleRow[]> = { 12: [], 13: [] };
 
   public isModalOpen: boolean = false;
   public modalSession: ProgramSession | null = null;
@@ -55,8 +75,8 @@ export class ProgramComponent{
   iniciarProgramacao(atualizar: boolean = false): void {
     this.isLoading = true;
     this.hasError = false;
-    // const url = 'https://docs.google.com/spreadsheets/d/1azq9A98HoXqYvhavLLCH-pSFTBN9ZX6-oB3SCoNJUD0/gviz/tq?tqx=out:json';
-    const url = 'https://insc.faculdadefacit.edu.br/agile_brazil_2026.php';
+    const url = 'https://docs.google.com/spreadsheets/d/1n8AK2Pp4CbYo1A6V4431wGjTcXYjw4Dqi57khjqaqvQ/gviz/tq?tqx=out:json';
+    // const url = 'https://insc.faculdadefacit.edu.br/agile_brazil_2026.php';
 
     this.http.get(url, { responseType: 'text' }).subscribe({
       next: (responseText) => {
@@ -151,7 +171,7 @@ export class ProgramComponent{
   }
 
   private processarDadosPlanilha(rows: any[]): void {
-    this.dataProgram = { 12: [], 13: [] };
+    this.dataProgram = { 12: {}, 13: {} };
 
     rows.forEach(rowNode => {
       const row = rowNode.c.map((prop: any) => prop ? prop.v : null);
@@ -166,8 +186,10 @@ export class ProgramComponent{
       const description = row[7];
       const capacity = row[16];
 
+      if (!id) return;
+
       if (!this.dataProgram[day]) {
-        this.dataProgram[day] = [];
+        this.dataProgram[day] = {};
       }
 
       const speakers: Speaker[] = [];
@@ -202,11 +224,78 @@ export class ProgramComponent{
         hasDescription: !!row[10] || !!description,
         capacity: capacity ?? false,
         speakers,
-        cssClass
+        cssClass,
+        fullWidth: id.split('-').length === 2,
+        endTime: this.formatarMinutos(this.paraMinutos(time) + this.getDuracao(type))
       };
     });
 
+    Object.keys(this.dataProgram).forEach(day => this.montarGrade(Number(day)));
+
     console.log('Programação carregada:', this.dataProgram);
+  }
+
+  // Monta as linhas da grade a partir dos horários de início das sessões dos palcos.
+  // Sessões mais longas (workshops) ocupam todas as linhas que começam antes do seu término.
+  private montarGrade(day: number): void {
+    const sessions = Object.values(this.dataProgram[day]);
+    const columnOf = (session: ProgramSession) => this.columnSuffixes.indexOf(session.id.split('-')[2]);
+    const isWorkshopColumn = (column: number) => column === this.columnSuffixes.length - 1;
+
+    const rowTimes = Array.from(new Set(
+      sessions
+        .filter(session => session.fullWidth || (columnOf(session) >= 0 && !isWorkshopColumn(columnOf(session))))
+        .map(session => this.paraMinutos(session.time))
+    )).sort((a, b) => a - b);
+
+    const rows: ScheduleRow[] = rowTimes.map(minutes => ({
+      time: this.formatarMinutos(minutes),
+      cells: this.columnSuffixes.map(() => undefined)
+    }));
+
+    sessions.filter(session => session.fullWidth).forEach(session => {
+      rows[rowTimes.indexOf(this.paraMinutos(session.time))].fullWidth = session;
+    });
+
+    sessions.filter(session => !session.fullWidth && columnOf(session) >= 0).forEach(session => {
+      const column = columnOf(session);
+      const start = this.paraMinutos(session.time);
+      const end = this.paraMinutos(session.endTime);
+      const first = rowTimes.findIndex(minutes => minutes >= start);
+      if (first < 0 || rows[first].fullWidth) return;
+
+      // Ocupa as linhas seguintes até o término da sessão, sem atravessar keynotes/intervalos
+      let rowspan = 1;
+      while (first + rowspan < rows.length && rowTimes[first + rowspan] < end && !rows[first + rowspan].fullWidth) {
+        rows[first + rowspan].cells[column] = null;
+        rowspan++;
+      }
+      rows[first].cells[column] = { session, rowspan };
+    });
+
+    this.schedule[day] = rows;
+    this.rooms[day] = this.columnSuffixes.map((_, column) =>
+      sessions.find(session => !session.fullWidth && columnOf(session) === column)?.location ?? '');
+  }
+
+  // Sessões que começam em cada linha, na ordem das salas (usado na versão mobile)
+  public sessoesDaLinha(row: ScheduleRow): ProgramSession[] {
+    return row.fullWidth ? [row.fullWidth] : row.cells.filter(cell => !!cell).map(cell => cell.session);
+  }
+
+  private paraMinutos(time: string): number {
+    const [hours, minutes] = String(time ?? '0:0').split(':').map(Number);
+    return hours * 60 + (minutes || 0);
+  }
+
+  private formatarMinutos(total: number): string {
+    return `${String(Math.floor(total / 60)).padStart(2, '0')}:${String(total % 60).padStart(2, '0')}`;
+  }
+
+  // Duração em minutos a partir do tipo (ex.: 'Palestra 30', 'Workshop 70')
+  private getDuracao(type: string): number {
+    const duration = Number(String(type ?? '').match(/\d+/)?.[0]);
+    return duration || 30;
   }
 
   public setDay(day: number): void {
@@ -250,6 +339,8 @@ export class ProgramComponent{
       case 'FA': return 'Future AI/Agility';
       case 'RA': return 'Raizes da Agilidade';
       case 'PFC': return 'Produto e Foco no Cliente';
+      case 'Convidado': return 'Convidado';
+      case 'Patrocinador': return 'Painel Executivo';
       default: return null;
     }
   }
@@ -260,7 +351,8 @@ export class ProgramComponent{
       case 'FA': return 'futuro';
       case 'RA': return 'raizes';
       case 'PFC': return 'cliente';
-      case 'Painel Executivo': return 'executivo';
+      case 'Painel Executivo':
+      case 'Patrocinador': return 'executivo';
       case 'Arena Comunidades': return 'default';
       default: return 'default';
     }

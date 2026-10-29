@@ -1,21 +1,6 @@
 <!-- 1. TEMPLATE REUTILIZÁVEL (Substitui o jQuery HTML Injection) -->
-<ng-template #sessionCard let-id="id" let-isComunity="isComunity">
-    <ng-container *ngIf="(isComunity ? comunityProgram[currentDay]?.[id] : dataProgram[currentDay]?.[id]) as session">
-
-        <!-- COFFEE / ALMOÇO -->
-        <div *ngIf="session.type === 'Coffee' || session.type === 'Almoço'" class="activity full-space card-program">
-            {{ session.title }}
-        </div>
-
-        <!-- INTERVALO -->
-        <div *ngIf="session.type === 'Intervalo'" class="interval card-program">
-            {{ session.title }}
-        </div>
-
-        <!-- ENCERRAMENTO -->
-        <div *ngIf="session.type === 'Encerramento'" class="activity full-space card-program">
-            <div style="font-weight: bold; font-size: 18px;">{{ session.title }}</div>
-        </div>
+<ng-template #sessionCard let-session="session">
+    <ng-container *ngIf="session">
 
         <!-- KEYNOTE -->
         <div *ngIf="session.type === 'Keynote'" class="activity full-space keynote card-program">
@@ -24,13 +9,18 @@
             </div>
         </div>
 
-        <!-- PALESTRAS / WORKSHOPS / ETC -->
-        <div *ngIf="['Palestra 30', 'Workshop 120', 'Comunidade', 'Geral', 'TBD', 'Pitch'].includes(session.type)"
-            class="activity card-program" [ngClass]="session.cssClass">
+        <!-- COFFEE / ALMOÇO / ENCERRAMENTO -->
+        <div *ngIf="session.fullWidth && session.type !== 'Keynote'" class="activity full-space card-program">
+            <div style="font-weight: bold;">{{ session.title }}</div>
+        </div>
+
+        <!-- PALESTRAS / WORKSHOPS / PAINÉIS / COMUNIDADE -->
+        <div *ngIf="!session.fullWidth" class="activity card-program" [ngClass]="session.cssClass">
 
             <p class="hashtag-trilha" *ngIf="session.track && session.track !== 'Geral'">{{ session.track }}</p>
             <div class="local-palestra responsivo" *ngIf="session.track !== 'Arena Comunidades'">{{ session.location }}
             </div>
+            <div class="horario-sessao" *ngIf="session.type?.startsWith('Workshop')">{{ session.time }} - {{ session.endTime }}</div>
 
             <p class="title">
                 <a [ngClass]="{'text-clicavel': session.hasDescription}"
@@ -105,198 +95,33 @@
 
             <div *ngIf="isLoading" style="text-align: center; margin: 20px;">Carregando programação...</div>
 
-            <!-- ESTRUTURA DIA 12 (Desktop) -->
+            <!-- ESTRUTURA DESKTOP: montada a partir da planilha (2 palcos + sala de workshop) -->
             <div id="estrutura-desktop" *ngIf="!isLoading" style="display: flex; gap: 20px;">
                 <table class="full-screen">
                     <thead>
                         <tr class="locais">
                             <th class="horario"></th>
-                            <th class="trilhas">
-                                <div class="local palestra card-program">Palco - Brasil</div>
-                            </th>
-                            <th class="trilhas">
-                                <div class="local palestra card-program">Palco - Argentina</div>
-                            </th>
-                            <th class="trilhas">
-                                <div class="local palestra card-program">Palco - Paraguai</div>
-                            </th>
-                            <th class="trilhas">
-                                <div class="local workshop card-program">Sala Workshop - Usina de Itaipú</div>
-                            </th>
-                            <th class="trilhas">
-                                <div class="local workshop card-program">Sala Workshop - Cataratas do Iguaçu</div>
+                            <th class="trilhas" *ngFor="let room of rooms[currentDay]; let last = last">
+                                <div class="local card-program" [ngClass]="last ? 'workshop' : 'palestra'">{{ room }}</div>
                             </th>
                         </tr>
                     </thead>
                     <tbody>
-                        <tr>
-                            <td>
-                                <div id="identificacao-900-0" class="time card-program">{{dataProgram[currentDay]?.['identificacao-900'].time}}</div>
-                            </td>
-                            <td colspan="6" id="identificacao-900">
-                                <ng-container
-                                    *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-900' }"></ng-container>
-                            </td>
-                        </tr>
-                        <tr>
+                        <tr *ngFor="let row of schedule[currentDay]">
                             <td style="align-content: center;">
-                                <div id="identificacao-1020-0" class="time card-program">{{dataProgram[currentDay]?.['identificacao-1020'].time}}</div>
+                                <div class="time card-program">{{ row.time }}</div>
                             </td>
-                            <td colspan="6" id="identificacao-1020">
+                            <td *ngIf="row.fullWidth" [attr.colspan]="rooms[currentDay].length">
                                 <ng-container
-                                    *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1020' }"></ng-container>
+                                    *ngTemplateOutlet="sessionCard; context: { session: row.fullWidth }"></ng-container>
                             </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <div id="identificacao-1045-0" class="time card-program">
-                                    {{dataProgram[currentDay]?.['identificacao-1045-1'].time}}
-                                </div>
-                            </td>
-                            <td id="identificacao-1045-1"><ng-container
-                                    *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1045-1' }"></ng-container>
-                            </td>
-                            <td id="identificacao-1045-2"><ng-container
-                                    *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1045-2' }"></ng-container>
-                            </td>
-                            <td id="identificacao-1045-3"><ng-container
-                                    *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1045-3' }"></ng-container>
-                            </td>
-                            <td id="identificacao-1045-5" rowspan="4"><ng-container
-                                    *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1045-5' }"></ng-container>
-                            </td>
-                            <td id="identificacao-1045-6" rowspan="4"><ng-container
-                                    *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1045-6' }"></ng-container>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <div id="identificacao-1120-0" class="time card-program">
-                                    {{dataProgram[currentDay]?.['identificacao-1120-1'].time}}
-                                </div>
-                            </td>
-                            <td id="identificacao-1120-1"><ng-container
-                                    *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1120-1' }"></ng-container>
-                            </td>
-                            <td id="identificacao-1120-2"><ng-container
-                                    *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1120-2' }"></ng-container>
-                            </td>
-                            <td id="identificacao-1120-3"><ng-container
-                                    *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1120-3' }"></ng-container>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <div id="identificacao-1155-0" class="time card-program">
-                                    {{dataProgram[currentDay]?.['identificacao-1155-1'].time}}
-                                </div>
-                            </td>
-                            <td id="identificacao-1155-1"><ng-container
-                                    *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1155-1' }"></ng-container>
-                            </td>
-                            <td id="identificacao-1155-2"><ng-container
-                                    *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1155-2' }"></ng-container>
-                            </td>
-                            <td id="identificacao-1155-3"><ng-container
-                                    *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1155-3' }"></ng-container>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <div id="identificacao-1230-0" class="time card-program">
-                                    {{dataProgram[currentDay]?.['identificacao-1230-1'].time}}
-                                </div>
-                            </td>
-                            <td id="identificacao-1230-1"><ng-container
-                                    *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1230-1' }"></ng-container>
-                            </td>
-                            <td id="identificacao-1230-2"><ng-container
-                                    *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1230-2' }"></ng-container>
-                            </td>
-                            <td id="identificacao-1230-3"><ng-container
-                                    *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1230-3' }"></ng-container>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td style="align-content: center;">
-                                <div id="identificacao-1300-0" class="time card-program">{{dataProgram[currentDay]?.['identificacao-1300'].time}}</div>
-                            </td>
-                            <td colspan="6" id="identificacao-1300">
-                                <ng-container
-                                    *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1300' }"></ng-container>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <div id="identificacao-1430-0" class="time card-program">
-                                    {{dataProgram[currentDay]?.['identificacao-1430-1'].time}}
-                                </div>
-                            </td>
-                            <td id="identificacao-1430-1"><ng-container
-                                    *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1430-1' }"></ng-container>
-                            </td>
-                            <td id="identificacao-1430-2"><ng-container
-                                    *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1430-2' }"></ng-container>
-                            </td>
-                            <td id="identificacao-1430-3"><ng-container
-                                    *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1430-3' }"></ng-container>
-                            </td>
-                            <td id="identificacao-1430-5" rowspan="3"><ng-container
-                                    *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1430-5' }"></ng-container>
-                            </td>
-                            <td id="identificacao-1430-6" rowspan="3"><ng-container
-                                    *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1430-6' }"></ng-container>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <div id="identificacao-1510-0" class="time card-program">
-                                    {{dataProgram[currentDay]?.['identificacao-1510-1'].time}}
-                                </div>
-                            </td>
-                            <td id="identificacao-1510-1"><ng-container
-                                    *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1510-1' }"></ng-container>
-                            </td>
-                            <td id="identificacao-1510-2"><ng-container
-                                    *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1510-2' }"></ng-container>
-                            </td>
-                            <td id="identificacao-1510-3"><ng-container
-                                    *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1510-3' }"></ng-container>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <div id="identificacao-1550-0" class="time card-program">
-                                    {{dataProgram[currentDay]?.['identificacao-1550-1'].time}}
-                                </div>
-                            </td>
-                            <td id="identificacao-1550-1"><ng-container
-                                    *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1550-1' }"></ng-container>
-                            </td>
-                            <td id="identificacao-1550-2"><ng-container
-                                    *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1550-2' }"></ng-container>
-                            </td>
-                            <td id="identificacao-1550-3"><ng-container
-                                    *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1550-3' }"></ng-container>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td style="align-content: center;">
-                                <div id="identificacao-1630-0" class="time card-program">{{dataProgram[currentDay]?.['identificacao-1630'].time}}</div>
-                            </td>
-                            <td colspan="6" id="identificacao-1630">
-                                <ng-container
-                                    *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1630' }"></ng-container>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <div id="identificacao-1700-0" class="time card-program">{{dataProgram[currentDay]?.['identificacao-1700'].time}}</div>
-                            </td>
-                            <td colspan="6" id="identificacao-1700">
-                                <ng-container
-                                    *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1700' }"></ng-container>
-                            </td>
+                            <ng-container *ngIf="!row.fullWidth">
+                                <ng-container *ngFor="let cell of row.cells">
+                                    <td *ngIf="cell !== null" [attr.rowspan]="cell?.rowspan ?? 1"><ng-container
+                                            *ngTemplateOutlet="sessionCard; context: { session: cell?.session }"></ng-container>
+                                    </td>
+                                </ng-container>
+                            </ng-container>
                         </tr>
                     </tbody>
                 </table>
@@ -325,7 +150,7 @@
                                 </td>
                                 <td>
                                     <ng-container
-                                        *ngTemplateOutlet="sessionCard; context: { id: item.key, isComunity: true }"></ng-container>
+                                        *ngTemplateOutlet="sessionCard; context: { session: item.value }"></ng-container>
                                 </td>
                             </tr>
                         </ng-container>
@@ -336,238 +161,16 @@
             <div id="estrutura-mobile" *ngIf="!isLoading">
                 <table class="response-version-screen">
                     <tbody>
-                        <tr>
-                            <td>
-                                <div id="identificacao-900-0" class="time card-program">{{dataProgram[currentDay]?.['identificacao-900'].time}}</div>
-                            </td>
-                            <td id="identificacao-900">
-                                <ng-container
-                                    *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-900' }"></ng-container>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td style="align-content: center;">
-                                <div id="identificacao-1020-0" class="time card-program">{{dataProgram[currentDay]?.['identificacao-1020'].time}}</div>
-                            </td>
-                            <td id="identificacao-1020">
-                                <ng-container
-                                    *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1020' }"></ng-container>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td rowspan="3">
-                                <div id="identificacao-1045-0" class="time card-program">
-                                    {{dataProgram[currentDay]?.['identificacao-1045-1'].time}}
-                                </div>
-                            </td>
-                            <td id="identificacao-1045-1"><ng-container
-                                    *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1045-1' }"></ng-container>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td id="identificacao-1045-2"><ng-container
-                                    *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1045-2' }"></ng-container>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td id="identificacao-1045-3"><ng-container
-                                    *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1045-3' }"></ng-container>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td rowspan="3">
-                                <div id="identificacao-1120-0" class="time card-program">
-                                    {{dataProgram[currentDay]?.['identificacao-1120-1'].time}}
-                                </div>
-                            </td>
-                            <td id="identificacao-1120-1"><ng-container
-                                    *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1120-1' }"></ng-container>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td id="identificacao-1120-2"><ng-container
-                                    *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1120-2' }"></ng-container>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td id="identificacao-1120-3"><ng-container
-                                    *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1120-3' }"></ng-container>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td rowspan="3">
-                                <div id="identificacao-1155-0" class="time card-program">
-                                    {{dataProgram[currentDay]?.['identificacao-1155-1'].time}}
-                                </div>
-                            </td>
-                            <td id="identificacao-1155-1"><ng-container
-                                    *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1155-1' }"></ng-container>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td id="identificacao-1155-2"><ng-container
-                                    *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1155-2' }"></ng-container>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td id="identificacao-1155-3"><ng-container
-                                    *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1155-3' }"></ng-container>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td rowspan="3">
-                                <div id="identificacao-1230-0" class="time card-program">
-                                    {{dataProgram[currentDay]?.['identificacao-1230-1'].time}}
-                                </div>
-                            </td>
-                            <td id="identificacao-1230-1"><ng-container
-                                    *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1230-1' }"></ng-container>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td id="identificacao-1230-2"><ng-container
-                                    *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1230-2' }"></ng-container>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td id="identificacao-1230-3"><ng-container
-                                    *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1230-3' }"></ng-container>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td style="align-content: center;">
-                                <div id="identificacao-1300-0" class="time card-program">{{dataProgram[currentDay]?.['identificacao-1300'].time}}</div>
-                            </td>
-                            <td id="identificacao-1300">
-                                <ng-container
-                                    *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1300' }"></ng-container>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td rowspan="3">
-                                <div id="identificacao-1430-0" class="time card-program">
-                                    {{dataProgram[currentDay]?.['identificacao-1430-1'].time}}
-                                </div>
-                            </td>
-                            <td id="identificacao-1430-1"><ng-container
-                                    *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1430-1' }"></ng-container>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td id="identificacao-1430-2"><ng-container
-                                    *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1430-2' }"></ng-container>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td id="identificacao-1430-3"><ng-container
-                                    *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1430-3' }"></ng-container>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td rowspan="3">
-                                <div id="identificacao-1510-0" class="time card-program">
-                                    {{dataProgram[currentDay]?.['identificacao-1510-1'].time}}
-                                </div>
-                            </td>
-                            <td id="identificacao-1510-1"><ng-container
-                                    *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1510-1' }"></ng-container>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td id="identificacao-1510-2"><ng-container
-                                    *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1510-2' }"></ng-container>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td id="identificacao-1510-3"><ng-container
-                                    *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1510-3' }"></ng-container>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td rowspan="3">
-                                <div id="identificacao-1550-0" class="time card-program">
-                                    {{dataProgram[currentDay]?.['identificacao-1550-1'].time}}
-                                </div>
-                            </td>
-                            <td id="identificacao-1550-1"><ng-container
-                                    *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1550-1' }"></ng-container>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td id="identificacao-1550-2"><ng-container
-                                    *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1550-2' }"></ng-container>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td id="identificacao-1550-3"><ng-container
-                                    *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1550-3' }"></ng-container>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td style="align-content: center;">
-                                <div id="identificacao-1630-0" class="time card-program">{{dataProgram[currentDay]?.['identificacao-1630'].time}}</div>
-                            </td>
-                            <td id="identificacao-1630">
-                                <ng-container
-                                    *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1630' }"></ng-container>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>
-                                <div id="identificacao-1700-0" class="time card-program">{{dataProgram[currentDay]?.['identificacao-1700'].time}}</div>
-                            </td>
-                            <td id="identificacao-1700">
-                                <ng-container
-                                    *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1700' }"></ng-container>
-                            </td>
-                        </tr>
-                    </tbody>
-                </table>
-
-
-                <table class="response-version-screen">
-                    <tbody>
-                        <tr>
-                            <td>
-                            </td>
-                            <td>
-                                <div class="activity full-space default card-program">
-                                    <div>
-                                        <p class="keynote-program">Workshops</p>
-                                    </div>
-                                </div>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td rowspan="2">
-                                <div id="identificacao-1045-0" class="time card-program">
-                                    {{dataProgram[currentDay]?.['identificacao-1045-5'].time}}
-                                </div>
-                            </td>
-                            <td id="identificacao-1045-5"><ng-container
-                                    *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1045-5' }"></ng-container>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td id="identificacao-1045-6"><ng-container
-                                    *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1045-6' }"></ng-container>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td rowspan="2">
-                                <div id="identificacao-1430-0" class="time card-program">
-                                    {{dataProgram[currentDay]?.['identificacao-1430-5'].time}}
-                                </div>
-                            </td>
-                            <td id="identificacao-1430-5"><ng-container
-                                    *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1430-5' }"></ng-container>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td id="identificacao-1430-6"><ng-container
-                                    *ngTemplateOutlet="sessionCard; context: { id: 'identificacao-1430-6' }"></ng-container>
-                            </td>
-                        </tr>
+                        <ng-container *ngFor="let row of schedule[currentDay]">
+                            <tr *ngFor="let session of sessoesDaLinha(row); let first = first">
+                                <td *ngIf="first" [attr.rowspan]="sessoesDaLinha(row).length" style="align-content: center;">
+                                    <div class="time card-program">{{ row.time }}</div>
+                                </td>
+                                <td><ng-container
+                                        *ngTemplateOutlet="sessionCard; context: { session: session }"></ng-container>
+                                </td>
+                            </tr>
+                        </ng-container>
                     </tbody>
                 </table>
 
@@ -594,7 +197,7 @@
                                 </td>
                                 <td>
                                     <ng-container
-                                        *ngTemplateOutlet="sessionCard; context: { id: item.key, isComunity: true }"></ng-container>
+                                        *ngTemplateOutlet="sessionCard; context: { session: item.value }"></ng-container>
                                 </td>
                             </tr>
                         </ng-container>

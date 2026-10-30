@@ -278,9 +278,16 @@ export class ProgramComponent{
       sessions.find(session => !session.fullWidth && columnOf(session) === column)?.location ?? '');
   }
 
-  // Sessões que começam em cada linha, na ordem das salas (usado na versão mobile)
+  // Sessões dos palcos que começam em cada linha (versão mobile; workshops ficam em bloco separado)
   public sessoesDaLinha(row: ScheduleRow): ProgramSession[] {
-    return row.fullWidth ? [row.fullWidth] : row.cells.filter(cell => !!cell).map(cell => cell.session);
+    return row.fullWidth ? [row.fullWidth] : row.cells.slice(0, -1).filter(cell => !!cell).map(cell => cell.session);
+  }
+
+  // Workshops do dia em ordem de horário (bloco separado na versão mobile)
+  public workshopsDoDia(day: number): ProgramSession[] {
+    return (this.schedule[day] ?? [])
+      .map(row => row.cells[this.columnSuffixes.length - 1]?.session)
+      .filter(session => !!session);
   }
 
   private paraMinutos(time: string): number {

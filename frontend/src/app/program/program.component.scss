@@ -594,3 +594,7 @@ ul.icons li .icon {
 #conteudo-popup-programacao p, .keynote-program {
     text-align: center !important;
 }
+// No mobile o horário do workshop já aparece na coluna de horário do bloco "Workshops"
+.response-version-screen .horario-sessao {
+    display: none;
+}

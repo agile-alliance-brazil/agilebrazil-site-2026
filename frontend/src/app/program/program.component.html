@@ -119,6 +119,8 @@
                                 <ng-container *ngFor="let cell of row.cells">
                                     <td *ngIf="cell !== null" [attr.rowspan]="cell?.rowspan ?? 1"><ng-container
                                             *ngTemplateOutlet="sessionCard; context: { session: cell?.session }"></ng-container>
+                                        <!-- Sala sem sessão neste horário: bloco vazio na cor do horário -->
+                                        <div *ngIf="!cell" class="time card-program"></div>
                                     </td>
                                 </ng-container>
                             </ng-container>
@@ -171,6 +173,32 @@
                                 </td>
                             </tr>
                         </ng-container>
+                    </tbody>
+                </table>
+
+                <table class="response-version-screen" *ngIf="workshopsDoDia(currentDay).length">
+                    <tbody>
+                        <tr>
+                            <td></td>
+                            <td>
+                                <div class="activity full-space default card-program">
+                                    <div>
+                                        <p class="keynote-program">Workshops</p>
+                                    </div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr *ngFor="let session of workshopsDoDia(currentDay)">
+                            <td>
+                                <div class="time card-program">
+                                    <p style="text-align: center; font-weight: bold;">{{ session.time }} <br /> -
+                                        <br /> {{ session.endTime }} </p>
+                                </div>
+                            </td>
+                            <td><ng-container
+                                    *ngTemplateOutlet="sessionCard; context: { session: session }"></ng-container>
+                            </td>
+                        </tr>
                     </tbody>
                 </table>
 

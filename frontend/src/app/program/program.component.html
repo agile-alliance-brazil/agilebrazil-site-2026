@@ -142,17 +142,17 @@
                                 </div>
                             </td>
                         </tr>
-                        <ng-container *ngFor="let item of (comunityProgram[currentDay] | keyvalue)">
+                        <ng-container *ngFor="let session of comunityProgram[currentDay]">
                             <tr>
                                 <td>
                                     <div class="time card-program">
-                                        <p style="text-align: center; font-weight: bold;">{{ item.value.time.split(' ')[0] }} <br /> -
-                                            <br /> {{ item.value.time.split(' ')[2] }} </p>
+                                        <p style="text-align: center; font-weight: bold;">{{ session.time }}
+                                            <ng-container *ngIf="session.endTime"><br /> - <br /> {{ session.endTime }}</ng-container></p>
                                     </div>
                                 </td>
                                 <td>
                                     <ng-container
-                                        *ngTemplateOutlet="sessionCard; context: { session: item.value }"></ng-container>
+                                        *ngTemplateOutlet="sessionCard; context: { session: session }"></ng-container>
                                 </td>
                             </tr>
                         </ng-container>
@@ -215,17 +215,17 @@
                                 </div>
                             </td>
                         </tr>
-                        <ng-container *ngFor="let item of (comunityProgram[currentDay] | keyvalue)">
+                        <ng-container *ngFor="let session of comunityProgram[currentDay]">
                             <tr>
                                 <td>
                                     <div class="time card-program">
-                                        <p style="text-align: center; font-weight: bold;">{{ item.value.time.split(' ')[0] }} <br /> -
-                                            <br /> {{ item.value.time.split(' ')[2] }} </p>
+                                        <p style="text-align: center; font-weight: bold;">{{ session.time }}
+                                            <ng-container *ngIf="session.endTime"><br /> - <br /> {{ session.endTime }}</ng-container></p>
                                     </div>
                                 </td>
                                 <td>
                                     <ng-container
-                                        *ngTemplateOutlet="sessionCard; context: { session: item.value }"></ng-container>
+                                        *ngTemplateOutlet="sessionCard; context: { session: session }"></ng-container>
                                 </td>
                             </tr>
                         </ng-container>

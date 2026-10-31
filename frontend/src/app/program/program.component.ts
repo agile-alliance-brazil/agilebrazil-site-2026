@@ -66,7 +66,8 @@ export class ProgramComponent{
   public modalSpeaker: Speaker | null = null;
   public modalViewType: 1 | 2 | 3 = 1; // 1 = Info Sessão, 2 = Speaker 1, 3 = Speaker 2
 
-  public comunityProgram: Record<number, Record<string, ProgramSession>> = { 12: {}, 13: {} };
+  // Sessões da Arena Comunidades por dia, ordenadas pelo horário de início
+  public comunityProgram: Record<number, ProgramSession[]> = { 12: [], 13: [] };
 
   ngOnInit(): void {
     this.iniciarProgramacao();
@@ -114,16 +115,16 @@ export class ProgramComponent{
     });
   }
 
-  // Colunas: Dia, Horário, ID, Local, Título, Descrição, Capacidade,
+  // Colunas: Dia, Horário (ex.: '10:45 - 12:15'), ID, Local, Título, Descrição, Capacidade,
   // depois 7 colunas por palestrante (Nome, Foto, Mini Biografia, LinkedIn, Comunidade, Imagem Comunidade, Tags)
   private processarDadosPlanilhaComunidade(rows: any[]): void {
-    this.comunityProgram = { 12: {}, 13: {} };
+    const program: Record<number, Record<string, ProgramSession>> = { 12: {}, 13: {} };
 
     rows.forEach(rowNode => {
       const row = rowNode.c.map((prop: any) => prop ? prop.v : null);
       const day = row[0];
-      const time = row[1];
-      const id = row[2];
+      const [time, endTime] = String(row[1] ?? '').split('-').map(part => part.trim());
+      const id = row[2] || (time ? `identificacao-comunity-${time.replace(':', '')}` : null);
       const location = row[3];
       const title = row[4] ?? 'Em definição';
       const description = row[5];
@@ -131,8 +132,8 @@ export class ProgramComponent{
 
       if (!id) return;
 
-      if (!this.comunityProgram[day]) {
-        this.comunityProgram[day] = {};
+      if (!program[day]) {
+        program[day] = {};
       }
 
       const speakers: Speaker[] = [];
@@ -151,10 +152,11 @@ export class ProgramComponent{
         });
       });
 
-      this.comunityProgram[day][id] = {
+      program[day][id] = {
         id,
         hourId: id,
         time,
+        endTime,
         title,
         type: 'Comunidade',
         track: 'Comunidade',
@@ -165,6 +167,12 @@ export class ProgramComponent{
         speakers,
         cssClass: 'default'
       };
+    });
+
+    this.comunityProgram = { 12: [], 13: [] };
+    Object.entries(program).forEach(([day, sessions]) => {
+      this.comunityProgram[Number(day)] = Object.values(sessions)
+        .sort((a, b) => this.paraMinutos(a.time) - this.paraMinutos(b.time));
     });
 
     console.log('Programação da comunidade carregada:', this.comunityProgram);

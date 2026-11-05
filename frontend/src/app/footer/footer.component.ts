@@ -38,7 +38,7 @@ export class FooterComponent {
       name: 'Improvee',
       imageUrl: '/2026/assets/images/improvee.png',
       nivel: 'Silver',
-      link: 'https://improvee.com.br/'
+      link: 'https://improvee.com.br/agile-brazil/'
     },
     {
       name: 'Elegant Garden',

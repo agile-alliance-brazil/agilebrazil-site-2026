@@ -66,7 +66,7 @@ export class ProgramComponent{
   public modalSpeaker: Speaker | null = null;
   public modalViewType: 1 | 2 | 3 = 1; // 1 = Info Sessão, 2 = Speaker 1, 3 = Speaker 2
 
-  // Sessões da Arena Comunidades por dia, ordenadas pelo horário de início
+  // Sessões da Sala Ponte da Amizade por dia, ordenadas pelo horário de início
   public comunityProgram: Record<number, ProgramSession[]> = { 12: [], 13: [] };
 
   ngOnInit(): void {
@@ -77,6 +77,7 @@ export class ProgramComponent{
     this.isLoading = true;
     this.hasError = false;
     // const url = 'https://docs.google.com/spreadsheets/d/1n8AK2Pp4CbYo1A6V4431wGjTcXYjw4Dqi57khjqaqvQ/gviz/tq?tqx=out:json';
+    // const url = 'https://docs.google.com/spreadsheets/d/1SuK4-m73A1J4sD67EbGBysoMx3XTuegytSviXqS3Z4A/gviz/tq?tqx=out:json';
     const url = 'https://insc.faculdadefacit.edu.br/agile_brazil_2026.php';
 
     this.http.get(url, { responseType: 'text' }).subscribe({
@@ -98,9 +99,9 @@ export class ProgramComponent{
   }
 
   iniciarProgramacaoComunidade(): void {
-    // TODO: substituir pela URL do proxy da planilha de programação da Arena Comunidades
-    // const url = 'https://docs.google.com/spreadsheets/d/1DwFxCadmrpsm8sy_sHcG_zikrDyOzVTS0QotCGriZxY/gviz/tq?tqx=out:json';
-    const url = 'https://insc.faculdadefacit.edu.br/agile_brazil_2026_comunidade_programacao.php';
+    // TODO: substituir pela URL do proxy da planilha de programação da Sala Ponte da Amizade
+    const url = 'https://docs.google.com/spreadsheets/d/1DwFxCadmrpsm8sy_sHcG_zikrDyOzVTS0QotCGriZxY/gviz/tq?tqx=out:json';
+    // const url = 'https://insc.faculdadefacit.edu.br/agile_brazil_2026_comunidade_programacao.php';
 
     this.http.get(url, { responseType: 'text' }).subscribe({
       next: (responseText) => {
@@ -193,7 +194,6 @@ export class ProgramComponent{
       const type = row[6] ?? row[4] ?? 'Geral';
       const description = row[7];
       const capacity = row[16];
-
       if (!id) return;
 
       if (!this.dataProgram[day]) {
@@ -368,7 +368,7 @@ export class ProgramComponent{
       case 'PFC': return 'cliente';
       case 'Painel Executivo':
       case 'Patrocinador': return 'executivo';
-      case 'Arena Comunidades': return 'default';
+      case 'Sala Ponte da Amizade': return 'default';
       default: return 'default';
     }
   }

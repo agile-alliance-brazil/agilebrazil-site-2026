@@ -28,6 +28,18 @@ export class FooterComponent {
       nivel: 'Gold',
       link: 'https://br.k21.global/'
     },
+     {
+      name: 'Businessmap',
+      imageUrl: '/2026/assets/images/businessmap.png',
+      nivel: 'Gold',
+      link: 'https://businessmap.io/'
+    },
+     {
+      name: 'Taller',
+      imageUrl: '/2026/assets/images/taller.png',
+      nivel: 'Gold',
+      link: 'https://www.taller.net.br/'
+    },
     {
       name: 'Os Agilistas',
       imageUrl: '/2026/assets/images/osagilistasdti.png',

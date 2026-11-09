@@ -18,7 +18,7 @@
         <div *ngIf="!session.fullWidth" class="activity card-program" [ngClass]="session.cssClass">
 
             <p class="hashtag-trilha" *ngIf="session.track && session.track !== 'Geral'">{{ session.track }}</p>
-            <div class="local-palestra responsivo" *ngIf="session.track !== 'Arena Comunidades'">{{ session.location }}
+            <div class="local-palestra responsivo" *ngIf="session.track !== 'Sala Ponte da Amizade'">{{ session.location }}
             </div>
             <div class="horario-sessao" *ngIf="session.type?.startsWith('Workshop')">{{ session.time }} - {{ session.endTime }}</div>
 
@@ -137,7 +137,7 @@
                                 <div class="activity full-space default card-program"
                                     style="background-color: #063676;">
                                     <div>
-                                        <p class="keynote-program">Arena Comunidades</p>
+                                        <p class="keynote-program"> <strong>Sala Ponte da Amizade</strong></p>
                                     </div>
                                 </div>
                             </td>
@@ -210,7 +210,7 @@
                                 <div class="activity full-space default card-program"
                                     style="background-color: #063676;">
                                     <div>
-                                        <p class="keynote-program">Arena Comunidades</p>
+                                        <p class="keynote-program"><strong>Sala Ponte da Amizade</strong></p>
                                     </div>
                                 </div>
                             </td>

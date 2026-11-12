@@ -70,6 +70,7 @@ export class ProgramComponent{
   public comunityProgram: Record<number, ProgramSession[]> = { 12: [], 13: [] };
 
   ngOnInit(): void {
+    window.location.replace('https://feedback-ab26.replit.app/');
     this.iniciarProgramacao();
   }
 
